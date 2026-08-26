@@ -1,6 +1,3 @@
-import { COLLEGE, HERO_HIGHLIGHTS } from '../data/siteContent'
-import Icon from './Icon'
-
 export default function Hero() {
   return (
     <section id="home" className="relative overflow-hidden bg-gradient-to-br from-[#E3F2FD] via-[#EAF4F8] to-[#F8FCFF]">
@@ -49,28 +46,6 @@ export default function Hero() {
           </div>
         </div>
       </div>
-
-      {/* Highlights strip — new stacked structure with floating icon badges */}
-      <div className="container-x relative pb-8 pt-6 sm:pb-10">
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
-          {HERO_HIGHLIGHTS.map((h, i) => (
-            <div
-              key={h.title}
-              className="reveal group relative rounded-2xl bg-white px-5 pb-5 pt-9 text-center shadow-card ring-1 ring-navy-100 card-lift"
-              style={{ '--reveal-delay': `${i * 90}ms` }}
-            >
-              <span className="absolute -top-6 left-1/2 flex h-12 w-12 -translate-x-1/2 items-center justify-center rounded-full bg-gradient-to-br from-royal-600 to-brand-600 text-white shadow-[0_10px_20px_-6px_rgba(25,118,210,0.5)] ring-4 ring-royal-50 transition-transform duration-300 group-hover:scale-110">
-                <Icon name={h.icon} className="h-5 w-5" />
-              </span>
-              <h3 className="font-display text-sm font-bold text-navy-950">{h.title}</h3>
-              <p className="mt-1.5 text-xs leading-relaxed text-navy-700">{h.text}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Screen-reader only college name for SEO (h1 lives in header) */}
-      <span className="sr-only">{COLLEGE.name}, Miraj, Sangli, Maharashtra</span>
     </section>
   )
 }
