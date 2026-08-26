@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-heading: 'Inter', Arial, Helvetica, sans-serif;
+  --font-body: 'Inter', Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+  }
+  body {
+    @apply font-sans text-navy-900 antialiased bg-[#F4F9FC];
+  }
+  ::selection {
+    @apply bg-brand-600 text-white;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+  .section-pad {
+    @apply py-8 sm:py-9 lg:py-10;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium tracking-wide transition-all duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-500/40;
+  }
+  .btn-primary {
+    @apply btn bg-brand-600 text-white shadow-card hover:bg-brand-700 hover:shadow-card-hover hover:-translate-y-0.5;
+  }
+  .btn-outline-light {
+    @apply btn border-2 border-white/80 text-white hover:bg-white hover:text-navy-950 hover:-translate-y-0.5;
+  }
+  .btn-outline {
+    @apply btn border-2 border-brand-600 text-brand-700 hover:bg-brand-600 hover:text-white hover:-translate-y-0.5;
+  }
+  .section-tag {
+    @apply inline-flex items-center gap-2 rounded-full bg-brand-100 px-4 py-1.5 text-xs sm:text-sm font-bold uppercase tracking-wide text-brand-700;
+  }
+  .heading-xl {
+    @apply font-display text-2xl sm:text-3xl lg:text-[2.25rem] font-extrabold leading-tight text-navy-950;
+  }
+  .card-lift {
+    @apply transition-all duration-300 hover:-translate-y-1.5 hover:shadow-card-hover;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
