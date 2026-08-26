@@ -10,7 +10,7 @@ export default function About() {
           <div className="relative">
             <div className="overflow-hidden rounded-2xl shadow-card ring-1 ring-navy-100">
               <img
-                src="/images/Multi-Speciality-Hospital-Miraj.jpg"
+                src={`${import.meta.env.BASE_URL}images/Multi-Speciality-Hospital-Miraj.jpg`}
                 alt="Synergy Hospital, Miraj — multi-speciality hospital associated with the college"
                 className="aspect-[16/10] w-full object-cover object-center transition-transform duration-700 hover:scale-105"
                 loading="lazy"
@@ -24,7 +24,7 @@ export default function About() {
           <div className="mt-4 grid grid-cols-2 gap-4">
             <div className="overflow-hidden rounded-2xl shadow-card ring-1 ring-navy-100">
               <img
-                src="/images/Female-Ward-Synergy-Hospital.jpg"
+                src={`${import.meta.env.BASE_URL}images/Female-Ward-Synergy-Hospital.jpg`}
                 alt="Female ward at Synergy Hospital"
                 className="aspect-[4/3] w-full object-cover object-center transition-transform duration-700 hover:scale-105"
                 loading="lazy"
@@ -32,7 +32,7 @@ export default function About() {
             </div>
             <div className="overflow-hidden rounded-2xl shadow-card ring-1 ring-navy-100">
               <img
-                src="/images/Child-Care-Hospital-Miraj-Sangli.jpg"
+                src={`${import.meta.env.BASE_URL}images/Child-Care-Hospital-Miraj-Sangli.jpg`}
                 alt="Child care services at Synergy Hospital"
                 className="aspect-[4/3] w-full object-cover object-center transition-transform duration-700 hover:scale-105"
                 loading="lazy"

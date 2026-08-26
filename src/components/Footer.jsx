@@ -26,7 +26,7 @@ export default function Footer() {
         <div>
           <a href="#home" className="inline-flex items-center gap-3">
             <img
-              src="/images/logo.jpg"
+              src={`${import.meta.env.BASE_URL}images/logo.jpg`}
               alt={`${COLLEGE.name} logo`}
               className="h-12 w-auto rounded-md ring-1 ring-white/20"
               loading="lazy"

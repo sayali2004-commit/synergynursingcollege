@@ -32,7 +32,7 @@ export default function Courses() {
               {/* Visual side */}
               <div className="relative min-h-[240px] overflow-hidden bg-brand-800">
                 <img
-                  src="/images/Synergy-Hospital-Miraj.jpg"
+                  src={`${import.meta.env.BASE_URL}images/Synergy-Hospital-Miraj.jpg`}
                   alt={`${course.name} — clinical training at Synergy Hospital, Miraj`}
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   loading="lazy"

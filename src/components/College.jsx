@@ -60,19 +60,19 @@ export default function College() {
         {/* Images */}
         <div className="reveal order-1 lg:order-2 grid grid-cols-2 gap-4">
           <img
-            src="/images/Female-Ward-Synergy-Hospital.jpg"
+            src={`${import.meta.env.BASE_URL}images/Female-Ward-Synergy-Hospital.jpg`}
             alt="Female ward at Synergy Hospital, Miraj"
             className="col-span-2 h-56 w-full rounded-2xl object-cover shadow-card ring-1 ring-white/10 sm:h-72"
             loading="lazy"
           />
           <img
-            src="/images/Ambulance-Facility-Miraj.jpg"
+            src={`${import.meta.env.BASE_URL}images/Ambulance-Facility-Miraj.jpg`}
             alt="Ambulance facility at Synergy Hospital"
             className="h-40 w-full rounded-2xl object-cover shadow-card ring-1 ring-white/10 sm:h-48"
             loading="lazy"
           />
           <img
-            src="/images/best-eye-hospital-in-MIraj.jpg"
+            src={`${import.meta.env.BASE_URL}images/best-eye-hospital-in-MIraj.jpg`}
             alt="Speciality eye care services at Synergy Hospital"
             className="h-40 w-full rounded-2xl object-cover shadow-card ring-1 ring-white/10 sm:h-48"
             loading="lazy"

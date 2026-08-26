@@ -7,7 +7,7 @@ export default function Hero() {
       {/* Background */}
       <div className="absolute inset-0" aria-hidden="true">
         <img
-          src="/images/Synergy-Hospital-Miraj.jpg"
+          src={`${import.meta.env.BASE_URL}images/Synergy-Hospital-Miraj.jpg`}
           alt=""
           className="h-full w-full object-cover object-center"
           loading="eager"

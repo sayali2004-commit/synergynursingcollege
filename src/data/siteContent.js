@@ -62,9 +62,9 @@ export const NAV_MENU = [
 ]
 
 export const IMAGES = {
-  logo: '/images/logo@2x-144x88.jpg',
-  logoFooter: '/images/logo.jpg',
-  hero: '/images/Synergy-Hospital-Miraj.jpg',
+  logo: `${import.meta.env.BASE_URL}images/logo@2x-144x88.jpg`,
+  logoFooter: `${import.meta.env.BASE_URL}images/logo.jpg`,
+  hero: `${import.meta.env.BASE_URL}images/Synergy-Hospital-Miraj.jpg`,
 }
 
 export const HERO_HIGHLIGHTS = [
@@ -229,36 +229,36 @@ export const FACILITIES = [
   {
     title: 'Clinical Training',
     text: 'Hands-on patient care through our associated multi-speciality Synergy Hospital, Miraj.',
-    image: '/images/Miraj-Hospitals-Best-Hospital.jpg',
+    image: `${import.meta.env.BASE_URL}images/Miraj-Hospitals-Best-Hospital.jpg`,
   },
   {
     title: 'Multi-Speciality Exposure',
     text: 'Rotations across specialities give students broad, real-world clinical experience.',
-    image: '/images/Multi-Speciality-Hospital-Miraj.jpg',
+    image: `${import.meta.env.BASE_URL}images/Multi-Speciality-Hospital-Miraj.jpg`,
   },
   {
     title: 'Dedicated Female Ward',
     text: 'Structured ward postings help students master day-to-day nursing care practices.',
-    image: '/images/Female-Ward-Synergy-Hospital.jpg',
+    image: `${import.meta.env.BASE_URL}images/Female-Ward-Synergy-Hospital.jpg`,
   },
   {
     title: 'Child Care Services',
     text: 'Paediatric exposure builds specialised skills in caring for young patients.',
-    image: '/images/Child-Care-Hospital-Miraj-Sangli.jpg',
+    image: `${import.meta.env.BASE_URL}images/Child-Care-Hospital-Miraj-Sangli.jpg`,
   },
   {
     title: 'Emergency & Ambulance',
     text: 'Exposure to emergency response services develops quick-thinking professionals.',
-    image: '/images/Ambulance-Facility-Miraj.jpg',
+    image: `${import.meta.env.BASE_URL}images/Ambulance-Facility-Miraj.jpg`,
   },
   {
     title: 'Speciality Eye Care',
     text: 'Ophthalmic services at the associated hospital widen specialty learning options.',
-    image: '/images/best-eye-hospital-in-MIraj.jpg',
+    image: `${import.meta.env.BASE_URL}images/best-eye-hospital-in-MIraj.jpg`,
   },
 ]
 
-const GALLERY_BASE = '/images/'
+const GALLERY_BASE = import.meta.env.BASE_URL + 'images/'
 
 export const GALLERY_IMAGES = [
   'IMG-20200806-WA0032.jpg',
