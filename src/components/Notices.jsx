@@ -27,7 +27,7 @@ export default function Notices() {
                   <Icon name="badge" className="w-6 h-6" />
                 </span>
                 <div>
-                  <h3 className="font-display text-lg font-bold text-white">MUHS Mandate — {group.year}</h3>
+                  <h3 className="font-display text-lg font-bold text-white">MUHS Mandate, {group.year}</h3>
                   <p className="mt-1 text-sm leading-relaxed text-white/85">{group.highlight}</p>
                 </div>
               </header>

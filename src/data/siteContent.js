@@ -3,7 +3,7 @@ export const COLLEGE = {
   shortName: 'Synergy Nursing College',
   tagline: 'Miraj · Sangli · Maharashtra',
   description:
-    'Synergy College of Nursing is a part of Uma Trust and Synergy Hospital, Miraj — one of the leading educational institutions in Maharashtra, affiliated to the Maharashtra University of Health Sciences (MUHS), Nashik.',
+    'Synergy College of Nursing is a part of Uma Trust and Synergy Hospital, Miraj, one of the leading educational institutions in Maharashtra, affiliated to the Maharashtra University of Health Sciences (MUHS), Nashik.',
   addressLines: ['Usmania Moholla, Maji Sainik Vasahat,', '100 Ft Road, Miraj 416410'],
   addressShort: 'Usmania Moholla, Maji Sainik Vasahat, 100 Ft Road, Miraj 416410',
   phones: ['8767778129', '9765500700'],
@@ -134,7 +134,7 @@ export const WHY_US = [
 export const APPROVALS = [
   {
     title: 'Affiliated to MUHS, Nashik',
-    text: 'The college is affiliated to the Maharashtra University of Health Sciences — one of the best affiliations for nursing education in the state.',
+    text: 'The college is affiliated to the Maharashtra University of Health Sciences, one of the best affiliations for nursing education in the state.',
     icon: 'badge',
   },
   {

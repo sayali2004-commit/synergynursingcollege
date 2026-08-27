@@ -4,7 +4,7 @@ import Icon from './Icon'
 export default function College() {
   return (
     <section id="college" className="section-pad relative overflow-hidden" style={{ backgroundColor: '#1E4460' }}>
-      {/* decorative — very subtle */}
+      {/* decorative, very subtle */}
       <div
         className="pointer-events-none absolute -left-32 top-10 h-80 w-80 rounded-full bg-brand-600/10 blur-3xl"
         aria-hidden="true"
@@ -23,7 +23,7 @@ export default function College() {
           </h2>
           <p className="reveal mt-4 leading-relaxed text-white/75" style={{ '--reveal-delay': '160ms' }}>
             Located in the heart of a bustling mix of rural and urban area in Miraj, the college
-            offers excellent facilities together with a welcoming academic environment — making it
+            offers excellent facilities together with a welcoming academic environment, making it
             one of the best B.Sc. Nursing colleges in Maharashtra.
           </p>
 

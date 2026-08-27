@@ -39,7 +39,7 @@ export default function Gallery() {
             Glimpses of Campus &amp; Hospital Life
           </h2>
           <p className="reveal mt-4 leading-relaxed text-navy-800" style={{ '--reveal-delay': '160ms' }}>
-            Real photographs of our college and the associated Synergy Hospital, Miraj — captured
+            Real photographs of our college and the associated Synergy Hospital, Miraj, captured
             from the institution&apos;s official physical facilities collection.
           </p>
         </div>
@@ -108,7 +108,7 @@ export default function Gallery() {
           <figure onClick={(e) => e.stopPropagation()} className="max-h-full max-w-5xl animate-fade-up">
             <img
               src={GALLERY_IMAGES[lightbox]}
-              alt={`Synergy Nursing College — image ${lightbox + 1}`}
+              alt={`Synergy Nursing College, image ${lightbox + 1}`}
               className="max-h-[78vh] w-auto rounded-xl shadow-card-hover ring-1 ring-white/20"
             />
             <figcaption className="mt-3 text-center text-sm font-semibold text-white/70">

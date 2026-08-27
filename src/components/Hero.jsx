@@ -35,7 +35,7 @@ export default function Hero() {
           </p>
           <p className="reveal mt-4 max-w-xl text-base sm:text-lg leading-relaxed text-navy-800" style={{ '--reveal-delay': '240ms' }}>
             A premier institution under <strong>Uma Trust &amp; Synergy Hospital, Miraj</strong>,
-            affiliated to <strong>MUHS, Nashik</strong> — offering quality nursing education backed
+            affiliated to <strong>MUHS, Nashik</strong>, offering quality nursing education backed
             by hands-on, multi-speciality clinical training.
           </p>
           <div className="reveal mt-8 flex flex-wrap items-center gap-4" style={{ '--reveal-delay': '320ms' }}>

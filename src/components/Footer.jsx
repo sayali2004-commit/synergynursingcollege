@@ -47,7 +47,7 @@ export default function Footer() {
             </span>
           </Link>
           <p className="mt-5 max-w-sm text-sm leading-relaxed">
-            One of the leading nursing institutions in Maharashtra — affiliated to MUHS, Nashik,
+            One of the leading nursing institutions in Maharashtra, affiliated to MUHS, Nashik,
             and backed by the clinical excellence of Synergy Hospital, Miraj.
           </p>
           <a

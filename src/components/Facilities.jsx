@@ -13,7 +13,7 @@ export default function Facilities() {
               Learning Beyond the Classroom
             </h2>
             <p className="reveal mt-4 leading-relaxed text-navy-800" style={{ '--reveal-delay': '160ms' }}>
-              The college and Synergy Hospital Miraj are associated — giving our students direct,
+              The college and Synergy Hospital Miraj are associated, giving our students direct,
               supervised clinical exposure across the hospital&apos;s multi-speciality services.
             </p>
           </div>

@@ -11,7 +11,7 @@ export default function About() {
             <div className="overflow-hidden rounded-2xl shadow-card ring-1 ring-navy-100">
               <img
                 src={`${import.meta.env.BASE_URL}images/Multi-Speciality-Hospital-Miraj.jpg`}
-                alt="Synergy Hospital, Miraj — multi-speciality hospital associated with the college"
+                alt="Synergy Hospital, Miraj, multi-speciality hospital associated with the college"
                 className="aspect-[16/10] w-full object-cover object-center transition-transform duration-700 hover:scale-105"
                 loading="lazy"
               />
@@ -41,7 +41,7 @@ export default function About() {
           </div>
         </div>
 
-        {/* Copy — compact */}
+        {/* Copy, compact */}
         <div>
           <p className="reveal section-tag">About Us</p>
           <h2 className="reveal heading-xl mt-4 text-balance" style={{ '--reveal-delay': '80ms' }}>

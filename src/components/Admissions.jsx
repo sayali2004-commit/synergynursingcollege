@@ -12,7 +12,7 @@ const STEPS = [
   },
   {
     title: 'Confirmation of Admission',
-    text: 'Admissions are confirmed as per eligibility — 10+2 Science passed with CET / NEET — under MUHS and state norms.',
+    text: 'Admissions are confirmed as per eligibility, 10+2 Science passed with CET / NEET, under MUHS and state norms.',
   },
 ]
 

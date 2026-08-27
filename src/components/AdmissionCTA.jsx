@@ -23,7 +23,7 @@ export default function AdmissionCTA() {
           Start Your Journey in Nursing
         </h2>
         <p className="reveal mx-auto mt-4 max-w-2xl leading-relaxed text-white/80" style={{ '--reveal-delay': '180ms' }}>
-          Join a college where compassion meets clinical excellence — backed by Uma Trust,
+          Join a college where compassion meets clinical excellence, backed by Uma Trust,
           Synergy Hospital and an MUHS affiliation.
         </p>
         <div className="reveal mt-9 flex flex-wrap items-center justify-center gap-4" style={{ '--reveal-delay': '260ms' }}>

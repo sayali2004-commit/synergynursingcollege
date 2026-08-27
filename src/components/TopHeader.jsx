@@ -13,7 +13,7 @@ export default function TopHeader() {
           />
         </div>
 
-        {/* College name — center-left */}
+        {/* College name, center-left */}
         <div className="min-w-0">
           <h1 className="font-display text-lg sm:text-2xl lg:text-3xl xl:text-[2.25rem] font-extrabold leading-tight text-gold-400 text-balance">
             Synergy College of Nursing
@@ -23,7 +23,7 @@ export default function TopHeader() {
           </p>
         </div>
 
-        {/* Society block — right */}
+        {/* Society block, right */}
         <div className="ml-auto hidden shrink-0 items-center gap-4 md:flex lg:gap-5">
           <p className="whitespace-nowrap font-serif text-3xl font-bold tracking-wide text-white lg:text-5xl">
             UMA TRUST

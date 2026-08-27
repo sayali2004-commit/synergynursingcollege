@@ -30,7 +30,7 @@ export default function Contact() {
 
   const onSubmit = (e) => {
     e.preventDefault()
-    const subject = encodeURIComponent(`Admission enquiry — ${form.course} (${form.name})`)
+    const subject = encodeURIComponent(`Admission enquiry, ${form.course} (${form.name})`)
     const body = encodeURIComponent(
       `Name: ${form.name}\nPhone: ${form.phone}\nEmail: ${form.email}\nCourse of interest: ${form.course}\n\nMessage:\n${form.message}`,
     )
@@ -47,7 +47,7 @@ export default function Contact() {
             We&apos;d Love to Hear From You
           </h2>
           <p className="reveal mt-4 leading-relaxed text-navy-800" style={{ '--reveal-delay': '160ms' }}>
-            Have a question about admissions, courses or campus life? Reach out — our team is
+            Have a question about admissions, courses or campus life? Reach out, our team is
             happy to help.
           </p>
         </div>
