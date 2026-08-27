@@ -2,17 +2,17 @@ import { Link } from 'react-router-dom'
 import { COLLEGE } from '../data/siteContent'
 import Icon from './Icon'
 
-const QUICK_LINKS = [
+const QUICK_LINKS_LEFT = [
   { label: 'Home', to: '/' },
   { label: 'About Us', to: '/#about' },
   { label: 'Academics', to: '/academics' },
+]
+
+const QUICK_LINKS_RIGHT = [
   { label: 'Campus Life', to: '/campus-life' },
   { label: 'Admissions', to: '/admissions' },
   { label: 'Contact Us', to: '/contact' },
 ]
-
-const LEFT_LINKS = QUICK_LINKS.slice(0, 3)
-const RIGHT_LINKS = QUICK_LINKS.slice(3)
 
 export default function Footer() {
   return (
@@ -48,17 +48,17 @@ export default function Footer() {
 
         {/* Quick Links */}
         <div>
-          <h3 className="font-display text-sm font-bold uppercase tracking-wide text-white">Quick Links</h3>
+          <h3 className="font-display text-sm font-bold uppercase tracking-wide text-white text-center">Quick Links</h3>
           <div className="mt-5 grid grid-cols-2 gap-x-10 gap-y-3">
             <ul className="space-y-3">
-              {LEFT_LINKS.map((l) => (
+              {QUICK_LINKS_LEFT.map((l) => (
                 <li key={l.label}>
                   <Link to={l.to} className="text-sm transition-colors hover:text-brand-300">{l.label}</Link>
                 </li>
               ))}
             </ul>
             <ul className="space-y-3">
-              {RIGHT_LINKS.map((l) => (
+              {QUICK_LINKS_RIGHT.map((l) => (
                 <li key={l.label}>
                   <Link to={l.to} className="text-sm transition-colors hover:text-brand-300">{l.label}</Link>
                 </li>
