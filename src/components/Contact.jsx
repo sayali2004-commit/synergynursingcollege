@@ -156,14 +156,17 @@ export default function Contact() {
                     <span className="mb-1.5 block text-xs font-bold uppercase tracking-widest text-navy-700">
                       Course of Interest
                     </span>
-                    <select
-                      value={form.course}
-                      onChange={update('course')}
-                      className="w-full rounded-xl border border-navy-200 bg-navy-50 px-4 py-3 text-sm outline-none transition-all focus:border-brand-500 focus:bg-white focus:ring-4 focus:ring-brand-500/15"
-                    >
-                      <option>B.Sc. Nursing</option>
-                      <option>Other / General Enquiry</option>
-                    </select>
+                    <div className="relative">
+                      <select
+                        value={form.course}
+                        onChange={update('course')}
+                        className="w-full appearance-none rounded-xl border border-navy-200 bg-navy-50 px-4 py-3 pr-10 text-sm outline-none transition-all focus:border-brand-500 focus:bg-white focus:ring-4 focus:ring-brand-500/15"
+                      >
+                        <option>B.Sc. Nursing</option>
+                        <option>Other / General Enquiry</option>
+                      </select>
+                      <svg className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-navy-500" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                    </div>
                   </label>
                 </div>
                 <label className="block">
