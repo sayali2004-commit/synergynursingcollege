@@ -73,8 +73,8 @@ export default function Footer() {
         </div>
 
         {/* Quick links */}
-        <div>
-          <h3 className="font-display text-sm font-bold uppercase tracking-wide text-white text-center sm:text-left">Quick Links</h3>
+        <div className="text-center sm:text-left">
+          <h3 className="font-display text-sm font-bold uppercase tracking-wide text-white">Quick Links</h3>
           {/* Mobile: 2-column grid. Desktop: single column */}
           <div className="mt-5 grid grid-cols-2 gap-x-6 gap-y-2.5 sm:block sm:space-y-2.5 sm:gap-0">
             <ul className="space-y-2.5">

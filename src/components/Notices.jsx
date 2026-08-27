@@ -6,7 +6,7 @@ export default function Notices() {
     <section id="notices" className="section-pad bg-gradient-to-b from-brand-50 to-brand-50/40">
       <div className="container-x">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="reveal section-tag">Notices &amp; News</p>
+          <p className="reveal section-tag">Mandate</p>
           <h2 className="reveal heading-xl mt-4 text-balance" style={{ '--reveal-delay': '80ms' }}>
             MUHS Mandate Announcements
           </h2>
