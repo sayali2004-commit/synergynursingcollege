@@ -5,7 +5,6 @@ import Icon from './Icon'
 
 const MENU = [
   { label: 'Home', to: '/' },
-  { label: 'About', to: '/#about' },
   { label: 'Academics', to: '/academics' },
   { label: 'Campus Life', to: '/campus-life' },
   { label: 'Admissions', to: '/admissions' },
