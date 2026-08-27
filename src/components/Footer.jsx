@@ -26,7 +26,7 @@ export default function Footer() {
         }}
         aria-hidden="true"
       />
-      <div className="container-x flex flex-col items-start gap-8 py-10 sm:flex-row sm:items-start sm:gap-16 lg:py-12">
+      <div className="container-x flex flex-col items-start gap-8 py-10 sm:flex-row sm:items-center sm:gap-16 lg:py-12">
         {/* Contact */}
         <div>
           <h3 className="font-display text-sm font-bold uppercase tracking-wide text-white">Contact</h3>
