@@ -51,20 +51,6 @@ export default function WhyChooseUs() {
                     />
                   )}
 
-                  <span className="relative block h-14 w-14 shrink-0 drop-shadow-[0_10px_18px_rgba(25,118,210,0.30)] sm:h-[68px] sm:w-[68px]">
-                    <span
-                      className={`absolute inset-0 bg-gradient-to-br ${alt ? 'from-brand-500 to-royal-600' : 'from-royal-600 to-brand-500'} [clip-path:polygon(25%_2%,75%_2%,98%_50%,75%_98%,25%_98%,2%_50%)]`}
-                      aria-hidden="true"
-                    />
-                    <span
-                      className="absolute inset-[3px] bg-white [clip-path:polygon(25%_2%,75%_2%,98%_50%,75%_98%,25%_98%,2%_50%)]"
-                      aria-hidden="true"
-                    />
-                    <span className="absolute inset-0 flex items-center justify-center">
-                      <Icon name={item.icon} className="h-6 w-6" />
-                    </span>
-                  </span>
-
                   <div className="relative z-10 flex min-w-0 flex-1 flex-col items-start">
                     <h3 className="text-[15px] font-bold leading-snug text-navy-950">{item.title}</h3>
                     <span
