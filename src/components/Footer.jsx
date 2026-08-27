@@ -31,9 +31,9 @@ export default function Footer() {
         }}
         aria-hidden="true"
       />
-      <div className="container-x relative grid gap-8 py-8 sm:grid-cols-2 sm:gap-10 lg:grid-cols-[1.4fr_1fr_1fr_1.3fr] lg:py-10">
-        {/* Brand */}
-        <div className="min-w-0">
+      <div className="container-x relative grid grid-cols-2 gap-x-6 gap-y-8 py-8 sm:gap-x-8 sm:gap-y-10 lg:grid-cols-[1.4fr_1fr_1fr_1.3fr] lg:gap-x-auto lg:py-10">
+        {/* Brand — full width */}
+        <div className="col-span-2 min-w-0">
           <Link to="/" className="inline-flex items-center gap-3">
             <img
               src={`${import.meta.env.BASE_URL}images/logo.jpg`}
@@ -63,13 +63,13 @@ export default function Footer() {
           </a>
         </div>
 
-        {/* Quick links */}
+        {/* Quick links — left column on mobile */}
         <nav aria-label="Footer quick links">
           <h3 className="font-display text-xs font-bold uppercase tracking-wide text-white sm:text-sm">Quick Links</h3>
-          <ul className="mt-4 space-y-2 sm:mt-5 sm:space-y-2.5">
+          <ul className="mt-3 space-y-1.5 sm:mt-5 sm:space-y-2.5">
             {QUICK_LINKS.map((l) => (
               <li key={l.label}>
-                <Link to={l.to} className="group inline-flex items-center gap-2 text-xs transition-colors hover:text-brand-300 sm:text-sm">
+                <Link to={l.to} className="group inline-flex items-center gap-2 text-[11px] transition-colors hover:text-brand-300 sm:text-sm">
                   <span className="h-px w-3 bg-brand-500 transition-all group-hover:w-5" aria-hidden="true" />
                   {l.label}
                 </Link>
@@ -78,13 +78,13 @@ export default function Footer() {
           </ul>
         </nav>
 
-        {/* Courses */}
+        {/* Courses — right column on mobile */}
         <nav aria-label="Footer course links">
           <h3 className="font-display text-xs font-bold uppercase tracking-wide text-white sm:text-sm">Courses</h3>
-          <ul className="mt-4 space-y-2 sm:mt-5 sm:space-y-2.5">
+          <ul className="mt-3 space-y-1.5 sm:mt-5 sm:space-y-2.5">
             {COURSE_LINKS.map((l) => (
               <li key={l.label}>
-                <Link to={l.to} className="group inline-flex items-center gap-2 text-xs transition-colors hover:text-brand-300 sm:text-sm">
+                <Link to={l.to} className="group inline-flex items-center gap-2 text-[11px] transition-colors hover:text-brand-300 sm:text-sm">
                   <span className="h-px w-3 bg-brand-500 transition-all group-hover:w-5" aria-hidden="true" />
                   {l.label}
                 </Link>
@@ -93,10 +93,10 @@ export default function Footer() {
           </ul>
         </nav>
 
-        {/* Contact */}
-        <div className="min-w-0">
+        {/* Contact — full width */}
+        <div className="col-span-2 min-w-0">
           <h3 className="font-display text-xs font-bold uppercase tracking-wide text-white sm:text-sm">Contact Us</h3>
-          <ul className="mt-4 space-y-3 text-xs sm:mt-5 sm:space-y-4 sm:text-sm">
+          <ul className="mt-3 space-y-2.5 text-xs sm:mt-5 sm:space-y-4 sm:text-sm">
             <li className="flex gap-2.5 sm:gap-3">
               <Icon name="pin" className="mt-0.5 h-4 w-4 shrink-0 text-brand-500 sm:h-5 sm:w-5" />
               <span className="break-words">{COLLEGE.addressShort}</span>
