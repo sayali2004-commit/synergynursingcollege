@@ -30,7 +30,7 @@ export default function Footer() {
         }}
         aria-hidden="true"
       />
-      <div className="footer-grid container-x relative gap-10 py-8 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.3fr] lg:py-10">
+      <div className="footer-grid container-x relative grid gap-10 py-8 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.3fr] lg:py-10">
         <div className="footer-brand">
           <Link to="/" className="inline-flex items-center gap-3">
             <img
