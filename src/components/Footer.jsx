@@ -16,7 +16,16 @@ const RIGHT_LINKS = QUICK_LINKS.slice(3)
 
 export default function Footer() {
   return (
-    <footer className="bg-[#122D42] text-white/75">
+    <footer className="relative overflow-hidden bg-[#122D42] text-white/75">
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.08]"
+        style={{
+          backgroundImage:
+            'radial-gradient(circle at 25px 25px, white 2px, transparent 0)',
+          backgroundSize: '50px 50px',
+        }}
+        aria-hidden="true"
+      />
       <div className="container-x flex flex-col items-start gap-10 py-10 sm:flex-row sm:items-start sm:justify-between sm:gap-8 lg:py-12">
         {/* Contact */}
         <div>
