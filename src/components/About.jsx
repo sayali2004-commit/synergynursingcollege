@@ -72,10 +72,9 @@ export default function About() {
             ))}
           </ul>
 
-          <a href="#college" className="reveal btn-outline mt-7" style={{ '--reveal-delay': '600ms' }}>
-            Explore The College
-            <Icon name="arrowRight" className="w-4 h-4" />
-          </a>
+          <p className="reveal mt-7 text-sm leading-relaxed text-navy-700" style={{ '--reveal-delay': '600ms' }}>
+            Learn more about the college, facilities and infrastructure below.
+          </p>
         </div>
       </div>
     </section>

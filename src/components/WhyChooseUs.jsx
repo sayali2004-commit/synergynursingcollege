@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { WHY_US } from '../data/siteContent'
 import Icon from './Icon'
 
@@ -20,14 +21,13 @@ export default function WhyChooseUs() {
           {WHY_US.map((item, i) => {
             const alt = i % 2 === 1
             const accentText = alt ? 'text-brand-600' : 'text-royal-600'
-            // Unique geometric D-shape / curved silhouette per card
             const shapes = [
-              'rounded-[16px] rounded-r-[48px] sm:pr-10', // large smooth curve on the right (D-shape)
-              'rounded-[16px] rounded-t-[44px] pt-8 sm:pt-9', // curved outward top edge
-              'rounded-[16px] rounded-b-[44px] pb-9', // curved bottom edge
-              'rounded-[16px] rounded-l-[48px] sm:pl-10', // mirrored D — left arch
-              'rounded-[16px] rounded-br-[44px] pb-9', // geometric bottom-right curve
-              'rounded-[16px] rounded-tr-[44px] rounded-bl-[44px]', // diagonal curved corners
+              'rounded-[16px] rounded-r-[48px] sm:pr-10',
+              'rounded-[16px] rounded-t-[44px] pt-8 sm:pt-9',
+              'rounded-[16px] rounded-b-[44px] pb-9',
+              'rounded-[16px] rounded-l-[48px] sm:pl-10',
+              'rounded-[16px] rounded-br-[44px] pb-9',
+              'rounded-[16px] rounded-tr-[44px] rounded-bl-[44px]',
             ]
             const showDots = i !== 0 && i !== 5
             const showTab = i !== 0 && i !== 2 && i !== 4
@@ -38,14 +38,12 @@ export default function WhyChooseUs() {
                     alt ? 'ring-1 ring-brand-300' : 'ring-1 ring-royal-300'
                   }`}
                 >
-                  {/* Decorative dotted pattern — top right */}
                   {showDots && (
                     <span
                       aria-hidden="true"
                       className="pointer-events-none absolute right-4 top-4 hidden h-9 w-12 opacity-70 [background-image:radial-gradient(circle,rgba(25,118,210,0.30)_1.4px,transparent_1.5px)] [background-size:11px_11px] sm:block"
                     />
                   )}
-                  {/* Decorative corner accent — bottom right */}
                   {showTab && (
                     <span
                       aria-hidden="true"
@@ -53,7 +51,6 @@ export default function WhyChooseUs() {
                     />
                   )}
 
-                  {/* Floating shield / hexagon icon badge */}
                   <span className="relative block h-14 w-14 shrink-0 drop-shadow-[0_10px_18px_rgba(25,118,210,0.30)] sm:h-[68px] sm:w-[68px]">
                     <span
                       className={`absolute inset-0 bg-gradient-to-br ${alt ? 'from-brand-500 to-royal-600' : 'from-royal-600 to-brand-500'} [clip-path:polygon(25%_2%,75%_2%,98%_50%,75%_98%,25%_98%,2%_50%)]`}
@@ -68,7 +65,6 @@ export default function WhyChooseUs() {
                     </span>
                   </span>
 
-                  {/* Content */}
                   <div className="relative z-10 flex min-w-0 flex-1 flex-col items-start">
                     <h3 className="text-[15px] font-bold leading-snug text-navy-950">{item.title}</h3>
                     <span
@@ -76,8 +72,8 @@ export default function WhyChooseUs() {
                       aria-hidden="true"
                     />
                     <p className="mt-2 text-[13.5px] leading-relaxed text-navy-700">{item.text}</p>
-                    <a
-                      href="#contact"
+                    <Link
+                      to="/contact"
                       className={`mt-auto inline-flex items-center gap-1.5 pt-3 text-[13px] font-semibold transition-colors duration-300 hover:text-gold-600 ${accentText}`}
                     >
                       Read More
@@ -85,7 +81,7 @@ export default function WhyChooseUs() {
                         name="arrowRight"
                         className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1.5"
                       />
-                    </a>
+                    </Link>
                   </div>
                 </article>
               </div>

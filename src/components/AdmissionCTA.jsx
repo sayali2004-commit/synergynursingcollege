@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { COLLEGE } from '../data/siteContent'
 import Icon from './Icon'
 
@@ -26,13 +27,13 @@ export default function AdmissionCTA() {
           Synergy Hospital and an MUHS affiliation.
         </p>
         <div className="reveal mt-9 flex flex-wrap items-center justify-center gap-4" style={{ '--reveal-delay': '260ms' }}>
-          <a href="#admissions" className="btn !bg-gold-400 !text-navy-950 hover:-translate-y-0.5 hover:!bg-white">
+          <Link to="/admissions" className="btn !bg-gold-400 !text-navy-950 hover:-translate-y-0.5 hover:!bg-white">
             Apply for Admission
             <Icon name="arrowRight" className="w-4 h-4" />
-          </a>
-          <a href="#contact" className="btn-outline-light">
+          </Link>
+          <Link to="/contact" className="btn-outline-light">
             Contact Us
-          </a>
+          </Link>
         </div>
         <p className="reveal mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm font-semibold text-white/75" style={{ '--reveal-delay': '340ms' }}>
           {COLLEGE.phones.map((p) => (

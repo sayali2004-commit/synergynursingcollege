@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { FACILITIES } from '../data/siteContent'
 import Icon from './Icon'
 
@@ -16,10 +17,10 @@ export default function Facilities() {
               supervised clinical exposure across the hospital&apos;s multi-speciality services.
             </p>
           </div>
-          <a href="#gallery" className="reveal btn-outline shrink-0" style={{ '--reveal-delay': '240ms' }}>
+          <Link to="/campus-life#gallery" className="reveal btn-outline shrink-0" style={{ '--reveal-delay': '240ms' }}>
             View Campus Gallery
             <Icon name="arrowRight" className="w-4 h-4" />
-          </a>
+          </Link>
         </div>
 
         <div className="mt-9 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

@@ -1,8 +1,11 @@
 import { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 
 export default function useReveal() {
+  const { pathname, hash } = useLocation()
+
   useEffect(() => {
-    const targets = document.querySelectorAll('.reveal')
+    const targets = document.querySelectorAll('.reveal:not(.is-visible)')
     if (!targets.length) return undefined
 
     const io = new IntersectionObserver(
@@ -19,5 +22,5 @@ export default function useReveal() {
 
     targets.forEach((t) => io.observe(t))
     return () => io.disconnect()
-  }, [])
+  }, [pathname, hash])
 }

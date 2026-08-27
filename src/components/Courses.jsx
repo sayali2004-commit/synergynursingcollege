@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { COURSES } from '../data/siteContent'
 import Icon from './Icon'
 
@@ -72,10 +73,10 @@ export default function Courses() {
                     <p className="font-display text-xl font-bold text-brand-700">₹ 72,000/-</p>
                     <p className="text-xs text-navy-600">as listed by the college</p>
                   </div>
-                  <a href="#admissions" className="btn-primary">
+                  <Link to="/admissions" className="btn-primary">
                     Apply Now
                     <Icon name="arrowRight" className="w-4 h-4" />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </article>

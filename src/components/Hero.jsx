@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 export default function Hero() {
   return (
     <section id="home" className="relative overflow-hidden bg-gradient-to-br from-[#E3F2FD] via-[#EAF4F8] to-[#F8FCFF]">
@@ -37,12 +39,12 @@ export default function Hero() {
             by hands-on, multi-speciality clinical training.
           </p>
           <div className="reveal mt-8 flex flex-wrap items-center gap-4" style={{ '--reveal-delay': '320ms' }}>
-            <a href="#courses" className="btn !bg-royal-600 !text-white hover:-translate-y-0.5 hover:!bg-royal-700 shadow-card-hover">
+            <Link to="/academics" className="btn !bg-royal-600 !text-white hover:-translate-y-0.5 hover:!bg-royal-700 shadow-card-hover">
               Explore Courses
-            </a>
-            <a href="#admissions" className="btn-outline">
+            </Link>
+            <Link to="/admissions" className="btn-outline">
               Apply Now
-            </a>
+            </Link>
           </div>
         </div>
       </div>
