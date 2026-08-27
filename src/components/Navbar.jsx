@@ -9,6 +9,7 @@ const MENU = [
   { label: 'Academics', to: '/academics' },
   { label: 'Campus Life', to: '/campus-life' },
   { label: 'Admissions', to: '/admissions' },
+  { label: 'Mandate', to: '/academics#notices' },
   { label: 'Contact Us', to: '/contact' },
 ]
 
@@ -25,7 +26,7 @@ function hashToMenu(h) {
   if (h === 'courses') return 'Academics'
   if (h === 'facilities' || h === 'gallery') return 'Campus Life'
   if (h === 'admissions') return 'Admissions'
-  if (h === 'notices') return 'Academics'
+  if (h === 'notices') return 'Mandate'
   if (h === 'contact') return 'Contact Us'
   return 'Home'
 }

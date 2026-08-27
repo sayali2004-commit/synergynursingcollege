@@ -61,15 +61,6 @@ export default function Footer() {
               <a href={`mailto:${COLLEGE.email}`} className="transition-colors hover:text-brand-300">{COLLEGE.email}</a>
             </div>
           </div>
-          <a
-            href={COLLEGE.website}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-5 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-brand-500 transition-colors hover:text-brand-300"
-          >
-            Official Website
-            <Icon name="arrowRight" className="w-4 h-4" />
-          </a>
         </div>
 
         {/* Quick links */}
@@ -81,7 +72,6 @@ export default function Footer() {
               {QUICK_LINKS_LEFT.map((l) => (
                 <li key={l.label}>
                   <Link to={l.to} className="group inline-flex items-center gap-2 text-sm transition-colors hover:text-brand-300">
-                    <span className="h-px w-3 bg-brand-500 transition-all group-hover:w-5" aria-hidden="true" />
                     {l.label}
                   </Link>
                 </li>
@@ -91,7 +81,6 @@ export default function Footer() {
               {QUICK_LINKS_RIGHT.map((l) => (
                 <li key={l.label}>
                   <Link to={l.to} className="group inline-flex items-center gap-2 text-sm transition-colors hover:text-brand-300">
-                    <span className="h-px w-3 bg-brand-500 transition-all group-hover:w-5" aria-hidden="true" />
                     {l.label}
                   </Link>
                 </li>
