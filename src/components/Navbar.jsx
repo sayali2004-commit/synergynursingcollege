@@ -5,14 +5,7 @@ import Icon from './Icon'
 
 const MENU = [
   { label: 'Home', to: '/' },
-  {
-    label: 'About',
-    children: [
-      { label: 'About Us', to: '/#about' },
-      { label: 'Why Choose Us', to: '/#why-us' },
-      { label: 'The College', to: '/#college' },
-    ],
-  },
+  { label: 'About', to: '/#about' },
   {
     label: 'Academics',
     children: [
@@ -172,7 +165,19 @@ export default function Navbar() {
                 key={item.label}
                 to={item.to}
                 aria-current={isActive ? 'true' : undefined}
-                onClick={() => activate(item.label)}
+                onClick={(e) => {
+                  activate(item.label)
+                  if (item.to.includes('#')) {
+                    e.preventDefault()
+                    const hash = item.to.split('#')[1]
+                    if (pathname === '/') {
+                      const el = document.getElementById(hash)
+                      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                    } else {
+                      window.location.hash = hash
+                    }
+                  }
+                }}
                 className={itemCls(isActive)}
               >
                 {item.label}
@@ -281,9 +286,19 @@ export default function Navbar() {
               <Link
                 key={item.label}
                 to={item.to}
-                onClick={() => {
+                onClick={(e) => {
                   activate(item.label)
                   setOpen(false)
+                  if (item.to.includes('#')) {
+                    e.preventDefault()
+                    const hash = item.to.split('#')[1]
+                    if (pathname === '/') {
+                      const el = document.getElementById(hash)
+                      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                    } else {
+                      window.location.hash = hash
+                    }
+                  }
                 }}
                 className="block border-b border-navy-50 py-3 text-[15px] font-semibold text-royal-800 transition-colors hover:text-royal-600"
               >
