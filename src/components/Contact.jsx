@@ -28,7 +28,7 @@ export default function Contact() {
 
   const update = (key) => (e) => setForm((f) => ({ ...f, [key]: e.target.value }))
 
-  const WHATSAPP_NUMBER = '918830879712'
+  const WHATSAPP_NUMBER = '918767778129'
 
   const onSubmit = (e) => {
     e.preventDefault()
