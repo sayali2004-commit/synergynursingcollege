@@ -18,21 +18,29 @@ export default function College() {
           </p>
 
           <div className="mt-8 space-y-4">
-            {APPROVALS.map((a, i) => (
-              <div
-                key={a.title}
-                className="reveal group flex gap-4 rounded-[2rem] border border-white/10 bg-white/[0.07] p-5 transition-all duration-300 hover:border-white/20 hover:bg-white/[0.12]"
-                style={{ '--reveal-delay': `${200 + i * 90}ms` }}
-              >
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-brand-400/20 text-brand-300 transition-colors duration-300 group-hover:bg-brand-400/30">
-                  <Icon name={a.icon} className="w-6 h-6" />
-                </span>
-                <div>
-                  <h3 className="font-display text-base font-bold text-white">{a.title}</h3>
-                  <p className="mt-1.5 text-sm leading-relaxed text-white/65">{a.text}</p>
+            {APPROVALS.map((a, i) => {
+              const shapes = [
+                'rounded-[16px] rounded-r-[44px]',
+                'rounded-[16px] rounded-t-[44px]',
+                'rounded-[16px] rounded-l-[44px]',
+              ]
+              return (
+                <div
+                  key={a.title}
+                  className={`reveal group relative flex gap-4 overflow-hidden p-5 transition-all duration-300 hover:bg-white/[0.12] ${shapes[i]} bg-white/[0.07] ring-1 ring-white/15 hover:ring-white/25`}
+                  style={{ '--reveal-delay': `${200 + i * 90}ms` }}
+                >
+                  <span className="absolute bottom-0 right-0 h-6 w-10 rounded-tl-[12px] bg-gradient-to-l from-brand-400 to-brand-500 opacity-80" aria-hidden="true" />
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-brand-400/20 text-brand-300 transition-colors duration-300 group-hover:bg-brand-400/30">
+                    <Icon name={a.icon} className="w-6 h-6" />
+                  </span>
+                  <div>
+                    <h3 className="font-display text-base font-bold text-white">{a.title}</h3>
+                    <p className="mt-1.5 text-sm leading-relaxed text-white/65">{a.text}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
 
           <div className="reveal mt-6 flex items-center gap-3 rounded-[2rem] border border-white/10 bg-white/[0.07] p-4 transition-all duration-300 hover:border-white/20 hover:bg-white/[0.12]" style={{ '--reveal-delay': '480ms' }}>
