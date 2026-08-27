@@ -120,9 +120,7 @@ export default function Footer() {
         <div className="container-x flex flex-col items-center justify-between gap-3 py-6 text-xs text-white/60 sm:flex-row">
           <p>© {new Date().getFullYear()} {COLLEGE.name}, Miraj. All rights reserved.</p>
           <p className="flex items-center gap-1.5 text-brand-400">
-            Affiliated to MUHS, Nashik
-            <span aria-hidden="true">·</span>
-            Managed by Uma Trust
+            Designed &amp; Developed by NexGravision
           </p>
         </div>
       </div>
