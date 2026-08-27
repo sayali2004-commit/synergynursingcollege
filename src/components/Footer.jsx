@@ -29,25 +29,7 @@ export default function Footer() {
       <div className="container-x relative grid gap-10 py-10 sm:grid-cols-2 lg:gap-16 lg:py-12">
         {/* Brand */}
         <div className="footer-brand">
-          <Link to="/" className="inline-flex items-center gap-3">
-            <img
-              src={`${import.meta.env.BASE_URL}images/logo.jpg`}
-              alt={`${COLLEGE.name} logo`}
-              className="h-12 w-auto rounded-md ring-1 ring-white/20"
-              loading="lazy"
-            />
-            <span className="min-w-0 leading-tight">
-              <span className="block font-display text-base font-bold text-white">Synergy College of Nursing</span>
-              <span className="text-[11px] font-bold uppercase tracking-widest text-brand-500">
-                Uma Trust, Miraj
-              </span>
-            </span>
-          </Link>
-          <p className="mt-5 max-w-sm text-sm leading-relaxed">
-            One of the leading nursing institutions in Maharashtra, affiliated to MUHS, Nashik,
-            and backed by the clinical excellence of Synergy Hospital, Miraj.
-          </p>
-          <div className="mt-5 flex flex-col gap-2 text-sm">
+          <div className="flex flex-col gap-2 text-sm">
             <div className="flex items-center gap-2">
               <Icon name="pin" className="h-4 w-4 shrink-0 text-brand-500" />
               <span>Miraj 416410, Sangli District, Maharashtra</span>
