@@ -10,11 +10,11 @@ import CampusLifePage from './pages/CampusLifePage'
 import AdmissionsPage from './pages/AdmissionsPage'
 import ContactPage from './pages/ContactPage'
 
-export default function App() {
+function AppLayout() {
   useReveal()
 
   return (
-    <HashRouter>
+    <>
       <ScrollHandler />
       <a
         href="#/home"
@@ -34,6 +34,14 @@ export default function App() {
         </Routes>
       </main>
       <Footer />
+    </>
+  )
+}
+
+export default function App() {
+  return (
+    <HashRouter>
+      <AppLayout />
     </HashRouter>
   )
 }
