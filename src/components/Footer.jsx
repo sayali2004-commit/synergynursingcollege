@@ -21,7 +21,7 @@ const QUICK_LINKS = [
 export default function Footer() {
   return (
     <footer className="relative overflow-hidden bg-gradient-to-br from-royal-800 via-royal-900 to-navy-950 text-white/75">
-      {/* Subtle dotted texture — matches CTA band */}
+      {/* Subtle dotted texture */}
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.08]"
         style={{
@@ -31,24 +31,24 @@ export default function Footer() {
         }}
         aria-hidden="true"
       />
-      <div className="container-x relative grid gap-10 py-8 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.3fr] lg:py-10">
+      <div className="container-x relative grid gap-8 py-8 sm:grid-cols-2 sm:gap-10 lg:grid-cols-[1.4fr_1fr_1fr_1.3fr] lg:py-10">
         {/* Brand */}
-        <div>
+        <div className="min-w-0">
           <Link to="/" className="inline-flex items-center gap-3">
             <img
               src={`${import.meta.env.BASE_URL}images/logo.jpg`}
               alt={`${COLLEGE.name} logo`}
-              className="h-12 w-auto rounded-md ring-1 ring-white/20"
+              className="h-10 w-auto rounded-md ring-1 ring-white/20 sm:h-12"
               loading="lazy"
             />
-            <span className="leading-tight">
-              <span className="block font-display text-base font-bold text-white">Synergy College of Nursing</span>
-              <span className="text-[11px] font-bold uppercase tracking-widest text-brand-500">
+            <span className="min-w-0 leading-tight">
+              <span className="block font-display text-sm font-bold text-white sm:text-base">Synergy College of Nursing</span>
+              <span className="text-[10px] font-bold uppercase tracking-widest text-brand-500 sm:text-[11px]">
                 Uma Trust · Miraj
               </span>
             </span>
           </Link>
-          <p className="mt-5 max-w-sm text-sm leading-relaxed">
+          <p className="mt-4 max-w-sm text-xs leading-relaxed sm:mt-5 sm:text-sm">
             One of the leading nursing institutions in Maharashtra — affiliated to MUHS, Nashik,
             and backed by the clinical excellence of Synergy Hospital, Miraj.
           </p>
@@ -56,30 +56,23 @@ export default function Footer() {
             href={COLLEGE.website}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-5 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-brand-500 transition-colors hover:text-brand-300"
+            className="mt-4 inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest text-brand-500 transition-colors hover:text-brand-300 sm:mt-5 sm:text-xs"
           >
             Official Website
-            <Icon name="arrowRight" className="w-4 h-4" />
+            <Icon name="arrowRight" className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
           </a>
         </div>
 
         {/* Quick links */}
         <nav aria-label="Footer quick links">
-          <h3 className="font-display text-sm font-bold uppercase tracking-wide text-white">Quick Links</h3>
-          <ul className="mt-5 space-y-2.5">
+          <h3 className="font-display text-xs font-bold uppercase tracking-wide text-white sm:text-sm">Quick Links</h3>
+          <ul className="mt-4 space-y-2 sm:mt-5 sm:space-y-2.5">
             {QUICK_LINKS.map((l) => (
               <li key={l.label}>
-                {l.to.startsWith('/#') ? (
-                  <Link to={l.to} className="group inline-flex items-center gap-2 text-sm transition-colors hover:text-brand-300">
-                    <span className="h-px w-3 bg-brand-500 transition-all group-hover:w-5" aria-hidden="true" />
-                    {l.label}
-                  </Link>
-                ) : (
-                  <Link to={l.to} className="group inline-flex items-center gap-2 text-sm transition-colors hover:text-brand-300">
-                    <span className="h-px w-3 bg-brand-500 transition-all group-hover:w-5" aria-hidden="true" />
-                    {l.label}
-                  </Link>
-                )}
+                <Link to={l.to} className="group inline-flex items-center gap-2 text-xs transition-colors hover:text-brand-300 sm:text-sm">
+                  <span className="h-px w-3 bg-brand-500 transition-all group-hover:w-5" aria-hidden="true" />
+                  {l.label}
+                </Link>
               </li>
             ))}
           </ul>
@@ -87,36 +80,29 @@ export default function Footer() {
 
         {/* Courses */}
         <nav aria-label="Footer course links">
-          <h3 className="font-display text-sm font-bold uppercase tracking-wide text-white">Courses</h3>
-          <ul className="mt-5 space-y-2.5">
+          <h3 className="font-display text-xs font-bold uppercase tracking-wide text-white sm:text-sm">Courses</h3>
+          <ul className="mt-4 space-y-2 sm:mt-5 sm:space-y-2.5">
             {COURSE_LINKS.map((l) => (
               <li key={l.label}>
-                {l.to.includes('#') ? (
-                  <Link to={l.to} className="group inline-flex items-center gap-2 text-sm transition-colors hover:text-brand-300">
-                    <span className="h-px w-3 bg-brand-500 transition-all group-hover:w-5" aria-hidden="true" />
-                    {l.label}
-                  </Link>
-                ) : (
-                  <Link to={l.to} className="group inline-flex items-center gap-2 text-sm transition-colors hover:text-brand-300">
-                    <span className="h-px w-3 bg-brand-500 transition-all group-hover:w-5" aria-hidden="true" />
-                    {l.label}
-                  </Link>
-                )}
+                <Link to={l.to} className="group inline-flex items-center gap-2 text-xs transition-colors hover:text-brand-300 sm:text-sm">
+                  <span className="h-px w-3 bg-brand-500 transition-all group-hover:w-5" aria-hidden="true" />
+                  {l.label}
+                </Link>
               </li>
             ))}
           </ul>
         </nav>
 
         {/* Contact */}
-        <div>
-          <h3 className="font-display text-sm font-bold uppercase tracking-wide text-white">Contact Us</h3>
-          <ul className="mt-5 space-y-4 text-sm">
-            <li className="flex gap-3">
-              <Icon name="pin" className="w-5 h-5 shrink-0 text-brand-500" />
-              <span>{COLLEGE.addressShort}</span>
+        <div className="min-w-0">
+          <h3 className="font-display text-xs font-bold uppercase tracking-wide text-white sm:text-sm">Contact Us</h3>
+          <ul className="mt-4 space-y-3 text-xs sm:mt-5 sm:space-y-4 sm:text-sm">
+            <li className="flex gap-2.5 sm:gap-3">
+              <Icon name="pin" className="mt-0.5 h-4 w-4 shrink-0 text-brand-500 sm:h-5 sm:w-5" />
+              <span className="break-words">{COLLEGE.addressShort}</span>
             </li>
-            <li className="flex gap-3">
-              <Icon name="phone" className="w-5 h-5 shrink-0 text-brand-500" />
+            <li className="flex gap-2.5 sm:gap-3">
+              <Icon name="phone" className="mt-0.5 h-4 w-4 shrink-0 text-brand-500 sm:h-5 sm:w-5" />
               <span className="flex flex-col">
                 {COLLEGE.phones.map((p) => (
                   <a key={p} href={`tel:+91${p}`} className="font-semibold transition-colors hover:text-brand-300">
@@ -125,9 +111,9 @@ export default function Footer() {
                 ))}
               </span>
             </li>
-            <li className="flex gap-3">
-              <Icon name="mail" className="w-5 h-5 shrink-0 text-brand-500" />
-              <a href={`mailto:${COLLEGE.email}`} className="transition-colors hover:text-brand-300">
+            <li className="flex gap-2.5 sm:gap-3">
+              <Icon name="mail" className="mt-0.5 h-4 w-4 shrink-0 text-brand-500 sm:h-5 sm:w-5" />
+              <a href={`mailto:${COLLEGE.email}`} className="break-all transition-colors hover:text-brand-300">
                 {COLLEGE.email}
               </a>
             </li>
@@ -135,10 +121,11 @@ export default function Footer() {
         </div>
       </div>
 
+      {/* Copyright */}
       <div className="relative border-t border-brand-500/25">
-        <div className="container-x flex flex-col items-center justify-between gap-3 py-6 text-xs text-white/60 sm:flex-row">
-          <p>© {new Date().getFullYear()} {COLLEGE.name}, Miraj. All rights reserved.</p>
-          <p className="flex items-center gap-1.5 text-brand-400">
+        <div className="container-x flex flex-col items-center gap-2 py-5 text-[11px] text-white/60 sm:flex-row sm:justify-between sm:gap-3 sm:py-6 sm:text-xs">
+          <p className="text-center sm:text-left">© {new Date().getFullYear()} {COLLEGE.name}, Miraj. All rights reserved.</p>
+          <p className="flex items-center gap-1.5 text-center text-brand-400 sm:text-left">
             Affiliated to MUHS, Nashik
             <span aria-hidden="true">·</span>
             Managed by Uma Trust
