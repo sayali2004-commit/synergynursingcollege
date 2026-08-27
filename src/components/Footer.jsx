@@ -31,24 +31,24 @@ export default function Footer() {
         }}
         aria-hidden="true"
       />
-      <div className="container-x relative grid grid-cols-2 gap-x-6 gap-y-8 py-8 sm:gap-x-8 sm:gap-y-10 lg:grid-cols-[1.4fr_1fr_1fr_1.3fr] lg:gap-x-auto lg:py-10">
+      <div className="footer-grid container-x relative py-10 lg:grid-cols-[1.4fr_1fr_1fr_1.3fr] lg:gap-x-auto">
         {/* Brand — full width */}
-        <div className="col-span-2 min-w-0">
+        <div className="footer-brand min-w-0">
           <Link to="/" className="inline-flex items-center gap-3">
             <img
               src={`${import.meta.env.BASE_URL}images/logo.jpg`}
               alt={`${COLLEGE.name} logo`}
-              className="h-10 w-auto rounded-md ring-1 ring-white/20 sm:h-12"
+              className="h-12 w-auto rounded-md ring-1 ring-white/20"
               loading="lazy"
             />
             <span className="min-w-0 leading-tight">
-              <span className="block font-display text-sm font-bold text-white sm:text-base">Synergy College of Nursing</span>
-              <span className="text-[10px] font-bold uppercase tracking-widest text-brand-500 sm:text-[11px]">
+              <span className="block font-display text-base font-bold text-white">Synergy College of Nursing</span>
+              <span className="text-[11px] font-bold uppercase tracking-widest text-brand-500">
                 Uma Trust · Miraj
               </span>
             </span>
           </Link>
-          <p className="mt-4 max-w-sm text-xs leading-relaxed sm:mt-5 sm:text-sm">
+          <p className="mt-5 max-w-sm text-sm leading-relaxed">
             One of the leading nursing institutions in Maharashtra — affiliated to MUHS, Nashik,
             and backed by the clinical excellence of Synergy Hospital, Miraj.
           </p>
@@ -56,20 +56,20 @@ export default function Footer() {
             href={COLLEGE.website}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-4 inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest text-brand-500 transition-colors hover:text-brand-300 sm:mt-5 sm:text-xs"
+            className="mt-5 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-brand-500 transition-colors hover:text-brand-300"
           >
             Official Website
-            <Icon name="arrowRight" className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+            <Icon name="arrowRight" className="w-4 h-4" />
           </a>
         </div>
 
-        {/* Quick links — left column on mobile */}
-        <nav aria-label="Footer quick links">
-          <h3 className="font-display text-xs font-bold uppercase tracking-wide text-white sm:text-sm">Quick Links</h3>
-          <ul className="mt-3 space-y-1.5 sm:mt-5 sm:space-y-2.5">
+        {/* Quick links */}
+        <nav className="footer-quicklinks" aria-label="Footer quick links">
+          <h3 className="font-display text-sm font-bold uppercase tracking-wide text-white">Quick Links</h3>
+          <ul className="mt-5 space-y-2.5">
             {QUICK_LINKS.map((l) => (
               <li key={l.label}>
-                <Link to={l.to} className="group inline-flex items-center gap-2 text-[11px] transition-colors hover:text-brand-300 sm:text-sm">
+                <Link to={l.to} className="group inline-flex items-center gap-2 text-sm transition-colors hover:text-brand-300">
                   <span className="h-px w-3 bg-brand-500 transition-all group-hover:w-5" aria-hidden="true" />
                   {l.label}
                 </Link>
@@ -78,13 +78,13 @@ export default function Footer() {
           </ul>
         </nav>
 
-        {/* Courses — right column on mobile */}
-        <nav aria-label="Footer course links">
-          <h3 className="font-display text-xs font-bold uppercase tracking-wide text-white sm:text-sm">Courses</h3>
-          <ul className="mt-3 space-y-1.5 sm:mt-5 sm:space-y-2.5">
+        {/* Courses */}
+        <nav className="footer-courses" aria-label="Footer course links">
+          <h3 className="font-display text-sm font-bold uppercase tracking-wide text-white">Courses</h3>
+          <ul className="mt-5 space-y-2.5">
             {COURSE_LINKS.map((l) => (
               <li key={l.label}>
-                <Link to={l.to} className="group inline-flex items-center gap-2 text-[11px] transition-colors hover:text-brand-300 sm:text-sm">
+                <Link to={l.to} className="group inline-flex items-center gap-2 text-sm transition-colors hover:text-brand-300">
                   <span className="h-px w-3 bg-brand-500 transition-all group-hover:w-5" aria-hidden="true" />
                   {l.label}
                 </Link>
@@ -94,15 +94,15 @@ export default function Footer() {
         </nav>
 
         {/* Contact — full width */}
-        <div className="col-span-2 min-w-0">
-          <h3 className="font-display text-xs font-bold uppercase tracking-wide text-white sm:text-sm">Contact Us</h3>
-          <ul className="mt-3 space-y-2.5 text-xs sm:mt-5 sm:space-y-4 sm:text-sm">
-            <li className="flex gap-2.5 sm:gap-3">
-              <Icon name="pin" className="mt-0.5 h-4 w-4 shrink-0 text-brand-500 sm:h-5 sm:w-5" />
+        <div className="footer-contact min-w-0">
+          <h3 className="font-display text-sm font-bold uppercase tracking-wide text-white">Contact Us</h3>
+          <ul className="mt-5 space-y-4 text-sm">
+            <li className="flex gap-3">
+              <Icon name="pin" className="mt-0.5 h-5 w-5 shrink-0 text-brand-500" />
               <span className="break-words">{COLLEGE.addressShort}</span>
             </li>
-            <li className="flex gap-2.5 sm:gap-3">
-              <Icon name="phone" className="mt-0.5 h-4 w-4 shrink-0 text-brand-500 sm:h-5 sm:w-5" />
+            <li className="flex gap-3">
+              <Icon name="phone" className="mt-0.5 h-5 w-5 shrink-0 text-brand-500" />
               <span className="flex flex-col">
                 {COLLEGE.phones.map((p) => (
                   <a key={p} href={`tel:+91${p}`} className="font-semibold transition-colors hover:text-brand-300">
@@ -111,8 +111,8 @@ export default function Footer() {
                 ))}
               </span>
             </li>
-            <li className="flex gap-2.5 sm:gap-3">
-              <Icon name="mail" className="mt-0.5 h-4 w-4 shrink-0 text-brand-500 sm:h-5 sm:w-5" />
+            <li className="flex gap-3">
+              <Icon name="mail" className="mt-0.5 h-5 w-5 shrink-0 text-brand-500" />
               <a href={`mailto:${COLLEGE.email}`} className="break-all transition-colors hover:text-brand-300">
                 {COLLEGE.email}
               </a>
@@ -123,7 +123,7 @@ export default function Footer() {
 
       {/* Copyright */}
       <div className="relative border-t border-brand-500/25">
-        <div className="container-x flex flex-col items-center gap-2 py-5 text-[11px] text-white/60 sm:flex-row sm:justify-between sm:gap-3 sm:py-6 sm:text-xs">
+        <div className="container-x flex flex-col items-center gap-3 py-6 text-xs text-white/60 sm:flex-row sm:justify-between">
           <p className="text-center sm:text-left">© {new Date().getFullYear()} {COLLEGE.name}, Miraj. All rights reserved.</p>
           <p className="flex items-center gap-1.5 text-center text-brand-400 sm:text-left">
             Affiliated to MUHS, Nashik
