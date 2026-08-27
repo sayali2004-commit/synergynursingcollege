@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { COLLEGE, IMAGES } from '../data/siteContent'
 import Icon from './Icon'
 
@@ -34,6 +34,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false)
   const [pinned, setPinned] = useState(null)
   const { pathname, hash } = useLocation()
+  const navigate = useNavigate()
 
   const activeMenu = (() => {
     if (pinned) return pinned
@@ -46,6 +47,21 @@ export default function Navbar() {
   useEffect(() => {
     setPinned(null)
   }, [pathname, hash])
+
+  const handleNavClick = (e, item) => {
+    activate(item.label)
+    if (!item.to.includes('#')) return
+
+    e.preventDefault()
+    const [routePath, hashId] = item.to.split('#')
+
+    if (pathname === routePath || (pathname === '/' && routePath === '/')) {
+      const el = document.getElementById(hashId)
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    } else {
+      navigate(routePath || '/', { state: { scrollTo: hashId } })
+    }
+  }
 
   const navLinkCls = (isActive) =>
     `nav-link group relative inline-flex items-center gap-1.5 px-1 py-2 text-[15px] font-semibold tracking-wide transition-colors duration-300 ${
@@ -65,21 +81,9 @@ export default function Navbar() {
               return (
                 <Link
                   key={item.label}
-                  to={item.to}
+                  to={item.to.includes('#') ? item.to.split('#')[0] || '/' : item.to}
                   aria-current={isActive ? 'page' : undefined}
-                  onClick={(e) => {
-                    activate(item.label)
-                    if (item.to.includes('#')) {
-                      e.preventDefault()
-                      const h = item.to.split('#')[1]
-                      if (pathname === '/') {
-                        const el = document.getElementById(h)
-                        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-                      } else {
-                        window.location.hash = h
-                      }
-                    }
-                  }}
+                  onClick={(e) => handleNavClick(e, item)}
                   className={navLinkCls(isActive)}
                 >
                   {item.label}
@@ -131,20 +135,10 @@ export default function Navbar() {
           {MENU.map((item) => (
             <Link
               key={item.label}
-              to={item.to}
+              to={item.to.includes('#') ? item.to.split('#')[0] || '/' : item.to}
               onClick={(e) => {
-                activate(item.label)
+                handleNavClick(e, item)
                 setOpen(false)
-                if (item.to.includes('#')) {
-                  e.preventDefault()
-                  const h = item.to.split('#')[1]
-                  if (pathname === '/') {
-                    const el = document.getElementById(h)
-                    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-                  } else {
-                    window.location.hash = h
-                  }
-                }
               }}
               className={`block rounded-xl px-4 py-3 text-[15px] font-semibold transition-colors duration-200 ${
                 activeMenu === item.label
