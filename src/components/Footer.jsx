@@ -11,6 +11,9 @@ const QUICK_LINKS = [
   { label: 'Contact Us', to: '/contact' },
 ]
 
+const QUICK_LINKS_LEFT = QUICK_LINKS.slice(0, 3)
+const QUICK_LINKS_RIGHT = QUICK_LINKS.slice(3)
+
 export default function Footer() {
   return (
     <footer className="relative overflow-hidden bg-[#122D42] text-white/75">
@@ -70,19 +73,32 @@ export default function Footer() {
         </div>
 
         {/* Quick links */}
-        <nav aria-label="Footer quick links">
-          <h3 className="font-display text-sm font-bold uppercase tracking-wide text-white">Quick Links</h3>
-          <ul className="mt-5 space-y-2.5">
-            {QUICK_LINKS.map((l) => (
-              <li key={l.label}>
-                <Link to={l.to} className="group inline-flex items-center gap-2 text-sm transition-colors hover:text-brand-300">
-                  <span className="h-px w-3 bg-brand-500 transition-all group-hover:w-5" aria-hidden="true" />
-                  {l.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
+        <div>
+          <h3 className="font-display text-sm font-bold uppercase tracking-wide text-white text-center sm:text-left">Quick Links</h3>
+          {/* Mobile: 2-column grid. Desktop: single column */}
+          <div className="mt-5 grid grid-cols-2 gap-x-6 gap-y-2.5 sm:block sm:space-y-2.5 sm:gap-0">
+            <ul className="space-y-2.5">
+              {QUICK_LINKS_LEFT.map((l) => (
+                <li key={l.label}>
+                  <Link to={l.to} className="group inline-flex items-center gap-2 text-sm transition-colors hover:text-brand-300">
+                    <span className="h-px w-3 bg-brand-500 transition-all group-hover:w-5" aria-hidden="true" />
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <ul className="space-y-2.5">
+              {QUICK_LINKS_RIGHT.map((l) => (
+                <li key={l.label}>
+                  <Link to={l.to} className="group inline-flex items-center gap-2 text-sm transition-colors hover:text-brand-300">
+                    <span className="h-px w-3 bg-brand-500 transition-all group-hover:w-5" aria-hidden="true" />
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
 
       <div className="relative border-t border-brand-500/25">

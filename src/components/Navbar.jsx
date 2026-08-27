@@ -33,8 +33,16 @@ function hashToMenu(h) {
 export default function Navbar() {
   const [open, setOpen] = useState(false)
   const [pinned, setPinned] = useState(null)
+  const [scrolled, setScrolled] = useState(false)
   const { pathname, hash } = useLocation()
   const navigate = useNavigate()
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   const activeMenu = (() => {
     if (pinned) return pinned
@@ -71,22 +79,40 @@ export default function Navbar() {
     }`
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-navy-100/60 bg-white/80 backdrop-blur-xl shadow-[0_1px_3px_rgba(0,0,0,0.04),0_4px_24px_rgba(0,0,0,0.06)]">
+    <header
+      className={`sticky top-0 z-50 w-full transition-all duration-300 ${
+        scrolled
+          ? 'border-b border-navy-100/60 bg-white/90 backdrop-blur-xl shadow-[0_1px_3px_rgba(0,0,0,0.04),0_4px_24px_rgba(0,0,0,0.06)]'
+          : 'bg-transparent border-b-transparent'
+      }`}
+    >
       {/* Desktop */}
       <div className="relative hidden lg:block">
-        <div className="container-x flex h-[72px] items-center justify-between">
-          <Link to="/" className="flex items-center gap-3 shrink-0">
+        <div className="container-x flex h-[68px] items-center justify-between">
+          {/* Logo, visible only when scrolled */}
+          <Link
+            to="/"
+            className={`flex items-center gap-3 shrink-0 transition-all duration-300 ${
+              scrolled ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4 pointer-events-none w-0 overflow-hidden'
+            }`}
+          >
             <img
               src={IMAGES.logo}
               alt="Synergy College of Nursing logo"
-              className="h-11 w-auto rounded-lg ring-1 ring-navy-100 shadow-sm"
+              className="h-10 w-auto rounded-lg ring-1 ring-navy-100 shadow-sm"
             />
-            <span className="font-display text-[17px] font-bold leading-tight text-navy-900">
+            <span className="font-display text-[16px] font-bold leading-tight text-navy-900 whitespace-nowrap">
               Synergy College of Nursing
             </span>
           </Link>
 
-          <nav className="flex items-center gap-0.5 ml-8" aria-label="Primary">
+          {/* Nav links, centered when no logo, right-aligned when logo visible */}
+          <nav
+            className={`flex items-center gap-0.5 transition-all duration-300 ${
+              scrolled ? 'ml-auto' : 'mx-auto'
+            }`}
+            aria-label="Primary"
+          >
             {MENU.map((item) => {
               const isActive = activeMenu === item.label
               return (
@@ -113,7 +139,7 @@ export default function Navbar() {
       </div>
 
       {/* Mobile */}
-      <div className="flex h-[60px] items-center justify-between px-4 lg:hidden">
+      <div className="flex h-[56px] items-center justify-between px-4 lg:hidden">
         <Link to="/" className="flex items-center gap-2.5" aria-label="Synergy College, Home">
           <img
             src={IMAGES.logo}
@@ -127,12 +153,12 @@ export default function Navbar() {
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          className="inline-flex h-11 w-11 items-center justify-center rounded-xl text-navy-700 transition-all duration-200 hover:bg-royal-50 focus:outline-none focus-visible:ring-4 focus-visible:ring-royal-500/30"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-xl text-navy-700 transition-all duration-200 hover:bg-royal-50 focus:outline-none focus-visible:ring-4 focus-visible:ring-royal-500/30"
           aria-expanded={open}
           aria-controls="mobile-menu"
           aria-label={open ? 'Close menu' : 'Open menu'}
         >
-          <Icon name={open ? 'close' : 'menu'} className="h-6 w-6" />
+          <Icon name={open ? 'close' : 'menu'} className="h-5 w-5" />
         </button>
       </div>
 
