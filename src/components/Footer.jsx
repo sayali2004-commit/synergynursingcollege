@@ -26,7 +26,7 @@ export default function Footer() {
         }}
         aria-hidden="true"
       />
-      <div className="container-x flex flex-col items-center gap-8 py-10 sm:flex-row sm:justify-center sm:items-center sm:gap-16 lg:py-12">
+      <div className="container-x flex flex-col items-center gap-8 py-10 sm:flex-row sm:justify-center sm:items-start sm:gap-16 lg:py-12">
         {/* Contact */}
         <div>
           <h3 className="font-display text-sm font-bold uppercase tracking-wide text-white">Contact</h3>
@@ -46,25 +46,28 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Quick Links */}
+        {/* Quick Links - Center */}
         <div>
           <h3 className="font-display text-sm font-bold uppercase tracking-wide text-white text-center">Quick Links</h3>
-          <div className="mt-5 grid grid-cols-2 gap-x-10 gap-y-3">
-            <ul className="space-y-3">
-              {QUICK_LINKS_LEFT.map((l) => (
-                <li key={l.label}>
-                  <Link to={l.to} className="text-sm transition-colors hover:text-brand-300">{l.label}</Link>
-                </li>
-              ))}
-            </ul>
-            <ul className="space-y-3">
-              {QUICK_LINKS_RIGHT.map((l) => (
-                <li key={l.label}>
-                  <Link to={l.to} className="text-sm transition-colors hover:text-brand-300">{l.label}</Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <ul className="mt-5 space-y-3">
+            {QUICK_LINKS_LEFT.map((l) => (
+              <li key={l.label}>
+                <Link to={l.to} className="text-sm transition-colors hover:text-brand-300">{l.label}</Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Quick Links - Right */}
+        <div>
+          <h3 className="font-display text-sm font-bold uppercase tracking-wide text-white invisible">Quick Links</h3>
+          <ul className="mt-5 space-y-3">
+            {QUICK_LINKS_RIGHT.map((l) => (
+              <li key={l.label}>
+                <Link to={l.to} className="text-sm transition-colors hover:text-brand-300">{l.label}</Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
 
