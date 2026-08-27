@@ -2,9 +2,9 @@ import { Link } from 'react-router-dom'
 import { COLLEGE } from '../data/siteContent'
 import Icon from './Icon'
 
-export default function FloatingContact() {
+export default function FloatingContact({ hidden }) {
   return (
-    <div className="fixed bottom-4 right-3 z-40 flex flex-col gap-2 sm:bottom-6 sm:right-4 sm:gap-2.5">
+    <div className={`fixed bottom-4 right-3 z-40 flex flex-col gap-2 transition-opacity duration-300 sm:bottom-6 sm:right-4 sm:gap-2.5 ${hidden ? 'hidden sm:flex' : ''}`}>
       <a
         href={`https://wa.me/91${COLLEGE.phones[0]}`}
         target="_blank"

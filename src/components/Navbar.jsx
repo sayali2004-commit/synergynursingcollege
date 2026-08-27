@@ -32,8 +32,9 @@ function hashToMenu(h) {
   return 'Home'
 }
 
-export default function Navbar() {
-  const [open, setOpen] = useState(false)
+export default function Navbar({ mobileMenuOpen, setMobileMenuOpen }) {
+  const open = mobileMenuOpen
+  const setOpen = setMobileMenuOpen
   const [pinned, setPinned] = useState(null)
   const [scrolled, setScrolled] = useState(false)
   const { pathname, hash } = useLocation()

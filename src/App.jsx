@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { HashRouter, Routes, Route } from 'react-router-dom'
 import useReveal from './hooks/useReveal'
 import Header from './components/Header'
@@ -13,6 +14,7 @@ import MandatePage from './pages/MandatePage'
 
 function AppLayout() {
   useReveal()
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
     <>
@@ -23,8 +25,8 @@ function AppLayout() {
       >
         Skip to content
       </a>
-      <Header />
-      <FloatingContact />
+      <Header mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} />
+      <FloatingContact hidden={mobileMenuOpen} />
       <main>
         <Routes>
           <Route path="/" element={<HomePage />} />
