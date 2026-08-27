@@ -52,7 +52,7 @@ export default function College() {
             <p className="text-sm leading-relaxed text-white">
               Usmania Moholla, Maji Sainik Vasahat, 100 Ft Road,
               <br />
-              Miraj 416410 — Sangli District, Maharashtra
+              Miraj 416410, Sangli District, Maharashtra
             </p>
           </div>
         </div>
