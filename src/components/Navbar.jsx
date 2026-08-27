@@ -72,7 +72,7 @@ export default function Navbar() {
   }
 
   const navLinkCls = (isActive) =>
-    `nav-link group relative inline-flex items-center gap-1.5 px-1 py-2 text-[15px] font-semibold tracking-wide transition-colors duration-300 ${
+    `nav-link group relative inline-flex items-center gap-1.5 px-3 py-2 text-[15px] font-semibold tracking-wide transition-colors duration-300 rounded-lg hover:bg-navy-50/60 ${
       isActive
         ? 'active-underline text-royal-600'
         : 'text-navy-700 hover:text-royal-600'
@@ -88,7 +88,7 @@ export default function Navbar() {
     >
       {/* Desktop */}
       <div className="relative hidden lg:block">
-        <div className="container-x flex h-[68px] items-center justify-between">
+        <div className="container-x flex h-[72px] items-center justify-between">
           {/* Logo, visible only when scrolled */}
           <Link
             to="/"
@@ -108,7 +108,7 @@ export default function Navbar() {
 
           {/* Nav links, centered when no logo, right-aligned when logo visible */}
           <nav
-            className={`flex items-center gap-0.5 transition-all duration-300 ${
+            className={`flex items-center gap-1 transition-all duration-300 ${
               scrolled ? 'ml-auto' : 'mx-auto'
             }`}
             aria-label="Primary"
@@ -131,7 +131,7 @@ export default function Navbar() {
 
           <Link
             to="/admissions"
-            className="hidden shrink-0 rounded-full bg-gradient-to-r from-royal-600 to-royal-700 px-6 py-2.5 text-[13px] font-bold uppercase tracking-widest text-white shadow-[0_2px_12px_rgba(25,118,210,0.3)] transition-all duration-300 hover:-translate-y-0.5 hover:from-royal-700 hover:to-royal-800 hover:shadow-[0_6px_20px_rgba(25,118,210,0.4)] 2xl:inline-flex"
+            className="shrink-0 ml-4 rounded-full bg-gradient-to-r from-royal-600 to-royal-700 px-6 py-2.5 text-[13px] font-bold uppercase tracking-widest text-white shadow-[0_2px_12px_rgba(25,118,210,0.3)] transition-all duration-300 hover:-translate-y-0.5 hover:from-royal-700 hover:to-royal-800 hover:shadow-[0_6px_20px_rgba(25,118,210,0.4)]"
           >
             Apply Now
           </Link>
