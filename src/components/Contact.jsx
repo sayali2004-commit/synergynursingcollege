@@ -28,13 +28,22 @@ export default function Contact() {
 
   const update = (key) => (e) => setForm((f) => ({ ...f, [key]: e.target.value }))
 
+  const WHATSAPP_NUMBER = '918830879712'
+
   const onSubmit = (e) => {
     e.preventDefault()
-    const subject = encodeURIComponent(`Admission enquiry, ${form.course} (${form.name})`)
-    const body = encodeURIComponent(
-      `Name: ${form.name}\nPhone: ${form.phone}\nEmail: ${form.email}\nCourse of interest: ${form.course}\n\nMessage:\n${form.message}`,
-    )
-    window.location.href = `mailto:${COLLEGE.email}?subject=${subject}&body=${body}`
+    const msg = [
+      '*New Admission Enquiry*',
+      '',
+      `*Name:* ${form.name}`,
+      `*Phone:* ${form.phone}`,
+      `*Email:* ${form.email}`,
+      `*Course:* ${form.course}`,
+      '',
+      `*Message:* ${form.message}`,
+    ].join('\n')
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`
+    window.open(url, '_blank')
     setSent(true)
   }
 
@@ -96,10 +105,10 @@ export default function Contact() {
                 </span>
                 <p className="mt-4 font-display text-lg font-bold text-navy-950">Thank you!</p>
                 <p className="mt-1.5 text-sm leading-relaxed text-navy-700">
-                  Your email draft has been opened. If it didn&apos;t open automatically, write to us
-                  directly at{' '}
-                  <a href={`mailto:${COLLEGE.email}`} className="font-bold text-brand-700 underline underline-offset-2">
-                    {COLLEGE.email}
+                  Your enquiry has been sent to WhatsApp. If it didn&apos;t open automatically, message us
+                  directly on{' '}
+                  <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer" className="font-bold text-brand-700 underline underline-offset-2">
+                    WhatsApp
                   </a>{' '}
                   or call{' '}
                   <a href={`tel:+91${COLLEGE.phones[0]}`} className="font-bold text-brand-700 underline underline-offset-2">
