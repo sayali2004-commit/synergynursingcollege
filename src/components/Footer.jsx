@@ -20,8 +20,7 @@ const QUICK_LINKS = [
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden text-white/75" style={{ backgroundColor: '#162D45' }}>
-      {/* Subtle dotted texture */}
+    <footer className="relative overflow-hidden bg-[#122D42] text-white/75">
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.08]"
         style={{
@@ -31,9 +30,8 @@ export default function Footer() {
         }}
         aria-hidden="true"
       />
-      <div className="footer-grid container-x relative py-10 lg:grid-cols-[1.4fr_1fr_1fr_1.3fr] lg:gap-x-auto">
-        {/* Brand — full width */}
-        <div className="footer-brand min-w-0">
+      <div className="footer-grid container-x relative gap-10 py-8 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.3fr] lg:py-10">
+        <div className="footer-brand">
           <Link to="/" className="inline-flex items-center gap-3">
             <img
               src={`${import.meta.env.BASE_URL}images/logo.jpg`}
@@ -63,7 +61,6 @@ export default function Footer() {
           </a>
         </div>
 
-        {/* Quick links */}
         <nav className="footer-quicklinks" aria-label="Footer quick links">
           <h3 className="font-display text-sm font-bold uppercase tracking-wide text-white">Quick Links</h3>
           <ul className="mt-5 space-y-2.5">
@@ -78,7 +75,6 @@ export default function Footer() {
           </ul>
         </nav>
 
-        {/* Courses */}
         <nav className="footer-courses" aria-label="Footer course links">
           <h3 className="font-display text-sm font-bold uppercase tracking-wide text-white">Courses</h3>
           <ul className="mt-5 space-y-2.5">
@@ -93,8 +89,7 @@ export default function Footer() {
           </ul>
         </nav>
 
-        {/* Contact — full width */}
-        <div className="footer-contact min-w-0">
+        <div className="footer-contact">
           <h3 className="font-display text-sm font-bold uppercase tracking-wide text-white">Contact Us</h3>
           <ul className="mt-5 space-y-4 text-sm">
             <li className="flex gap-3">
@@ -121,11 +116,10 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Copyright */}
       <div className="relative border-t border-brand-500/25">
-        <div className="container-x flex flex-col items-center gap-3 py-6 text-xs text-white/60 sm:flex-row sm:justify-between">
-          <p className="text-center sm:text-left">© {new Date().getFullYear()} {COLLEGE.name}, Miraj. All rights reserved.</p>
-          <p className="flex items-center gap-1.5 text-center text-brand-400 sm:text-left">
+        <div className="container-x flex flex-col items-center justify-between gap-3 py-6 text-xs text-white/60 sm:flex-row">
+          <p>© {new Date().getFullYear()} {COLLEGE.name}, Miraj. All rights reserved.</p>
+          <p className="flex items-center gap-1.5 text-brand-400">
             Affiliated to MUHS, Nashik
             <span aria-hidden="true">·</span>
             Managed by Uma Trust

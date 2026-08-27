@@ -73,27 +73,16 @@
   width: 100%;
 }
 
-/* Footer mobile layout — all mobile styles isolated here */
-.footer-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  padding: 2rem 0;
-}
-
-.footer-brand,
-.footer-contact {
-  grid-column: 1 / -1;
-}
-
-/* Tablet (640px+): Quick Links + Courses side by side */
-@media (min-width: 640px) {
+/* Footer — mobile overrides ONLY */
+@media (max-width: 767px) {
   .footer-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 2.5rem;
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+    padding: 1.75rem 0;
   }
 
-  .footer-brand {
+  .footer-brand,
+  .footer-contact {
     grid-column: 1 / -1;
   }
 
@@ -103,18 +92,6 @@
 
   .footer-courses {
     grid-column: 2;
-  }
-
-  .footer-contact {
-    grid-column: 1 / -1;
-  }
-}
-
-/* Mobile only: tighter spacing and smaller text */
-@media (max-width: 639px) {
-  .footer-grid {
-    gap: 1.75rem;
-    padding: 1.75rem 0;
   }
 
   .footer-brand h3,
