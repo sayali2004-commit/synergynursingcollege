@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
-import { COLLEGE, IMAGES } from '../data/siteContent'
 import Icon from './Icon'
 
 const MENU = [
@@ -102,16 +101,7 @@ export default function Navbar() {
       </div>
 
       {/* Mobile */}
-      <div className="flex h-[64px] items-center justify-between px-4 lg:hidden">
-        <Link to="/" className="flex items-center gap-2.5" aria-label={`${COLLEGE.name} — Home`}>
-          <img src={IMAGES.logo} alt="" className="h-10 w-auto rounded-lg ring-1 ring-navy-100 shadow-sm" />
-          <span className="font-display text-[15px] font-bold leading-tight text-navy-900">
-            Synergy College
-            <span className="block text-[9px] font-bold uppercase tracking-[0.14em] text-royal-600">
-              of Nursing · Miraj
-            </span>
-          </span>
-        </Link>
+      <div className="flex h-[64px] items-center justify-end px-4 lg:hidden">
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
