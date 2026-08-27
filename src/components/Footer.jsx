@@ -32,15 +32,15 @@ export default function Footer() {
           <div>
             <h3 className="font-display text-sm font-bold uppercase tracking-wide text-white">Contact</h3>
             <ul className="mt-5 space-y-3.5">
-              <li className="flex items-center justify-center gap-3">
+              <li className="flex items-center gap-3">
                 <Icon name="pin" className="h-4 w-4 shrink-0 text-brand-500" />
                 <span className="text-sm">Miraj 416410, Sangli District, Maharashtra</span>
               </li>
-              <li className="flex items-center justify-center gap-3">
+              <li className="flex items-center gap-3">
                 <Icon name="phone" className="h-4 w-4 shrink-0 text-brand-500" />
                 <a href="tel:+918767778129" className="text-sm font-semibold transition-colors hover:text-brand-300">+91 8767778129</a>
               </li>
-              <li className="flex items-center justify-center gap-3">
+              <li className="flex items-center gap-3">
                 <Icon name="mail" className="h-4 w-4 shrink-0 text-brand-500" />
                 <a href={`mailto:${COLLEGE.email}`} className="text-sm transition-colors hover:text-brand-300">{COLLEGE.email}</a>
               </li>
