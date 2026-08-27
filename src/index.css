@@ -56,6 +56,23 @@
   }
 }
 
+/* Navbar hover underline animation */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #1976D2, #00A6A6);
+  border-radius: 9999px;
+  transition: width 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.nav-link:hover::after,
+.nav-link.active-underline::after {
+  width: 100%;
+}
+
 /* Scroll reveal */
 .reveal {
   opacity: 0;
