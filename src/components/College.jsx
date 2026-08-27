@@ -4,6 +4,20 @@ import Icon from './Icon'
 export default function College() {
   return (
     <section id="college" className="section-pad relative overflow-hidden mb-6" style={{ backgroundColor: '#1E4460' }}>
+      <svg
+        className="absolute left-0 top-0 w-full"
+        viewBox="0 0 1440 80"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="none"
+        style={{ height: '60px', transform: 'translateY(-59px)' }}
+        aria-hidden="true"
+      >
+        <path
+          d="M0,40 C360,80 720,0 1080,50 C1260,65 1380,20 1440,30 L1440,80 L0,80 Z"
+          fill="#1E4460"
+        />
+      </svg>
       <div className="container-x relative grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
         {/* Copy */}
         <div className="order-2 lg:order-1">
@@ -30,7 +44,6 @@ export default function College() {
                   className={`reveal group relative flex gap-4 overflow-hidden p-5 transition-all duration-300 hover:bg-white/[0.12] ${shapes[i]} bg-white/[0.07] ring-1 ring-white/15 hover:ring-white/25`}
                   style={{ '--reveal-delay': `${200 + i * 90}ms` }}
                 >
-                  <span className="absolute bottom-0 right-0 h-6 w-10 rounded-tl-[12px] bg-gradient-to-l from-brand-400 to-brand-500 opacity-80" aria-hidden="true" />
                   <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-brand-400/20 text-brand-300 transition-colors duration-300 group-hover:bg-brand-400/30">
                     <Icon name={a.icon} className="w-6 h-6" />
                   </span>
