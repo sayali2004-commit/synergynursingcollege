@@ -3,14 +3,14 @@ import Icon from './Icon'
 
 export default function College() {
   return (
-    <section id="college" className="section-pad relative overflow-hidden bg-royal-800">
-      {/* decorative */}
+    <section id="college" className="section-pad relative overflow-hidden bg-navy-950">
+      {/* decorative — very subtle */}
       <div
-        className="pointer-events-none absolute -left-32 top-10 h-80 w-80 rounded-full bg-brand-600/20 blur-3xl"
+        className="pointer-events-none absolute -left-32 top-10 h-80 w-80 rounded-full bg-brand-600/10 blur-3xl"
         aria-hidden="true"
       />
       <div
-        className="pointer-events-none absolute -right-24 bottom-0 h-72 w-72 rounded-full bg-gold-500/10 blur-3xl"
+        className="pointer-events-none absolute -right-24 bottom-0 h-72 w-72 rounded-full bg-gold-500/5 blur-3xl"
         aria-hidden="true"
       />
 
