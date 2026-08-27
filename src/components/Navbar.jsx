@@ -9,7 +9,7 @@ const MENU = [
   { label: 'Academics', to: '/academics' },
   { label: 'Campus Life', to: '/campus-life' },
   { label: 'Admissions', to: '/admissions' },
-  { label: 'Mandate', to: '/academics#notices' },
+  { label: 'Mandate', to: '/mandate' },
   { label: 'Contact Us', to: '/contact' },
 ]
 
@@ -18,6 +18,7 @@ const ROUTE_ACTIVE = {
   '/academics': 'Academics',
   '/campus-life': 'Campus Life',
   '/admissions': 'Admissions',
+  '/mandate': 'Mandate',
   '/contact': 'Contact Us',
 }
 
