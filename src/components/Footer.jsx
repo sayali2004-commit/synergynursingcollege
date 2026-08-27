@@ -26,44 +26,48 @@ export default function Footer() {
         }}
         aria-hidden="true"
       />
-      <div className="container-x flex flex-col items-center gap-8 py-10 sm:flex-row sm:justify-center sm:items-start sm:gap-20 lg:py-12">
-        {/* Contact */}
-        <div>
-          <h3 className="font-display text-sm font-bold uppercase tracking-wide text-white">Contact</h3>
-          <ul className="mt-5 space-y-3.5">
-            <li className="flex items-center gap-3">
-              <Icon name="pin" className="h-4 w-4 shrink-0 text-brand-500" />
-              <span className="text-sm">Miraj 416410, Sangli District, Maharashtra</span>
-            </li>
-            <li className="flex items-center gap-3">
-              <Icon name="phone" className="h-4 w-4 shrink-0 text-brand-500" />
-              <a href="tel:+918767778129" className="text-sm font-semibold transition-colors hover:text-brand-300">+91 8767778129</a>
-            </li>
-            <li className="flex items-center gap-3">
-              <Icon name="mail" className="h-4 w-4 shrink-0 text-brand-500" />
-              <a href={`mailto:${COLLEGE.email}`} className="text-sm transition-colors hover:text-brand-300">{COLLEGE.email}</a>
-            </li>
-          </ul>
+      <div className="container-x grid gap-8 py-10 sm:grid-cols-2 sm:py-12">
+        {/* Contact - centered in left half */}
+        <div className="flex justify-center">
+          <div>
+            <h3 className="font-display text-sm font-bold uppercase tracking-wide text-white">Contact</h3>
+            <ul className="mt-5 space-y-3.5">
+              <li className="flex items-center gap-3">
+                <Icon name="pin" className="h-4 w-4 shrink-0 text-brand-500" />
+                <span className="text-sm">Miraj 416410, Sangli District, Maharashtra</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <Icon name="phone" className="h-4 w-4 shrink-0 text-brand-500" />
+                <a href="tel:+918767778129" className="text-sm font-semibold transition-colors hover:text-brand-300">+91 8767778129</a>
+              </li>
+              <li className="flex items-center gap-3">
+                <Icon name="mail" className="h-4 w-4 shrink-0 text-brand-500" />
+                <a href={`mailto:${COLLEGE.email}`} className="text-sm transition-colors hover:text-brand-300">{COLLEGE.email}</a>
+              </li>
+            </ul>
+          </div>
         </div>
 
-        {/* Quick Links */}
-        <div className="text-center sm:mx-auto">
-          <h3 className="font-display text-sm font-bold uppercase tracking-wide text-white">Quick Links</h3>
-          <div className="mt-5 grid grid-cols-2 gap-x-16 gap-y-3 text-left">
-            <ul className="space-y-3">
-              {LEFT_LINKS.map((l) => (
-                <li key={l.label}>
-                  <Link to={l.to} className="text-sm transition-colors hover:text-brand-300">{l.label}</Link>
-                </li>
-              ))}
-            </ul>
-            <ul className="space-y-3">
-              {RIGHT_LINKS.map((l) => (
-                <li key={l.label}>
-                  <Link to={l.to} className="text-sm transition-colors hover:text-brand-300">{l.label}</Link>
-                </li>
-              ))}
-            </ul>
+        {/* Quick Links - centered in right half */}
+        <div className="flex justify-center">
+          <div className="text-center">
+            <h3 className="font-display text-sm font-bold uppercase tracking-wide text-white">Quick Links</h3>
+            <div className="mt-5 grid grid-cols-2 gap-x-16 gap-y-3 text-left">
+              <ul className="space-y-3">
+                {LEFT_LINKS.map((l) => (
+                  <li key={l.label}>
+                    <Link to={l.to} className="text-sm transition-colors hover:text-brand-300">{l.label}</Link>
+                  </li>
+                ))}
+              </ul>
+              <ul className="space-y-3">
+                {RIGHT_LINKS.map((l) => (
+                  <li key={l.label}>
+                    <Link to={l.to} className="text-sm transition-colors hover:text-brand-300">{l.label}</Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </div>
