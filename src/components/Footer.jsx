@@ -2,13 +2,6 @@ import { Link } from 'react-router-dom'
 import { COLLEGE } from '../data/siteContent'
 import Icon from './Icon'
 
-const COURSE_LINKS = [
-  { label: 'B.Sc. Nursing', to: '/academics#courses' },
-  { label: 'Admission Procedure', to: '/admissions' },
-  { label: 'MUHS Mandate Notices', to: '/academics#notices' },
-  { label: 'Physical Facilities', to: '/campus-life#facilities' },
-]
-
 const QUICK_LINKS = [
   { label: 'Home', to: '/' },
   { label: 'About Us', to: '/#about' },
@@ -30,7 +23,8 @@ export default function Footer() {
         }}
         aria-hidden="true"
       />
-      <div className="footer-grid container-x relative grid gap-10 py-8 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.3fr] lg:py-10">
+      <div className="container-x relative grid gap-10 py-10 sm:grid-cols-2 lg:gap-16 lg:py-12">
+        {/* Brand */}
         <div className="footer-brand">
           <Link to="/" className="inline-flex items-center gap-3">
             <img
@@ -42,7 +36,7 @@ export default function Footer() {
             <span className="min-w-0 leading-tight">
               <span className="block font-display text-base font-bold text-white">Synergy College of Nursing</span>
               <span className="text-[11px] font-bold uppercase tracking-widest text-brand-500">
-                Uma Trust · Miraj
+                Uma Trust, Miraj
               </span>
             </span>
           </Link>
@@ -50,6 +44,20 @@ export default function Footer() {
             One of the leading nursing institutions in Maharashtra, affiliated to MUHS, Nashik,
             and backed by the clinical excellence of Synergy Hospital, Miraj.
           </p>
+          <div className="mt-5 flex flex-col gap-2 text-sm">
+            <div className="flex items-center gap-2">
+              <Icon name="pin" className="h-4 w-4 shrink-0 text-brand-500" />
+              <span>Miraj 416410, Sangli District, Maharashtra</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Icon name="phone" className="h-4 w-4 shrink-0 text-brand-500" />
+              <a href="tel:+918767778129" className="font-semibold transition-colors hover:text-brand-300">+91 8767778129</a>
+            </div>
+            <div className="flex items-center gap-2">
+              <Icon name="mail" className="h-4 w-4 shrink-0 text-brand-500" />
+              <a href={`mailto:${COLLEGE.email}`} className="transition-colors hover:text-brand-300">{COLLEGE.email}</a>
+            </div>
+          </div>
           <a
             href={COLLEGE.website}
             target="_blank"
@@ -61,7 +69,8 @@ export default function Footer() {
           </a>
         </div>
 
-        <nav className="footer-quicklinks" aria-label="Footer quick links">
+        {/* Quick links */}
+        <nav aria-label="Footer quick links">
           <h3 className="font-display text-sm font-bold uppercase tracking-wide text-white">Quick Links</h3>
           <ul className="mt-5 space-y-2.5">
             {QUICK_LINKS.map((l) => (
@@ -74,51 +83,11 @@ export default function Footer() {
             ))}
           </ul>
         </nav>
-
-        <nav className="footer-courses" aria-label="Footer course links">
-          <h3 className="font-display text-sm font-bold uppercase tracking-wide text-white">Courses</h3>
-          <ul className="mt-5 space-y-2.5">
-            {COURSE_LINKS.map((l) => (
-              <li key={l.label}>
-                <Link to={l.to} className="group inline-flex items-center gap-2 text-sm transition-colors hover:text-brand-300">
-                  <span className="h-px w-3 bg-brand-500 transition-all group-hover:w-5" aria-hidden="true" />
-                  {l.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-
-        <div className="footer-contact">
-          <h3 className="font-display text-sm font-bold uppercase tracking-wide text-white">Contact Us</h3>
-          <ul className="mt-5 space-y-4 text-sm">
-            <li className="flex gap-3">
-              <Icon name="pin" className="mt-0.5 h-5 w-5 shrink-0 text-brand-500" />
-              <span className="break-words">{COLLEGE.addressShort}</span>
-            </li>
-            <li className="flex gap-3">
-              <Icon name="phone" className="mt-0.5 h-5 w-5 shrink-0 text-brand-500" />
-              <span className="flex flex-col">
-                {COLLEGE.phones.map((p) => (
-                  <a key={p} href={`tel:+91${p}`} className="font-semibold transition-colors hover:text-brand-300">
-                    +91 {p}
-                  </a>
-                ))}
-              </span>
-            </li>
-            <li className="flex gap-3">
-              <Icon name="mail" className="mt-0.5 h-5 w-5 shrink-0 text-brand-500" />
-              <a href={`mailto:${COLLEGE.email}`} className="break-all transition-colors hover:text-brand-300">
-                {COLLEGE.email}
-              </a>
-            </li>
-          </ul>
-        </div>
       </div>
 
       <div className="relative border-t border-brand-500/25">
         <div className="container-x flex flex-col items-center gap-1 py-6 text-xs text-white/60">
-          <p>© {new Date().getFullYear()} {COLLEGE.name}, Miraj. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} {COLLEGE.name}, Miraj. All rights reserved.</p>
           <p className="text-brand-400">
             Designed &amp; Developed by NexGravision
           </p>

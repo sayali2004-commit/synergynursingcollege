@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { IMAGES } from '../data/siteContent'
 import Icon from './Icon'
 
 const MENU = [
@@ -74,7 +75,18 @@ export default function Navbar() {
       {/* Desktop */}
       <div className="relative hidden lg:block">
         <div className="container-x flex h-[72px] items-center justify-between">
-          <nav className="flex items-center gap-0.5" aria-label="Primary">
+          <Link to="/" className="flex items-center gap-3 shrink-0">
+            <img
+              src={IMAGES.logo}
+              alt="Synergy College of Nursing logo"
+              className="h-11 w-auto rounded-lg ring-1 ring-navy-100 shadow-sm"
+            />
+            <span className="font-display text-[17px] font-bold leading-tight text-navy-900">
+              Synergy College of Nursing
+            </span>
+          </Link>
+
+          <nav className="flex items-center gap-0.5 ml-8" aria-label="Primary">
             {MENU.map((item) => {
               const isActive = activeMenu === item.label
               return (
@@ -101,7 +113,17 @@ export default function Navbar() {
       </div>
 
       {/* Mobile */}
-      <div className="flex h-[64px] items-center justify-end px-4 lg:hidden">
+      <div className="flex h-[60px] items-center justify-between px-4 lg:hidden">
+        <Link to="/" className="flex items-center gap-2.5" aria-label="Synergy College, Home">
+          <img
+            src={IMAGES.logo}
+            alt=""
+            className="h-9 w-auto rounded-lg ring-1 ring-navy-100 shadow-sm"
+          />
+          <span className="font-display text-[14px] font-bold leading-tight text-navy-900">
+            Synergy College
+          </span>
+        </Link>
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
