@@ -3,7 +3,7 @@ import Icon from './Icon'
 
 export default function College() {
   return (
-    <section id="college" className="section-pad relative overflow-hidden bg-navy-950">
+    <section id="college" className="section-pad relative overflow-hidden" style={{ backgroundColor: '#1D4258' }}>
       {/* decorative — very subtle */}
       <div
         className="pointer-events-none absolute -left-32 top-10 h-80 w-80 rounded-full bg-brand-600/10 blur-3xl"

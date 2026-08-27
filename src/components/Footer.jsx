@@ -20,7 +20,7 @@ const QUICK_LINKS = [
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-navy-950 text-white/75">
+    <footer className="relative overflow-hidden text-white/75" style={{ backgroundColor: '#162D45' }}>
       {/* Subtle dotted texture */}
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.08]"
