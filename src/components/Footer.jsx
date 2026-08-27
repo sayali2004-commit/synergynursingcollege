@@ -26,7 +26,7 @@ export default function Footer() {
         }}
         aria-hidden="true"
       />
-      <div className="container-x flex flex-col items-center gap-8 py-10 sm:flex-row sm:justify-center sm:items-start sm:gap-28 lg:py-12">
+      <div className="container-x flex flex-col items-center gap-8 py-10 sm:flex-row sm:justify-between sm:items-start sm:gap-8 lg:py-12">
         {/* Contact */}
         <div>
           <h3 className="font-display text-sm font-bold uppercase tracking-wide text-white">Contact</h3>
@@ -47,7 +47,7 @@ export default function Footer() {
         </div>
 
         {/* Quick Links */}
-        <div className="text-center">
+        <div className="text-center sm:mx-auto">
           <h3 className="font-display text-sm font-bold uppercase tracking-wide text-white">Quick Links</h3>
           <div className="mt-5 grid grid-cols-2 gap-x-16 gap-y-3 text-left">
             <ul className="space-y-3">
