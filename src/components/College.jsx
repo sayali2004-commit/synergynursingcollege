@@ -41,9 +41,9 @@ export default function College() {
                 <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-brand-400/20 text-brand-300 transition-colors duration-300 group-hover:bg-brand-400/30">
                   <Icon name={a.icon} className="w-6 h-6" />
                 </span>
-                <div>
-                  <h3 className="font-display text-base font-bold text-white">{a.title}</h3>
-                  <p className="mt-1.5 text-sm leading-relaxed text-white/65">{a.text}</p>
+                <div className="min-w-0">
+                  <h3 className="font-display text-sm sm:text-base font-bold text-white">{a.title}</h3>
+                  <p className="mt-1.5 text-xs sm:text-sm leading-relaxed text-white/65">{a.text}</p>
                 </div>
               </div>
             ))}
@@ -53,7 +53,7 @@ export default function College() {
             <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-brand-400/20 text-brand-300">
               <Icon name="pin" className="w-5 h-5" />
             </span>
-            <p className="text-sm leading-relaxed text-white/80">
+            <p className="min-w-0 text-xs sm:text-sm leading-relaxed text-white/80">
               Usmania Moholla, Maji Sainik Vasahat, 100 Ft Road, Miraj 416410, Sangli District, Maharashtra
             </p>
           </div>

@@ -26,15 +26,15 @@ export default function Footer() {
         }}
         aria-hidden="true"
       />
-      <div className="container-x grid gap-8 py-10 sm:grid-cols-2 sm:py-12">
+      <div className="container-x grid gap-8 py-10 sm:grid-cols-2 sm:gap-12 sm:py-12">
         {/* Contact - centered in left half */}
         <div className="flex justify-center text-center">
-          <div>
+          <div className="min-w-0">
             <h3 className="font-display text-sm font-bold uppercase tracking-wide text-white">Contact</h3>
             <ul className="mt-5 space-y-3.5">
               <li className="flex items-center gap-3">
                 <Icon name="pin" className="h-4 w-4 shrink-0 text-brand-500" />
-                <span className="text-sm">Miraj 416410, Sangli District, Maharashtra</span>
+                <span className="min-w-0 text-sm break-words">Miraj 416410, Sangli District, Maharashtra</span>
               </li>
               <li className="flex items-center gap-3">
                 <Icon name="phone" className="h-4 w-4 shrink-0 text-brand-500" />
@@ -42,7 +42,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Icon name="mail" className="h-4 w-4 shrink-0 text-brand-500" />
-                <a href={`mailto:${COLLEGE.email}`} className="text-sm transition-colors hover:text-brand-300">{COLLEGE.email}</a>
+                <a href={`mailto:${COLLEGE.email}`} className="min-w-0 text-sm transition-colors hover:text-brand-300 break-all">{COLLEGE.email}</a>
               </li>
             </ul>
           </div>
@@ -52,7 +52,7 @@ export default function Footer() {
         <div className="flex justify-center">
           <div className="text-center">
             <h3 className="font-display text-sm font-bold uppercase tracking-wide text-white">Quick Links</h3>
-            <div className="mt-5 grid grid-cols-2 gap-x-16 gap-y-3 text-left">
+            <div className="mt-5 grid grid-cols-1 gap-x-10 gap-y-3 text-left sm:grid-cols-2">
               <ul className="space-y-3">
                 {LEFT_LINKS.map((l) => (
                   <li key={l.label}>

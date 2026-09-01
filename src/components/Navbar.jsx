@@ -74,7 +74,7 @@ export default function Navbar({ mobileMenuOpen, setMobileMenuOpen }) {
   }
 
   const navLinkCls = (isActive) =>
-    `nav-link group relative inline-flex items-center gap-1.5 px-3 py-2 text-[15px] font-semibold tracking-wide transition-colors duration-300 rounded-lg hover:bg-navy-50/60 ${
+    `nav-link group relative inline-flex items-center gap-1.5 px-2 py-2 text-[13px] xl:px-3 xl:text-[15px] font-semibold tracking-wide transition-colors duration-300 rounded-lg hover:bg-navy-50/60 whitespace-nowrap ${
       isActive
         ? 'active-underline text-royal-600'
         : 'text-navy-700 hover:text-royal-600'
@@ -133,7 +133,7 @@ export default function Navbar({ mobileMenuOpen, setMobileMenuOpen }) {
 
           <Link
             to="/admissions"
-            className="shrink-0 ml-4 rounded-full bg-gradient-to-r from-royal-600 to-royal-700 px-6 py-2.5 text-[13px] font-bold uppercase tracking-widest text-white shadow-[0_2px_12px_rgba(25,118,210,0.3)] transition-all duration-300 hover:-translate-y-0.5 hover:from-royal-700 hover:to-royal-800 hover:shadow-[0_6px_20px_rgba(25,118,210,0.4)]"
+            className="shrink-0 ml-2 xl:ml-4 rounded-full bg-gradient-to-r from-royal-600 to-royal-700 px-4 py-2 xl:px-6 xl:py-2.5 text-[11px] xl:text-[13px] font-bold uppercase tracking-widest text-white shadow-[0_2px_12px_rgba(25,118,210,0.3)] transition-all duration-300 hover:-translate-y-0.5 hover:from-royal-700 hover:to-royal-800 hover:shadow-[0_6px_20px_rgba(25,118,210,0.4)]"
           >
             Apply Now
           </Link>

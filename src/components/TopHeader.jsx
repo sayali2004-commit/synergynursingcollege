@@ -14,11 +14,11 @@ export default function TopHeader() {
         </div>
 
         {/* College name */}
-        <div className="min-w-0">
-          <h1 className="font-display text-lg sm:text-2xl lg:text-3xl xl:text-[2.25rem] font-extrabold leading-tight text-gold-400 text-balance">
+        <div className="min-w-0 flex-1">
+          <h1 className="font-display text-lg sm:text-2xl lg:text-3xl xl:text-[2.25rem] font-extrabold leading-tight text-gold-400 text-balance truncate">
             Synergy College of Nursing
           </h1>
-          <p className="mt-1.5 text-[11px] font-bold tracking-wide text-white/85 sm:text-sm lg:text-base">
+          <p className="mt-1.5 text-[11px] font-bold tracking-wide text-white/85 sm:text-sm lg:text-base truncate">
             Part of Uma Trust and Synergy Hospital, Miraj
           </p>
         </div>
