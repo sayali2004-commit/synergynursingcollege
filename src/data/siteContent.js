@@ -6,7 +6,7 @@ export const COLLEGE = {
     'Synergy College of Nursing is a part of Uma Trust and Synergy Hospital, Miraj, one of the leading educational institutions in Maharashtra, affiliated to the Maharashtra University of Health Sciences (MUHS), Nashik.',
   addressLines: ['Usmania Moholla, Maji Sainik Vasahat,', '100 Ft Road, Miraj 416410'],
   addressShort: 'Usmania Moholla, Maji Sainik Vasahat, 100 Ft Road, Miraj 416410',
-  phones: ['8767778129', '9765500700'],
+  phones: ['9765998191', '9765500700'],
   email: 'info@synergynursingcollege.in',
   website: 'https://synergynursingcollege.in/',
   affiliation: 'Maharashtra University of Health Sciences (MUHS), Nashik',

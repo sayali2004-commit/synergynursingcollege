@@ -77,7 +77,7 @@ export default function Admissions() {
                 Eligibility for B.Sc. Nursing: <strong className="text-white">10+2 Science passed</strong> with{' '}
                 <strong className="text-white">CET / NEET compulsory</strong>.
               </p>
-              <a href={`tel:+91${'8767778129'}`} className="btn !bg-white !text-brand-900 hover:-translate-y-0.5 hover:!bg-gold-400 hover:!text-navy-950 w-full">
+              <a href={`tel:+91${'9765998191'}`} className="btn !bg-white !text-brand-900 hover:-translate-y-0.5 hover:!bg-gold-400 hover:!text-navy-950 w-full">
                 <Icon name="phone" className="w-4 h-4" />
                 Call Admissions Desk
               </a>
