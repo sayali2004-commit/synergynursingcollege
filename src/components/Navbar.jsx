@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { IMAGES } from '../data/siteContent'
 import Icon from './Icon'
@@ -36,6 +36,7 @@ export default function Navbar({ mobileMenuOpen, setMobileMenuOpen }) {
   const setOpen = setMobileMenuOpen
   const [pinned, setPinned] = useState(null)
   const [scrolled, setScrolled] = useState(false)
+  const headerRef = useRef(null)
   const { pathname, hash } = useLocation()
   const navigate = useNavigate()
 
@@ -45,6 +46,35 @@ export default function Navbar({ mobileMenuOpen, setMobileMenuOpen }) {
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
+
+  useEffect(() => {
+    if (!open) return
+    const prevOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.body.style.overflow = prevOverflow
+    }
+  }, [open])
+
+  useEffect(() => {
+    if (!open) return
+    const onPointerDown = (e) => {
+      if (headerRef.current && !headerRef.current.contains(e.target)) {
+        setOpen(false)
+      }
+    }
+    const onKeyDown = (e) => {
+      if (e.key === 'Escape') setOpen(false)
+    }
+    document.addEventListener('mousedown', onPointerDown)
+    document.addEventListener('touchstart', onPointerDown)
+    document.addEventListener('keydown', onKeyDown)
+    return () => {
+      document.removeEventListener('mousedown', onPointerDown)
+      document.removeEventListener('touchstart', onPointerDown)
+      document.removeEventListener('keydown', onKeyDown)
+    }
+  }, [open, setOpen])
 
   const activeMenu = (() => {
     if (pinned) return pinned
@@ -82,6 +112,7 @@ export default function Navbar({ mobileMenuOpen, setMobileMenuOpen }) {
 
   return (
     <header
+      ref={headerRef}
       className={`sticky top-0 z-50 w-full transition-all duration-300 ${
         scrolled
           ? 'border-b border-navy-100/60 bg-white/90 backdrop-blur-xl shadow-[0_1px_3px_rgba(0,0,0,0.04),0_4px_24px_rgba(0,0,0,0.06)]'
@@ -141,33 +172,35 @@ export default function Navbar({ mobileMenuOpen, setMobileMenuOpen }) {
       </div>
 
       {/* Mobile */}
-      <div className="flex h-[56px] items-center justify-between px-4 lg:hidden">
-        <Link to="/" className="flex items-center gap-2.5" aria-label="Synergy College, Home">
-          <img
-            src={IMAGES.logo}
-            alt=""
-            className="h-9 w-auto rounded-lg ring-1 ring-navy-100 shadow-sm"
-          />
-          <span className="font-display text-[14px] font-bold leading-tight text-navy-900">
-            Synergy College
-          </span>
-        </Link>
+      <div className="flex h-[56px] items-center gap-3 px-4 lg:hidden">
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          className="inline-flex h-10 w-10 items-center justify-center rounded-xl text-navy-700 transition-all duration-200 hover:bg-royal-50 focus:outline-none focus-visible:ring-4 focus-visible:ring-royal-500/30"
+          className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-navy-700 transition-all duration-200 hover:bg-royal-50 focus:outline-none focus-visible:ring-4 focus-visible:ring-royal-500/30"
           aria-expanded={open}
           aria-controls="mobile-menu"
           aria-label={open ? 'Close menu' : 'Open menu'}
         >
           <Icon name={open ? 'close' : 'menu'} className="h-5 w-5" />
         </button>
+        <Link to="/" className="flex min-w-0 items-center gap-2.5" aria-label="Synergy College, Home">
+          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white p-0.5 shadow-sm ring-1 ring-navy-100">
+            <img
+              src={IMAGES.logo}
+              alt=""
+              className="h-full w-full rounded-full object-contain"
+            />
+          </span>
+          <span className="font-display text-[14px] font-bold leading-tight text-navy-900 truncate">
+            Synergy College
+          </span>
+        </Link>
       </div>
 
       {/* Mobile menu */}
       <div
         id="mobile-menu"
-        className={`overflow-hidden border-t border-navy-100/60 transition-[max-height,opacity] duration-300 ease-out lg:hidden ${
+        className={`relative z-10 overflow-hidden border-t border-navy-100/60 bg-white/95 backdrop-blur-xl transition-[max-height,opacity] duration-300 ease-out lg:hidden ${
           open ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
