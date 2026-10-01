@@ -225,40 +225,13 @@ export const NOTICES = [
   },
 ]
 
-export const FACILITIES = [
-  {
-    title: 'Clinical Training',
-    text: 'Hands-on patient care through our associated multi-speciality Synergy Hospital, Miraj.',
-    image: `${import.meta.env.BASE_URL}images/Miraj-Hospitals-Best-Hospital.jpg`,
-  },
-  {
-    title: 'Multi-Speciality Exposure',
-    text: 'Rotations across specialities give students broad, real-world clinical experience.',
-    image: `${import.meta.env.BASE_URL}images/Multi-Speciality-Hospital-Miraj.jpg`,
-  },
-  {
-    title: 'Dedicated Female Ward',
-    text: 'Structured ward postings help students master day-to-day nursing care practices.',
-    image: `${import.meta.env.BASE_URL}images/Female-Ward-Synergy-Hospital.jpg`,
-  },
-  {
-    title: 'Child Care Services',
-    text: 'Paediatric exposure builds specialised skills in caring for young patients.',
-    image: `${import.meta.env.BASE_URL}images/Child-Care-Hospital-Miraj-Sangli.jpg`,
-  },
-  {
-    title: 'Emergency & Ambulance',
-    text: 'Exposure to emergency response services develops quick-thinking professionals.',
-    image: `${import.meta.env.BASE_URL}images/Ambulance-Facility-Miraj.jpg`,
-  },
-  {
-    title: 'Speciality Eye Care',
-    text: 'Ophthalmic services at the associated hospital widen specialty learning options.',
-    image: `${import.meta.env.BASE_URL}images/best-eye-hospital-in-MIraj.jpg`,
-  },
-]
+export const FACILITIES = Array.from({ length: 15 }, (_, i) => ({
+  image: `${import.meta.env.BASE_URL}images/campus-facilities/facility-${String(i + 1).padStart(2, '0')}.jpeg`,
+}))
 
 const GALLERY_BASE = import.meta.env.BASE_URL + 'images/'
+
+const STUDENT_ACTIVITY_BASE = import.meta.env.BASE_URL + 'images/student-activity/'
 
 export const GALLERY_IMAGES = [
   'IMG-20200806-WA0032.jpg',
@@ -282,4 +255,10 @@ export const GALLERY_IMAGES = [
   'WhatsApp-Image-2024-03-05-at-11.56.23-AM.jpeg',
   'WhatsApp-Image-2024-03-05-at-11.56.25-AM-1.jpeg',
   'Miraj-Hospitals-Best-Hospital.jpg',
-].map((f) => GALLERY_BASE + f)
+]
+  .map((f) => GALLERY_BASE + f)
+  .concat(
+    Array.from({ length: 24 }, (_, i) =>
+      STUDENT_ACTIVITY_BASE + `student-${String(i + 1).padStart(2, '0')}.jpeg`,
+    ),
+  )
