@@ -70,7 +70,7 @@ export default function Courses() {
                 <div className="mt-auto flex flex-wrap items-center justify-between gap-4 pt-7">
                   <div>
                     <p className="text-[11px] font-bold uppercase tracking-widest text-navy-500">Fees</p>
-                    <p className="font-display text-xl font-bold text-brand-700">₹ 72,000/-</p>
+                    <p className="font-display text-xl font-bold text-brand-700">₹ 80,000/-</p>
                     <p className="text-xs text-navy-600">as listed by the college</p>
                   </div>
                   <Link to="/admissions" className="btn-primary">

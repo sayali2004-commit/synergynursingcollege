@@ -44,24 +44,20 @@ export default function Gallery() {
           </p>
         </div>
 
-        <div className="mt-9 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-5">
+        <div className="mt-9 columns-2 gap-3 sm:columns-3 sm:gap-4 lg:columns-5">
           {GALLERY_IMAGES.map((src, i) => (
             <button
               key={src}
               type="button"
               onClick={() => setLightbox(i)}
-              className={`reveal group relative overflow-hidden rounded-xl ring-1 ring-navy-200 focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-500/50 ${
-                i % 7 === 0 ? 'col-span-2 row-span-2' : ''
-              }`}
+              className="reveal group relative mb-3 block w-full overflow-hidden rounded-xl break-inside-avoid ring-1 ring-navy-200 focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-500/50 sm:mb-4"
               style={{ '--reveal-delay': `${(i % 10) * 60}ms` }}
               aria-label={`Open image ${i + 1} of ${GALLERY_IMAGES.length}`}
             >
               <img
                 src={src}
                 alt={`Synergy Nursing College campus facility ${i + 1}`}
-                className={`w-full object-cover transition-transform duration-500 group-hover:scale-110 ${
-                  i % 7 === 0 ? 'h-full min-h-[220px]' : 'h-36 sm:h-44 lg:h-40'
-                }`}
+                className="block w-full transition-transform duration-500 group-hover:scale-110"
                 loading="lazy"
               />
               <span

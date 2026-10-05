@@ -156,7 +156,7 @@ export const COURSES = [
     mode: 'Full Time',
     duration: '4 Years',
     eligibility: '10+2 Science passed · CET / NEET compulsory',
-    fees: '₹ 72,000/- as listed by the college',
+    fees: '₹ 80,000/- as listed by the college',
     description:
       'Our Bachelor of Science in Nursing programme combines classroom instruction, hands-on training and rich clinical experiences to build a strong foundation in nursing theory and practice. Students train at the associated multi-speciality Synergy Hospital, Miraj, developing critical thinking and compassion for patients.',
     featured: true,
@@ -244,14 +244,13 @@ const GALLERY_BASE = import.meta.env.BASE_URL + 'images/'
 
 const STUDENT_ACTIVITY_BASE = import.meta.env.BASE_URL + 'images/student-activity/'
 
-export const GALLERY_IMAGES = [
+const GALLERY_FILENAMES = [
   'IMG-20200806-WA0032.jpg',
   'IMG-20200806-WA0035.jpg',
   'IMG-20210210-WA0005.jpg',
   'IMG-20200806-WA0033.jpg',
   'IMG-20201001-WA0061.jpg',
   'IMG-20201001-WA0067.jpg',
-  'WhatsApp-Image-2024-03-05-at-11.56.27-AM.jpeg',
   'IMG-20200806-WA0036.jpg',
   'IMG-20200806-WA0027.jpg',
   'IMG-20200806-WA0029.jpg',
@@ -265,10 +264,13 @@ export const GALLERY_IMAGES = [
   'WhatsApp-Image-2024-03-05-at-11.56.23-AM.jpeg',
   'WhatsApp-Image-2024-03-05-at-11.56.25-AM-1.jpeg',
   'Miraj-Hospitals-Best-Hospital.jpg',
+].map((f) => GALLERY_BASE + f)
+
+export const GALLERY_IMAGES = [
+  ...GALLERY_FILENAMES.slice(0, 6),
+  STUDENT_ACTIVITY_BASE + 'student-22.jpeg',
+  ...GALLERY_FILENAMES.slice(6),
+  ...Array.from({ length: 24 }, (_, i) => i + 1)
+    .filter((n) => ![1, 2, 4, 5, 17, 20, 22].includes(n))
+    .map((n) => STUDENT_ACTIVITY_BASE + `student-${String(n).padStart(2, '0')}.jpeg`),
 ]
-  .map((f) => GALLERY_BASE + f)
-  .concat(
-    Array.from({ length: 24 }, (_, i) => i + 1)
-      .filter((n) => ![1, 2, 4, 5, 17, 20].includes(n))
-      .map((n) => STUDENT_ACTIVITY_BASE + `student-${String(n).padStart(2, '0')}.jpeg`),
-  )
