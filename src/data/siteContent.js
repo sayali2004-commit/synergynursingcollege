@@ -225,8 +225,19 @@ export const NOTICES = [
   },
 ]
 
-export const FACILITIES = Array.from({ length: 15 }, (_, i) => ({
-  image: `${import.meta.env.BASE_URL}images/campus-facilities/facility-${String(i + 1).padStart(2, '0')}.jpeg`,
+const FACILITY_IMAGE_FILES = [
+  'facility-07.jpeg',
+  'facility-09.jpeg',
+  'facility-10.jpeg',
+  'facility-11.jpeg',
+  'facility-12.jpeg',
+  'facility-13.jpeg',
+  'facility-14.jpeg',
+  'facility-15.jpeg',
+]
+
+export const FACILITIES = FACILITY_IMAGE_FILES.map((file) => ({
+  image: `${import.meta.env.BASE_URL}images/campus-facilities/${file}`,
 }))
 
 const GALLERY_BASE = import.meta.env.BASE_URL + 'images/'
