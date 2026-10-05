@@ -269,6 +269,6 @@ export const GALLERY_IMAGES = [
   .map((f) => GALLERY_BASE + f)
   .concat(
     Array.from({ length: 24 }, (_, i) => i + 1)
-      .filter((n) => ![2, 17, 20].includes(n))
+      .filter((n) => ![1, 2, 4, 5, 17, 20].includes(n))
       .map((n) => STUDENT_ACTIVITY_BASE + `student-${String(n).padStart(2, '0')}.jpeg`),
   )
