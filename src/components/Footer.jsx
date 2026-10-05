@@ -75,7 +75,12 @@ export default function Footer() {
       <div className="border-t border-brand-500/25">
         <div className="container-x flex flex-col items-center gap-1 py-6 text-xs text-white/60">
           <p>&copy; {new Date().getFullYear()} {COLLEGE.name}, Miraj. All rights reserved.</p>
-          <p className="text-brand-400">Designed &amp; Developed by NexGravision</p>
+          <p className="text-brand-400">
+            Designed &amp; Developed by{' '}
+            <a href="https://nexgravision.com" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-brand-300">
+              NexGravision
+            </a>
+          </p>
         </div>
       </div>
     </footer>
