@@ -67,6 +67,24 @@ export const IMAGES = {
   hero: `${import.meta.env.BASE_URL}images/Synergy-Hospital-Miraj.jpg`,
 }
 
+export const AFFILIATIONS = [
+  {
+    name: 'Government of Maharashtra',
+    sub: 'DMER',
+    logo: `${import.meta.env.BASE_URL}images/affiliations/dmer.png`,
+  },
+  {
+    name: 'Maharashtra State Board of Nursing and Paramedical Education',
+    sub: 'Mumbai',
+    logo: `${import.meta.env.BASE_URL}images/affiliations/msbnpe.png`,
+  },
+  {
+    name: 'Maharashtra University of Health and Sciences',
+    sub: 'Nashik',
+    logo: `${import.meta.env.BASE_URL}images/affiliations/muhs.png`,
+  },
+]
+
 export const HERO_HIGHLIGHTS = [
   {
     title: 'MUHS Affiliated',
@@ -156,7 +174,7 @@ export const COURSES = [
     mode: 'Full Time',
     duration: '4 Years',
     eligibility: '10+2 Science passed · CET / NEET compulsory',
-    fees: '₹ 80,000/- as listed by the college',
+    fees: '₹ 80,000/- · Fees Details - Fees per year as per sanctioned by FRA',
     description:
       'Our Bachelor of Science in Nursing programme combines classroom instruction, hands-on training and rich clinical experiences to build a strong foundation in nursing theory and practice. Students train at the associated multi-speciality Synergy Hospital, Miraj, developing critical thinking and compassion for patients.',
     featured: true,
