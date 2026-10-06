@@ -197,8 +197,34 @@ export const ADMISSION_DOCS = [
 ]
 
 const UPLOADS = 'https://synergynursingcollege.in/wp-content/uploads'
+const LOCAL_ANNEXURES = `${import.meta.env.BASE_URL}annexures/2026-27/`
 
 export const NOTICES = [
+  {
+    year: 'Academic Year 2026–27',
+    highlight:
+      'MUHS Mandate annexure documents for the academic year 2026–27 have been published.',
+    files: [
+      { label: 'Annexure I', url: `${LOCAL_ANNEXURES}ANNEXURE-I.pdf` },
+      { label: 'Annexure II', url: `${LOCAL_ANNEXURES}ANNEXURE-II.pdf` },
+      { label: 'Annexure III', url: `${LOCAL_ANNEXURES}ANNEXURE-III.pdf` },
+      { label: 'Annexure IV', url: `${LOCAL_ANNEXURES}ANNEXURE-IV.pdf` },
+      { label: 'Annexure V', url: `${LOCAL_ANNEXURES}ANNEXURE-V.pdf` },
+      { label: 'Annexure VI', url: `${LOCAL_ANNEXURES}ANNEXURE-VI.pdf` },
+      { label: 'Annexure VII', url: `${LOCAL_ANNEXURES}ANNEXURE-VII.pdf` },
+      { label: 'Annexure VIII', url: `${LOCAL_ANNEXURES}ANNEXURE-VIII.pdf` },
+      { label: 'Annexure IX', url: `${LOCAL_ANNEXURES}ANNEXURE-IX.pdf` },
+      { label: 'Annexure X', url: `${LOCAL_ANNEXURES}ANNEXURE-X.pdf` },
+      { label: 'Annexure XI', url: `${LOCAL_ANNEXURES}ANNEXURE-XI.pdf` },
+      { label: 'Annexure XII', url: `${LOCAL_ANNEXURES}ANNEXURE-XII.pdf` },
+      { label: 'Annexure XIII', url: `${LOCAL_ANNEXURES}ANNEXURE-XIII.pdf` },
+      { label: 'Annexure XIIIA', url: `${LOCAL_ANNEXURES}ANNEXURE-XIIIA.pdf` },
+      { label: 'Annexure XIIIB', url: `${LOCAL_ANNEXURES}ANNEXURE-XIIIB.pdf` },
+      { label: 'Annexure XIV', url: `${LOCAL_ANNEXURES}ANNEXURE-XIV.pdf` },
+      { label: 'Annexure XV', url: `${LOCAL_ANNEXURES}ANNEXURE-XV.pdf` },
+      { label: 'Annexure XVI', url: `${LOCAL_ANNEXURES}ANNEXURE-XVI.pdf` },
+    ],
+  },
   {
     year: 'Academic Year 2025–26',
     highlight:
