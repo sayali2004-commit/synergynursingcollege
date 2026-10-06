@@ -2,6 +2,15 @@ import { Link } from 'react-router-dom'
 import { FACILITIES } from '../data/siteContent'
 import Icon from './Icon'
 
+const FALLBACK =
+  'data:image/svg+xml;utf8,' +
+  encodeURIComponent(
+    `<svg xmlns="http://www.w3.org/2000/svg" width="800" height="640" viewBox="0 0 800 640">
+      <rect fill="#EAF4F8" width="800" height="640"/>
+      <text x="400" y="330" text-anchor="middle" font-family="Arial,sans-serif" font-size="28" fill="#0b2033">Image unavailable</text>
+    </svg>`,
+  )
+
 export default function Facilities() {
   return (
     <section id="facilities" className="section-pad bg-[#F4F9FC]">
@@ -27,7 +36,7 @@ export default function Facilities() {
           {FACILITIES.map((f, i) => (
             <article
               key={f.image}
-              className="reveal group relative overflow-hidden rounded-2xl shadow-card ring-1 ring-navy-100 card-lift"
+              className="reveal group relative overflow-hidden rounded-2xl shadow-card ring-1 ring-navy-100 card-lift bg-navy-50"
               style={{ '--reveal-delay': `${(i % 3) * 90}ms` }}
             >
               <img
@@ -35,6 +44,10 @@ export default function Facilities() {
                 alt={`Synergy College campus facility ${i + 1}`}
                 className="h-64 w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 loading="lazy"
+                decoding="async"
+                onError={(e) => {
+                  if (e.currentTarget.src !== FALLBACK) e.currentTarget.src = FALLBACK
+                }}
               />
             </article>
           ))}

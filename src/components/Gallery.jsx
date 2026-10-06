@@ -2,8 +2,18 @@ import { useCallback, useEffect, useState } from 'react'
 import { GALLERY_IMAGES } from '../data/siteContent'
 import Icon from './Icon'
 
+const FALLBACK =
+  'data:image/svg+xml;utf8,' +
+  encodeURIComponent(
+    `<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+      <rect fill="#EAF4F8" width="800" height="600"/>
+      <text x="400" y="310" text-anchor="middle" font-family="Arial,sans-serif" font-size="28" fill="#0b2033">Image unavailable</text>
+    </svg>`,
+  )
+
 export default function Gallery() {
   const [lightbox, setLightbox] = useState(null) // index | null
+  const [lightboxLoading, setLightboxLoading] = useState(true)
 
   const close = useCallback(() => setLightbox(null), [])
   const prev = useCallback(
@@ -16,7 +26,11 @@ export default function Gallery() {
   )
 
   useEffect(() => {
-    if (lightbox === null) return undefined
+    if (lightbox === null) {
+      setLightboxLoading(true)
+      return undefined
+    }
+    setLightboxLoading(true)
     const onKey = (e) => {
       if (e.key === 'Escape') close()
       if (e.key === 'ArrowLeft') prev()
@@ -50,7 +64,7 @@ export default function Gallery() {
               key={src}
               type="button"
               onClick={() => setLightbox(i)}
-              className="reveal group relative mb-3 block w-full overflow-hidden rounded-xl break-inside-avoid ring-1 ring-navy-200 focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-500/50 sm:mb-4"
+              className="reveal group relative mb-3 block w-full overflow-hidden rounded-xl break-inside-avoid bg-navy-50 ring-1 ring-navy-200 focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-500/50 sm:mb-4"
               style={{ '--reveal-delay': `${(i % 10) * 60}ms` }}
               aria-label={`Open image ${i + 1} of ${GALLERY_IMAGES.length}`}
             >
@@ -59,6 +73,10 @@ export default function Gallery() {
                 alt={`Synergy Nursing College campus facility ${i + 1}`}
                 className="block w-full transition-transform duration-500 group-hover:scale-110"
                 loading="lazy"
+                decoding="async"
+                onError={(e) => {
+                  if (e.currentTarget.src !== FALLBACK) e.currentTarget.src = FALLBACK
+                }}
               />
               <span
                 className="absolute inset-0 flex items-center justify-center bg-navy-950/0 opacity-0 transition-all duration-300 group-hover:bg-navy-950/45 group-hover:opacity-100"
@@ -102,11 +120,24 @@ export default function Gallery() {
           </button>
 
           <figure onClick={(e) => e.stopPropagation()} className="max-h-full max-w-5xl animate-fade-up">
-            <img
-              src={GALLERY_IMAGES[lightbox]}
-              alt={`Synergy Nursing College, image ${lightbox + 1}`}
-              className="max-h-[78vh] w-auto rounded-xl shadow-card-hover ring-1 ring-white/20"
-            />
+            <div className="relative">
+              {lightboxLoading && (
+                <div className="absolute inset-0 z-10 flex items-center justify-center rounded-xl bg-navy-950/40">
+                  <span className="h-10 w-10 animate-spin rounded-full border-4 border-white/30 border-t-white" aria-label="Loading image" />
+                </div>
+              )}
+              <img
+                src={GALLERY_IMAGES[lightbox]}
+                alt={`Synergy Nursing College, image ${lightbox + 1}`}
+                className="max-h-[78vh] w-auto rounded-xl shadow-card-hover ring-1 ring-white/20"
+                decoding="async"
+                onLoad={() => setLightboxLoading(false)}
+                onError={(e) => {
+                  setLightboxLoading(false)
+                  if (e.currentTarget.src !== FALLBACK) e.currentTarget.src = FALLBACK
+                }}
+              />
+            </div>
             <figcaption className="mt-3 text-center text-sm font-semibold text-white/70">
               {lightbox + 1} / {GALLERY_IMAGES.length}
             </figcaption>
