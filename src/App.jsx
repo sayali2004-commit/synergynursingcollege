@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { HashRouter, Routes, Route } from 'react-router-dom'
 import useReveal from './hooks/useReveal'
+import useSeo from './hooks/useSeo'
 import Header from './components/Header'
 import FloatingContact from './components/FloatingContact'
 import ScrollHandler from './components/ScrollHandler'
@@ -14,6 +15,7 @@ import MandatePage from './pages/MandatePage'
 
 function AppLayout() {
   useReveal()
+  useSeo()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
