@@ -53,7 +53,7 @@ export default function Footer() {
         <div className="flex justify-center">
           <div className="text-center">
             <h3 className="font-display text-sm font-bold uppercase tracking-wide text-white">Quick Links</h3>
-            <div className="mt-5 grid grid-cols-2 gap-x-10 gap-y-3 text-left">
+            <div className="mt-5 grid grid-cols-2 gap-x-10 gap-y-3 text-center">
               <ul className="space-y-3">
                 {LEFT_LINKS.map((l) => (
                   <li key={l.label}>
