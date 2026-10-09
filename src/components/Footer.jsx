@@ -9,7 +9,6 @@ const QUICK_LINKS = [
   { label: 'Academics', to: '/academics' },
   { label: 'Campus Life', to: '/campus-life' },
   { label: 'Admissions', to: '/admissions' },
-  { label: 'Contact Us', to: '/contact' },
 ]
 
 const LEFT_LINKS = QUICK_LINKS.slice(0, 3)
@@ -75,6 +74,7 @@ export default function Footer() {
 
       <div className="border-t border-brand-500/25">
         <div className="container-x flex flex-col items-center gap-1 py-6 text-xs text-white/60">
+          <Link to="/contact" className="text-sm font-semibold text-white transition-colors hover:text-brand-300">Contact Us</Link>
           <p>&copy; {new Date().getFullYear()} {COLLEGE.name}, Miraj. All rights reserved.</p>
           <p className="text-brand-400">
             Designed &amp; Developed by{' '}
