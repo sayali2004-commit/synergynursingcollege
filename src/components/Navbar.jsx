@@ -23,7 +23,7 @@ const ROUTE_ACTIVE = {
 
 function hashToMenu(h) {
   if (h === 'about' || h === 'why-us' || h === 'college') return 'About'
-  if (h === 'courses') return 'Academics'
+  if (h === 'courses' || h === 'scholarships') return 'Academics'
   if (h === 'facilities' || h === 'gallery') return 'Campus Life'
   if (h === 'admissions') return 'Admissions'
   if (h === 'notices') return 'Mandate'

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { ADMISSION_DOCS } from '../data/siteContent'
 import Icon from './Icon'
 
@@ -67,6 +68,22 @@ export default function Admissions() {
                   </li>
                 ))}
               </ul>
+
+              <div className="mt-8 rounded-2xl bg-white/10 p-5 border border-white/20 backdrop-blur-sm">
+                <div className="flex items-center gap-2 text-gold-300 font-bold text-sm">
+                  <Icon name="badge" className="w-5 h-5 text-gold-400" />
+                  <span>100% Free Admission Scheme for Reserved Caste Students</span>
+                </div>
+                <p className="mt-1.5 text-xs sm:text-sm text-white/90 leading-relaxed">
+                  Students belonging to <strong>SC, ST, VJNT, NT, SBC, OBC</strong> categories holding valid Caste &amp; Caste Validity Certificates pay <strong>₹ 0/- tuition fees</strong> under Government of Maharashtra MahaDBT freeship guidelines.
+                </p>
+                <Link
+                  to="/academics#scholarships"
+                  className="mt-3 inline-flex items-center gap-1.5 text-xs font-bold text-gold-300 hover:text-white underline underline-offset-4"
+                >
+                  View complete Scholarship Schemes &amp; Freeships →
+                </Link>
+              </div>
             </div>
 
             <aside className="relative flex flex-col justify-center gap-5 bg-gradient-to-b from-brand-700 to-brand-900 p-8 sm:p-10">

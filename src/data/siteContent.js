@@ -47,6 +47,7 @@ export const NAV_MENU = [
     label: 'Academics',
     children: [
       { label: 'Courses & Fees', href: '#courses' },
+      { label: 'Scholarships & Free Admission', href: '#scholarships' },
       { label: 'MUHS Mandate', href: '#notices' },
     ],
   },
@@ -178,6 +179,64 @@ export const COURSES = [
     description:
       'Our Bachelor of Science in Nursing programme combines classroom instruction, hands-on training and rich clinical experiences to build a strong foundation in nursing theory and practice. Students train at the associated multi-speciality Synergy Hospital, Miraj, developing critical thinking and compassion for patients.',
     featured: true,
+  },
+]
+
+export const SCHOLARSHIPS = [
+  {
+    category: 'SC / ST Students',
+    benefit: '100% Free Admission',
+    department: 'Social Justice & Tribal Development Dept',
+    tuitionFee: '₹ 0/- (100% Free)',
+    description:
+      'Eligible Scheduled Caste (SC) and Scheduled Tribe (ST) students receive 100% Free Admission. Full tuition and exam fees are reimbursed through the Government of Maharashtra MahaDBT scholarship scheme.',
+    documents: [
+      'Caste Certificate',
+      'Caste Validity Certificate',
+      'Income Certificate',
+      'Aadhaar-Linked Bank Account',
+    ],
+  },
+  {
+    category: 'VJNT / NT / SBC Students',
+    benefit: '100% Tuition Freeship',
+    department: 'VJNT, OBC & SBC Welfare Department',
+    tuitionFee: '₹ 0/- (100% Free)',
+    description:
+      'Vimukta Jati, Nomadic Tribes, and Special Backward Class students are granted 100% tuition fee waiver under the State Government Freeship scheme with valid caste credentials.',
+    documents: [
+      'Caste Certificate',
+      'Caste Validity Certificate',
+      'Non-Creamy Layer Certificate',
+      'Tahsil Income Certificate',
+    ],
+  },
+  {
+    category: 'OBC Students',
+    benefit: 'MahaDBT Freeship & Scholarship',
+    department: 'OBC Welfare Department, Govt. of Maharashtra',
+    tuitionFee: 'Concession as per MahaDBT',
+    description:
+      'Other Backward Class students are eligible for substantial tuition fee scholarship and freeship concessions as per state government annual income criteria.',
+    documents: [
+      'Caste Certificate',
+      'Caste Validity Certificate',
+      'Non-Creamy Layer Certificate',
+      'Income Certificate',
+    ],
+  },
+  {
+    category: 'EBC / Minority / EWS Students',
+    benefit: 'Rajarshi Shahu Maharaj Scheme',
+    department: 'Higher & Technical Education Dept',
+    tuitionFee: '50% Fee Concession',
+    description:
+      'Economically Backward Class (EBC) and minority students receive up to 50% tuition fee reimbursement through state government scholarship schemes.',
+    documents: [
+      'Income Certificate (below ₹8 Lakh)',
+      'CAP Allotment Letter',
+      'Maharashtra Domicile Certificate',
+    ],
   },
 ]
 

@@ -25,15 +25,15 @@ export default function TopHeader() {
 
         {/* Society block */}
         <div className="ml-auto hidden shrink-0 items-center gap-4 md:flex lg:gap-5">
-          <p className="whitespace-nowrap font-serif text-3xl font-bold tracking-wide text-white lg:text-5xl">
+          <p className="whitespace-nowrap font-serif text-lg font-semibold tracking-wide text-white lg:text-2xl">
             UMA TRUST
           </p>
           <span className="h-12 w-px bg-white/40 lg:h-16" aria-hidden="true" />
           <div className="leading-tight">
-            <p className="whitespace-nowrap font-serif text-lg font-semibold tracking-wide text-white lg:text-2xl">
+            <p className="whitespace-nowrap font-serif text-3xl font-bold tracking-wide text-white lg:text-5xl">
               Synergy Hospital
             </p>
-            <p className="mt-1 whitespace-nowrap text-[9px] font-bold uppercase tracking-[0.12em] text-white/70 lg:text-[11px]">
+            <p className="mt-1 whitespace-nowrap text-xs font-bold uppercase tracking-[0.14em] text-white/80 lg:text-sm">
               Miraj, Maharashtra
             </p>
           </div>

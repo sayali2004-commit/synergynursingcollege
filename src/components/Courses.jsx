@@ -24,6 +24,23 @@ export default function Courses() {
           </p>
         </div>
 
+        <div className="reveal mt-6 flex flex-wrap items-center justify-center gap-3" style={{ '--reveal-delay': '200ms' }}>
+          <a
+            href="#courses"
+            className="inline-flex items-center gap-2 rounded-full bg-brand-700 px-4 py-2 text-xs font-bold text-white shadow-sm transition hover:bg-brand-800"
+          >
+            <Icon name="cap" className="w-4 h-4" />
+            Courses &amp; Fees
+          </a>
+          <a
+            href="#scholarships"
+            className="inline-flex items-center gap-2 rounded-full bg-emerald-600 px-4 py-2 text-xs font-bold text-white shadow-sm transition hover:bg-emerald-700"
+          >
+            <Icon name="check" className="w-4 h-4" />
+            Scholarships &amp; Free Admission
+          </a>
+        </div>
+
         <div className="mt-9 grid gap-8">
           {COURSES.map((course) => (
             <article
@@ -67,11 +84,35 @@ export default function Courses() {
                   {course.description}
                 </p>
 
+                {/* Free admission for caste banner */}
+                <div className="mt-5 rounded-2xl bg-emerald-50/90 border border-emerald-200 p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                  <div className="flex items-start gap-2.5">
+                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-600 text-white mt-0.5">
+                      <Icon name="check" className="w-3.5 h-3.5" />
+                    </span>
+                    <div>
+                      <p className="text-xs font-bold text-emerald-950 uppercase tracking-wide">
+                        100% Free Admission for Caste / Category Students
+                      </p>
+                      <p className="text-xs text-navy-700 mt-0.5">
+                        SC, ST, VJNT, NT, SBC &amp; OBC students pay ₹ 0 tuition fee under Maharashtra MahaDBT schemes.
+                      </p>
+                    </div>
+                  </div>
+                  <a
+                    href="#scholarships"
+                    className="shrink-0 inline-flex items-center gap-1.5 text-xs font-bold text-emerald-700 hover:text-emerald-900 hover:underline"
+                  >
+                    View Scholarships
+                    <Icon name="arrowRight" className="w-3.5 h-3.5" />
+                  </a>
+                </div>
+
                 <div className="mt-auto flex flex-wrap items-center justify-between gap-4 pt-7">
                   <div>
-                    <p className="text-[11px] font-bold uppercase tracking-widest text-navy-500">Fees</p>
+                    <p className="text-[11px] font-bold uppercase tracking-widest text-navy-500">General Fees</p>
                     <p className="font-display text-xl font-bold text-brand-700">₹ 80,000/-</p>
-                    <p className="text-xs text-navy-600">Fees Details - Fees per year as per sanctioned by FRA</p>
+                    <p className="text-xs text-navy-600">Per year as sanctioned by FRA · ₹ 0 for Caste Students</p>
                   </div>
                   <Link to="/admissions" className="btn-primary">
                     Apply Now
