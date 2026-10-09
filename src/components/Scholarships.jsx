@@ -43,7 +43,7 @@ export default function Scholarships() {
             {/* Visual side */}
             <div className="relative min-h-[260px] overflow-hidden bg-brand-800">
               <img
-                src={`${import.meta.env.BASE_URL}images/student-activity/student-13.jpeg`}
+                src={`${import.meta.env.BASE_URL}images/student-activity/student-scholarship.jpeg`}
                 alt="Synergy Nursing College Students - 100% Free Admission for Caste Students"
                 className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 loading="lazy"
