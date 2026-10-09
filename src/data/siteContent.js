@@ -168,6 +168,34 @@ export const APPROVALS = [
   },
 ]
 
+export const PARENT_HOSPITAL = {
+  label: 'Parent Hospital',
+  name: 'Synergy Multispeciality Hospital',
+  location: 'Miraj, Dist. Sangli, Maharashtra',
+  address: 'A/5, Sangli – Miraj Road, near S.T. Workshop, Chandan Wadi, Miraj 416410',
+  website: 'https://www.synergymshospital.com/',
+  websiteLabel: 'www.synergymshospital.com',
+  image: `${import.meta.env.BASE_URL}images/Synergy-Hospital-Miraj.jpg`,
+  imageAlt: 'Synergy Multispeciality Hospital building, Miraj — parent hospital of the college',
+  description:
+    'Synergy Multispeciality Hospital, Miraj is the parent hospital of the college. Students receive extensive, supervised hands-on clinical training across its multi-speciality departments, intensive care and emergency services throughout the course.',
+}
+
+export const AFFILIATED_HOSPITALS = [
+  {
+    name: 'Shaikh Institute of Orthopaedic and Trauma',
+    location: 'Miraj, Dist. Sangli, Maharashtra',
+  },
+  {
+    name: 'Saishwaree Clinic Hospital for Mental Health',
+    location: 'Miraj, Dist. Sangli, Maharashtra',
+  },
+  {
+    name: 'Nirmal Hospital and De-addiction Centre',
+    location: 'Miraj, Dist. Sangli, Maharashtra',
+  },
+]
+
 export const COURSES = [
   {
     name: 'B.Sc. Nursing',
