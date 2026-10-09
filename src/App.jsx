@@ -12,6 +12,7 @@ import CampusLifePage from './pages/CampusLifePage'
 import AdmissionsPage from './pages/AdmissionsPage'
 import ContactPage from './pages/ContactPage'
 import MandatePage from './pages/MandatePage'
+import HospitalsPage from './pages/HospitalsPage'
 
 function AppLayout() {
   useReveal()
@@ -37,6 +38,7 @@ function AppLayout() {
           <Route path="/admissions" element={<AdmissionsPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/mandate" element={<MandatePage />} />
+          <Route path="/hospitals" element={<HospitalsPage />} />
         </Routes>
       </main>
       <Footer />

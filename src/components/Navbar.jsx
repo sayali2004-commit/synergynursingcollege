@@ -5,7 +5,7 @@ import Icon from './Icon'
 
 const MENU = [
   { label: 'Home', to: '/' },
-  { label: 'Hospitals', to: '/#hospitals' },
+  { label: 'Hospitals', to: '/hospitals' },
   { label: 'Academics', to: '/academics' },
   { label: 'Campus Life', to: '/campus-life' },
   { label: 'Admissions', to: '/admissions' },
@@ -15,6 +15,7 @@ const MENU = [
 
 const ROUTE_ACTIVE = {
   '/': 'Home',
+  '/hospitals': 'Hospitals',
   '/academics': 'Academics',
   '/campus-life': 'Campus Life',
   '/admissions': 'Admissions',
@@ -24,7 +25,6 @@ const ROUTE_ACTIVE = {
 
 function hashToMenu(h) {
   if (h === 'about' || h === 'why-us' || h === 'college') return 'About'
-  if (h === 'hospitals') return 'Hospitals'
   if (h === 'courses' || h === 'scholarships') return 'Academics'
   if (h === 'facilities' || h === 'gallery') return 'Campus Life'
   if (h === 'admissions') return 'Admissions'

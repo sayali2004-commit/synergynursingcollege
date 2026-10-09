@@ -10,6 +10,11 @@ const PAGE_META = {
     description:
       'MUHS-affiliated B.Sc. Nursing college in Miraj, Sangli District. Clinical training at Synergy Hospital. Part of Uma Trust. Admissions open. Call +91 9765998191.',
   },
+  '/hospitals': {
+    title: `Parent & Affiliated Hospitals | ${SITE}`,
+    description:
+      'Parent hospital Synergy Multispeciality Hospital, Miraj and affiliated hospitals — Shaikh Institute of Orthopaedic and Trauma, Saishwaree Clinic Hospital for Mental Health and Nirmal Hospital and De-addiction Centre.',
+  },
   '/academics': {
     title: `Academics & B.Sc. Nursing Fees | ${SITE}`,
     description:

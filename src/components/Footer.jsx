@@ -5,7 +5,7 @@ import Icon from './Icon'
 const QUICK_LINKS = [
   { label: 'Home', to: '/' },
   { label: 'About Us', to: '/#about' },
-  { label: 'Hospitals', to: '/#hospitals' },
+  { label: 'Hospitals', to: '/hospitals' },
   { label: 'Academics', to: '/academics' },
   { label: 'Campus Life', to: '/campus-life' },
   { label: 'Admissions', to: '/admissions' },
