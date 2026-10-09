@@ -7,7 +7,7 @@ export const COLLEGE = {
   addressLines: ['Usmania Moholla, Maji Sainik Vasahat,', '100 Ft Road, Miraj 416410'],
   addressShort: 'Usmania Moholla, Maji Sainik Vasahat, 100 Ft Road, Miraj 416410',
   phones: ['9765998191'],
-  email: 'info@synergynursingcollege.in',
+  email: 'synergycollege7@gmail.com',
   website: 'https://synergynursingcollege.in/',
   affiliation: 'Maharashtra University of Health Sciences (MUHS), Nashik',
   trust: 'Uma Trust, Miraj',

@@ -33,7 +33,7 @@ const PAGE_META = {
   '/contact': {
     title: `Contact Us | ${SITE}, Miraj 416410`,
     description:
-      'Synergy College of Nursing, Usmania Moholla, Maji Sainik Vasahat, 100 Ft Road, Miraj 416410, Sangli District, Maharashtra. Phone +91 9765998191. Email info@synergynursingcollege.in.',
+      'Synergy College of Nursing, Usmania Moholla, Maji Sainik Vasahat, 100 Ft Road, Miraj 416410, Sangli District, Maharashtra. Phone +91 9765998191. Email synergycollege7@gmail.com.',
   },
   '/mandate': {
     title: `MUHS Mandate & Notices | ${SITE}`,
