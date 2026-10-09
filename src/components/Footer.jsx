@@ -49,9 +49,9 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Quick Links - centered in right half */}
-        <div className="flex justify-center">
-          <div className="text-center">
+        {/* Quick Links - centered like Contact */}
+        <div className="flex justify-center text-center">
+          <div className="min-w-0">
             <h3 className="font-display text-sm font-bold uppercase tracking-wide text-white">Quick Links</h3>
             <div className="mt-5 grid grid-cols-2 gap-x-10 gap-y-3 text-center">
               <ul className="space-y-3">
