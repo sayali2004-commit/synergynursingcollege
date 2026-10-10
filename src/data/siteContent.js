@@ -178,7 +178,7 @@ export const PARENT_HOSPITAL = {
   website: 'https://www.synergymshospital.com/',
   websiteLabel: 'www.synergymshospital.com',
   image: `${import.meta.env.BASE_URL}images/Synergy-Hospital-Miraj.jpg`,
-  imageAlt: 'Synergy Multispeciality Hospital building, Miraj — parent hospital of the college',
+  imageAlt: 'Synergy Multispeciality Hospital building, Miraj, parent hospital of the college',
   description:
     'Synergy Multispeciality Hospital, Miraj is the parent hospital of the college. Students receive extensive, supervised hands-on clinical training across its multi-speciality departments, intensive care and emergency services throughout the course.',
 }
@@ -219,7 +219,7 @@ export const SCHOLARSHIPS = [
     department: 'Social Justice & Tribal Development Dept',
     tuitionFee: '₹ 0/- (Eligible Fees Covered)',
     description:
-      'Eligible compulsory fees and maintenance allowance under the Government of India Post-Matric Scholarship / Freeship scheme. Scholarship generally up to ₹2.5 lakh annual family income; freeship conditions differ — verify current rules on MahaDBT.',
+      'Eligible compulsory fees and maintenance allowance under the Government of India Post-Matric Scholarship / Freeship scheme. Scholarship generally up to ₹2.5 lakh annual family income; freeship conditions differ. Verify current rules on MahaDBT.',
     documents: [
       'Caste Certificate',
       'Caste Validity Certificate',
@@ -233,7 +233,7 @@ export const SCHOLARSHIPS = [
     department: 'Tribal Development Dept, Govt. of Maharashtra',
     tuitionFee: '₹ 0/- (Eligible Fees Covered)',
     description:
-      'Tuition Fee and Examination Fee Freeship with eligible approved fees and maintenance allowance subject to scheme rules. Common post-matric income threshold is up to ₹2.5 lakh — confirm current scheme on MahaDBT.',
+      'Tuition Fee and Examination Fee Freeship with eligible approved fees and maintenance allowance subject to scheme rules. Common post-matric income threshold is up to ₹2.5 lakh. Confirm current scheme on MahaDBT.',
     documents: [
       'Caste Certificate',
       'Caste Validity Certificate',
@@ -275,7 +275,7 @@ export const SCHOLARSHIPS = [
     department: 'SBC Welfare Department, Govt. of Maharashtra',
     tuitionFee: '₹ 0/- (Eligible Fees Covered)',
     description:
-      'Eligible approved fees and maintenance allowance under Post-Matric Scholarship / Tuition Fees and Examination Fees to SBC Students. The listed post-matric scheme commonly specifies income up to ₹1.5 lakh — verify current rules on MahaDBT.',
+      'Eligible approved fees and maintenance allowance under Post-Matric Scholarship / Tuition Fees and Examination Fees to SBC Students. The listed post-matric scheme commonly specifies income up to ₹1.5 lakh. Verify current rules on MahaDBT.',
     documents: [
       'Caste Certificate',
       'Caste Validity Certificate',
@@ -303,7 +303,7 @@ export const SCHOLARSHIPS = [
     department: 'Higher & Technical Education Dept',
     tuitionFee: 'Partial Fee Benefit (If Covered)',
     description:
-      'Partial or other approved fee benefit only if B.Sc. Nursing / GNM and the college are covered under the scheme. Depends on the scheme — do not assume eligibility from EWS status alone. Verify on MahaDBT.',
+      'Partial or other approved fee benefit only if B.Sc. Nursing / GNM and the college are covered under the scheme. Depends on the scheme. Do not assume eligibility from EWS status alone. Verify on MahaDBT.',
     documents: [
       'Income Certificate',
       'EWS Certificate (if applicable)',
@@ -317,7 +317,7 @@ export const SCHOLARSHIPS = [
     department: 'Minority Development Dept, Govt. of Maharashtra',
     tuitionFee: 'Tuition & Exam Fee Assistance',
     description:
-      'Possible tuition-fee and examination-fee assistance under the relevant Minority Development Department scheme for eligible professional / medical courses. A listed medical-education scheme specifies an income limit up to ₹8 lakh — course list and current availability must be checked on MahaDBT.',
+      'Possible tuition-fee and examination-fee assistance under the relevant Minority Development Department scheme for eligible professional / medical courses. A listed medical-education scheme specifies an income limit up to ₹8 lakh. Course list and current availability must be checked on MahaDBT.',
     documents: [
       'Minority Community Certificate',
       'Income Certificate (up to ₹8 Lakh)',
@@ -531,7 +531,7 @@ export const STUDENT_FACILITIES = [
     details: [
       'Individual password and login for each student',
       'MUHS website accessible for all students and teachers',
-      'Educational sites only — non-educational sites blocked',
+      'Educational sites only, non-educational sites blocked',
       'Network, internet connectivity and firewall monitored',
       'Time schedule managed by lab in-charge',
     ],
@@ -546,7 +546,7 @@ export const STUDENT_FACILITIES = [
       '24/7 helplines available',
       'Walk-in / referral counselling',
       'Free psychologist & psychiatric consultation',
-      'Confidential records — shared on need-to-know basis',
+      'Confidential records, shared on need-to-know basis',
       'Psychiatric medications under faculty observation if needed',
     ],
   },
@@ -602,7 +602,7 @@ export const CODE_OF_CONDUCT = {
       icon: 'users',
       points: [
         'Uniform policy protects personal safety of students and patients in clinical settings.',
-        'Uniform must be worn during clinical postings — spotlessly clean and well ironed.',
+        'Uniform must be worn during clinical postings, spotlessly clean and well ironed.',
         'Hair must be clean, groomed, and non-distracting.',
         'One pair of earrings (not longer than fingertip) allowed; no facial or other visible piercings.',
         'Nails well trimmed; no visible tattoos or nail polish.',
@@ -642,7 +642,7 @@ export const CODE_OF_CONDUCT = {
         'Overdue fine: ₹5/day for textbooks, ₹25/day for reference books.',
         'Loss of borrower card: duplicate issued with ₹25 fine.',
         'No Due Certificate required after course completion.',
-        'Internet use is for academic purposes only — one hour per user.',
+        'Internet use is for academic purposes only, one hour per user.',
       ],
     },
     {
@@ -700,7 +700,7 @@ export const COUNSELLING_SERVICES = {
     '24/7 helplines',
     'Walk-in / referral counselling',
     'Free psychologist & psychiatric consultation and medications',
-    'Meticulous confidentiality in records — shared on strict need-to-know basis',
+    'Meticulous confidentiality in records, shared on strict need-to-know basis',
     'Psychiatric medications if necessary and prescribed, given under direct observation of faculty',
   ],
 }

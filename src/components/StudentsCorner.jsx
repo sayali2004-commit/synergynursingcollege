@@ -16,7 +16,7 @@ export default function StudentsCorner() {
           </h2>
           <p className="reveal mt-4 leading-relaxed text-navy-800" style={{ '--reveal-delay': '160ms' }}>
             Access examination information, important notices, scholarship details, and campus facilities
-            — all in one place for Synergy College of Nursing students.
+            all in one place for Synergy College of Nursing students.
           </p>
         </div>
 
@@ -290,7 +290,7 @@ export default function StudentsCorner() {
                   Need to Talk?
                 </h4>
                 <p className="mt-2 text-xs text-white/85 leading-relaxed">
-                  Our counselling services are confidential. Reach out whenever you need support — we are here for you.
+                  Our counselling services are confidential. Reach out whenever you need support, we are here for you.
                 </p>
                 <a
                   href="tel:+919765998191"

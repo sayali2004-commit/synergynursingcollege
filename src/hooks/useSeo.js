@@ -13,12 +13,12 @@ const PAGE_META = {
   '/hospitals': {
     title: `Parent & Affiliated Hospitals | ${SITE}`,
     description:
-      'Parent hospital Synergy Multispeciality Hospital, Miraj and affiliated hospitals — Shaikh Institute of Orthopaedic and Trauma, Saishwaree Clinic Hospital for Mental Health and Nirmal Hospital and De-addiction Centre.',
+      'Parent hospital Synergy Multispeciality Hospital, Miraj and affiliated hospitals, including Shaikh Institute of Orthopaedic and Trauma, Saishwaree Clinic Hospital for Mental Health and Nirmal Hospital and De-addiction Centre.',
   },
   '/academics': {
     title: `Academics & B.Sc. Nursing Fees | ${SITE}`,
     description:
-      'B.Sc. Nursing programme at Synergy College of Nursing, Miraj — 4-year degree affiliated to MUHS Nashik. Fees ₹80,000/- per year as per FRA. Eligibility 10+2 Science (CET/NEET).',
+      'B.Sc. Nursing programme at Synergy College of Nursing, Miraj, a 4-year degree affiliated to MUHS Nashik. Fees ₹80,000/- per year as per FRA. Eligibility 10+2 Science (CET/NEET).',
   },
   '/academics/courses': {
     title: `Courses & Fees | ${SITE}`,
@@ -48,7 +48,7 @@ const PAGE_META = {
   '/campus-life': {
     title: `Campus Life & Facilities | ${SITE}`,
     description:
-      'Explore campus facilities and student life at Synergy College of Nursing, Miraj — skills labs, clinical exposure at Synergy Hospital, and college gallery.',
+      'Explore campus facilities and student life at Synergy College of Nursing, Miraj, including skills labs, clinical exposure at Synergy Hospital, and college gallery.',
   },
   '/contact': {
     title: `Contact Us | ${SITE}, Miraj 416410`,
@@ -58,7 +58,7 @@ const PAGE_META = {
   '/mandate': {
     title: `MUHS Mandate & Notices | ${SITE}`,
     description:
-      'MUHS Mandate annexure documents for Synergy College of Nursing, Miraj — academic years 2026–27, 2025–26 and 2024–25 available for download.',
+      'MUHS Mandate annexure documents for Synergy College of Nursing, Miraj, covering academic years 2026–27, 2025–26 and 2024–25 available for download.',
   },
 }
 
