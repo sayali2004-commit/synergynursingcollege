@@ -88,21 +88,21 @@ export default function StudentsCorner() {
                   {currentNotices.year}
                 </p>
                 <p className="mt-2 text-sm font-semibold text-navy-900">{currentNotices.highlight}</p>
-                <div className="mt-4 flex flex-wrap gap-2">
+                <div className="mt-4 grid grid-cols-2 gap-2">
                   {currentNotices.files.slice(0, 8).map((file) => (
                     <a
                       key={file.label}
                       href={file.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 rounded-lg border border-navy-200 bg-white px-3 py-1.5 text-xs font-semibold text-navy-800 transition hover:border-brand-300 hover:bg-brand-50"
+                      className="inline-flex items-center justify-center gap-1.5 rounded-lg border border-navy-200 bg-white px-3 py-1.5 text-xs font-semibold text-navy-800 transition hover:border-brand-300 hover:bg-brand-50"
                     >
                       <Icon name="arrowRight" className="w-3 h-3 text-brand-600" />
                       {file.label}
                     </a>
                   ))}
                   {currentNotices.files.length > 8 && (
-                    <span className="inline-flex items-center px-3 py-1.5 text-xs font-semibold text-navy-500">
+                    <span className="inline-flex items-center justify-center px-3 py-1.5 text-xs font-semibold text-navy-500">
                       +{currentNotices.files.length - 8} more
                     </span>
                   )}
