@@ -8,6 +8,10 @@ import ScrollHandler from './components/ScrollHandler'
 import Footer from './components/Footer'
 import HomePage from './pages/HomePage'
 import AcademicsPage from './pages/AcademicsPage'
+import CoursesPage from './pages/CoursesPage'
+import ScholarshipsPage from './pages/ScholarshipsPage'
+import FacultyPage from './pages/FacultyPage'
+import StudentsCornerPage from './pages/StudentsCornerPage'
 import CampusLifePage from './pages/CampusLifePage'
 import AdmissionsPage from './pages/AdmissionsPage'
 import ContactPage from './pages/ContactPage'
@@ -34,6 +38,10 @@ function AppLayout() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/academics" element={<AcademicsPage />} />
+          <Route path="/academics/courses" element={<CoursesPage />} />
+          <Route path="/academics/scholarships" element={<ScholarshipsPage />} />
+          <Route path="/academics/faculty" element={<FacultyPage />} />
+          <Route path="/academics/students-corner" element={<StudentsCornerPage />} />
           <Route path="/campus-life" element={<CampusLifePage />} />
           <Route path="/admissions" element={<AdmissionsPage />} />
           <Route path="/contact" element={<ContactPage />} />

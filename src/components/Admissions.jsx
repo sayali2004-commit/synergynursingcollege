@@ -78,7 +78,7 @@ export default function Admissions() {
                   Students belonging to <strong>SC, ST, VJNT, NT, SBC, OBC</strong> categories holding valid Caste &amp; Caste Validity Certificates pay <strong>₹ 0/- tuition fees</strong> under Government of Maharashtra MahaDBT freeship guidelines.
                 </p>
                 <Link
-                  to="/academics#scholarships"
+                  to="/academics/scholarships"
                   className="mt-3 inline-flex items-center gap-1.5 text-xs font-bold text-gold-300 hover:text-white underline underline-offset-4"
                 >
                   View complete Scholarship Schemes &amp; Freeships →

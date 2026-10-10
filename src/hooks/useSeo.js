@@ -20,6 +20,26 @@ const PAGE_META = {
     description:
       'B.Sc. Nursing programme at Synergy College of Nursing, Miraj — 4-year degree affiliated to MUHS Nashik. Fees ₹80,000/- per year as per FRA. Eligibility 10+2 Science (CET/NEET).',
   },
+  '/academics/courses': {
+    title: `Courses & Fees | ${SITE}`,
+    description:
+      'B.Sc. Nursing and GNM Nursing programmes with detailed fee structure at Synergy College of Nursing, Miraj.',
+  },
+  '/academics/scholarships': {
+    title: `Scholarships & Freeships | ${SITE}`,
+    description:
+      'MahaDBT scholarships and freeships for SC, ST, OBC, VJNT, SBC, SEBC, EWS and Minority students at Synergy College of Nursing, Miraj.',
+  },
+  '/academics/faculty': {
+    title: `Faculty | ${SITE}`,
+    description:
+      'Meet the experienced and dedicated faculty members of Synergy College of Nursing, Miraj.',
+  },
+  '/academics/students-corner': {
+    title: `Students Corner | ${SITE}`,
+    description:
+      'Examination information, student notices, scholarships and campus facilities for Synergy College of Nursing students.',
+  },
   '/admissions': {
     title: `Admissions Open | B.Sc. Nursing Admissions in Miraj, Sangli`,
     description:

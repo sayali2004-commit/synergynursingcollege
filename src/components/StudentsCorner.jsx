@@ -76,7 +76,7 @@ export default function StudentsCorner() {
                   Latest Notices &amp; Announcements
                 </h3>
               </div>
-              <Link to="/academics" className="btn-primary">
+              <Link to="/mandate" className="btn-primary">
                 View All Notices
                 <Icon name="arrowRight" className="w-4 h-4" />
               </Link>
@@ -138,7 +138,7 @@ export default function StudentsCorner() {
                 </div>
               </div>
               <div className="flex flex-col gap-3">
-                <Link to="/academics" className="btn !bg-white !text-emerald-800 hover:!bg-emerald-50 w-full justify-center">
+                <Link to="/academics/scholarships" className="btn !bg-white !text-emerald-800 hover:!bg-emerald-50 w-full justify-center">
                   View Scholarship Details
                   <Icon name="arrowRight" className="w-4 h-4" />
                 </Link>

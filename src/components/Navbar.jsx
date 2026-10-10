@@ -14,16 +14,20 @@ const MENU = [
 ]
 
 const ACADEMICS_DROPDOWN = [
-  { label: 'Courses & Fees', to: '/academics#courses' },
-  { label: 'Scholarships', to: '/academics#scholarships' },
-  { label: 'Faculty', to: '/academics#faculty' },
-  { label: 'Students Corner', to: '/academics#students-corner' },
+  { label: 'Courses & Fees', to: '/academics/courses' },
+  { label: 'Scholarships', to: '/academics/scholarships' },
+  { label: 'Faculty', to: '/academics/faculty' },
+  { label: 'Students Corner', to: '/academics/students-corner' },
 ]
 
 const ROUTE_ACTIVE = {
   '/': 'Home',
   '/hospitals': 'Hospitals',
   '/academics': 'Academics',
+  '/academics/courses': 'Academics',
+  '/academics/scholarships': 'Academics',
+  '/academics/faculty': 'Academics',
+  '/academics/students-corner': 'Academics',
   '/campus-life': 'Campus Life',
   '/admissions': 'Admissions',
   '/mandate': 'Mandate',
@@ -35,7 +39,6 @@ function hashToMenu(h) {
   if (['courses', 'scholarships', 'faculty', 'students-corner', 'notices'].includes(h)) return 'Academics'
   if (h === 'facilities' || h === 'gallery') return 'Campus Life'
   if (h === 'admissions') return 'Admissions'
-  if (h === 'notices') return 'Mandate'
   if (h === 'contact') return 'Contact Us'
   return 'Home'
 }
@@ -217,36 +220,16 @@ export default function Navbar({ mobileMenuOpen, setMobileMenuOpen }) {
                           : 'pointer-events-none -translate-y-2 opacity-0 scale-95'
                       }`}
                     >
-                      {/* Arrow */}
-                      <div className="absolute -top-2 left-1/2 -translate-x-1/2">
-                        <div className="h-4 w-4 rotate-45 rounded-sm bg-white shadow-[4px_4px_8px_rgba(0,0,0,0.06)] ring-1 ring-navy-100/60" />
-                      </div>
-
                       <div className="overflow-hidden rounded-2xl border border-navy-100/60 bg-white shadow-[0_20px_60px_-12px_rgba(0,0,0,0.18),0_8px_24px_-8px_rgba(0,0,0,0.08)]">
-                        {/* Header */}
-                        <div className="border-b border-navy-50 bg-gradient-to-r from-royal-50/80 to-brand-50/50 px-5 py-3.5">
-                          <p className="text-[11px] font-bold uppercase tracking-widest text-royal-600">
-                            Academics
-                          </p>
-                        </div>
-
                         {/* Links */}
                         <div className="p-2">
                           {ACADEMICS_DROPDOWN.map((dropItem) => (
                             <Link
                               key={dropItem.label}
-                              to={dropItem.to.split('#')[0]}
-                              onClick={(e) => {
-                                e.preventDefault()
+                              to={dropItem.to}
+                              onClick={() => {
                                 setAcademicsOpen(false)
                                 activate('Academics')
-                                const [, hashId] = dropItem.to.split('#')
-                                if (pathname === '/academics') {
-                                  const el = document.getElementById(hashId)
-                                  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-                                } else {
-                                  navigate('/academics', { state: { scrollTo: hashId } })
-                                }
                               }}
                               className="group flex items-center justify-between rounded-xl px-4 py-2.5 transition-all duration-200 hover:bg-gradient-to-r hover:from-royal-50/60 hover:to-brand-50/40"
                             >
@@ -352,18 +335,10 @@ export default function Navbar({ mobileMenuOpen, setMobileMenuOpen }) {
                     {ACADEMICS_DROPDOWN.map((dropItem) => (
                       <Link
                         key={dropItem.label}
-                        to={dropItem.to.split('#')[0]}
-                        onClick={(e) => {
-                          e.preventDefault()
+                        to={dropItem.to}
+                        onClick={() => {
                           setOpen(false)
                           activate('Academics')
-                          const [, hashId] = dropItem.to.split('#')
-                          if (pathname === '/academics') {
-                            const el = document.getElementById(hashId)
-                            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-                          } else {
-                            navigate('/academics', { state: { scrollTo: hashId } })
-                          }
                         }}
                         className="flex items-center rounded-lg px-3 py-2.5 text-[13.5px] font-medium text-navy-700 transition-colors hover:bg-royal-50 hover:text-royal-600"
                       >
