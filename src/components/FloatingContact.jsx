@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import { COLLEGE } from '../data/siteContent'
 import Icon from './Icon'
 
@@ -21,13 +20,13 @@ export default function FloatingContact({ hidden }) {
       >
         <Icon name="phone" className="h-4 w-4 sm:h-5 sm:w-5" />
       </a>
-      <Link
-        to="/contact"
-        aria-label="Go to contact page"
+      <a
+        href={`mailto:${COLLEGE.email}`}
+        aria-label={`Email ${COLLEGE.email}`}
         className="flex h-10 w-10 items-center justify-center rounded-full bg-gold-400 text-royal-900 shadow-card-hover transition-transform duration-300 hover:scale-110 hover:bg-gold-500 sm:h-11 sm:w-11"
       >
         <Icon name="mail" className="h-4 w-4 sm:h-5 sm:w-5" />
-      </Link>
+      </a>
     </div>
   )
 }
