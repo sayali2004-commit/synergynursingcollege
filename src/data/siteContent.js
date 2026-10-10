@@ -48,6 +48,8 @@ export const NAV_MENU = [
     children: [
       { label: 'Courses & Fees', href: '#courses' },
       { label: 'Scholarships & Free Admission', href: '#scholarships' },
+      { label: 'Faculty', href: '#faculty' },
+      { label: 'Students Corner', href: '#students-corner' },
       { label: 'MUHS Mandate', href: '#notices' },
     ],
   },
@@ -490,3 +492,103 @@ export const GALLERY_IMAGES = [
     .filter((n) => ![1, 2, 4, 5, 17, 20, 22].includes(n))
     .map((n) => STUDENT_ACTIVITY_BASE + `student-${String(n).padStart(2, '0')}.jpeg`),
 ]
+
+// Faculty data - Add faculty members here as photos and details become available
+export const FACULTY = []
+
+export const STUDENT_FACILITIES = [
+  {
+    title: 'Library',
+    icon: 'book',
+    description:
+      'Our well-stocked library provides access to nursing textbooks, reference books, journals, and digital resources. Students can borrow up to 2 books for 1 week. The library is open Monday to Friday 9 AM to 8 PM (up to 9 PM during examinations), Saturday 9 AM to 4 PM, and Sundays 9 AM to 5 PM during examination time.',
+    details: [
+      'Undergraduate & GNM: Up to 2 books for 1 week',
+      'Textbook overdue fine: ₹5.00 per day per book',
+      'Reference book overdue fine: ₹25.00 per day per book',
+      'Digital library with internet access for academic purposes',
+      'Reference section: 10 students at a time for 30–60 minutes',
+    ],
+  },
+  {
+    title: 'Nursing Laboratories',
+    icon: 'trust',
+    description:
+      'Fully equipped foundation nursing labs provide hands-on clinical training. Students can issue lab articles with prior written application submitted to class-wise lab in-charges one day in advance.',
+    details: [
+      'Article issue/replace time: 12 Noon – 1 PM',
+      'Written application required one day prior',
+      'Articles must be replaced same day or within 4 days',
+      'Lost articles penalty: ₹50/- per week',
+      'Students responsible for lab article care and efficiency checks',
+    ],
+  },
+  {
+    title: 'Computer Lab',
+    icon: 'users',
+    description:
+      'A comprehensive IT facility with individual login credentials for all students. The computer lab supports academic research, MUHS updates, and online learning with monitored network security.',
+    details: [
+      'Individual password and login for each student',
+      'MUHS website accessible for all students and teachers',
+      'Educational sites only — non-educational sites blocked',
+      'Network, internet connectivity and firewall monitored',
+      'Time schedule managed by lab in-charge',
+    ],
+  },
+  {
+    title: 'Counselling Cell',
+    icon: 'trust',
+    description:
+      'The Counselling Cell provides psychological support to students facing anxiety, stress, or adaptation difficulties. We believe every student has the innate ability to overcome barriers with proper guidance.',
+    details: [
+      '3-tier counselling referral system',
+      '24/7 helplines available',
+      'Walk-in / referral counselling',
+      'Free psychologist & psychiatric consultation',
+      'Confidential records — shared on need-to-know basis',
+      'Psychiatric medications under faculty observation if needed',
+    ],
+  },
+  {
+    title: 'Health & Safety',
+    icon: 'check',
+    description:
+      'Student health and safety is a priority. The campus follows strict health protocols with first-aid facilities and emergency procedures in place.',
+    details: [
+      '10 sick leaves per year with medical certificate',
+      'Makeup classes arranged in 1:1 ratio for sick leave',
+      'Personal protective equipment training provided',
+      'Emergency evacuation procedures followed',
+      'CCTV surveillance across entire campus',
+    ],
+  },
+  {
+    title: 'Anti-Ragging & Grievance Cell',
+    icon: 'badge',
+    description:
+      'The college maintains a zero-tolerance anti-ragging policy based on UGC Regulations 2009. A Student Grievance Redressal Cell addresses concerns related to ragging, harassment, and academic issues.',
+    details: [
+      'Anti-Ragging Squad active at all times',
+      'Based on UGC Regulation on Curbing Ragging 2009',
+      'Sexual Harassment Redressal Committee in place',
+      'Student Grievance Redressal Cell for complaints',
+      'Disciplinary action: Warning, Restrictions, Penalty, Suspension, or Expulsion',
+    ],
+  },
+]
+
+export const EXAM_INFO = {
+  description:
+    'Examinations at Synergy College of Nursing are conducted as per MUHS and INC guidelines. Students must meet attendance requirements and academic standards to be eligible for examinations.',
+  points: [
+    'Examinations conducted as per Maharashtra University of Health Sciences (MUHS) guidelines',
+    'Theory and practical examinations for all nursing programmes',
+    'Internal assessment marks contribute to final results',
+    'Minimum attendance requirement as per INC norms must be met',
+    'Examination schedules announced well in advance on the notice board',
+    'Results declared through the MUHS result portal',
+  ],
+  resultsLink: 'https://muhs.ac.in/',
+  resultsNote: 'Results can be checked on the official MUHS examination portal.',
+}
