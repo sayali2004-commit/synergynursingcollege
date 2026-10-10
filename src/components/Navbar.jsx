@@ -6,11 +6,44 @@ import Icon from './Icon'
 const MENU = [
   { label: 'Home', to: '/' },
   { label: 'Hospitals', to: '/hospitals' },
-  { label: 'Academics', to: '/academics' },
+  { label: 'Academics', to: '/academics', hasDropdown: true },
   { label: 'Campus Life', to: '/campus-life' },
   { label: 'Admissions', to: '/admissions' },
   { label: 'Mandate', to: '/mandate' },
   { label: 'Contact Us', to: '/contact' },
+]
+
+const ACADEMICS_DROPDOWN = [
+  {
+    label: 'Courses & Fees',
+    to: '/academics#courses',
+    icon: 'cap',
+    description: 'B.Sc. Nursing & GNM programmes with fee structure',
+  },
+  {
+    label: 'Scholarships',
+    to: '/academics#scholarships',
+    icon: 'check',
+    description: 'MahaDBT scholarships & freeship details',
+  },
+  {
+    label: 'Faculty',
+    to: '/academics#faculty',
+    icon: 'users',
+    description: 'Experienced & dedicated teaching staff',
+  },
+  {
+    label: 'Students Corner',
+    to: '/academics#students-corner',
+    icon: 'badge',
+    description: 'Exams, notices, facilities & more',
+  },
+  {
+    label: 'MUHS Mandate',
+    to: '/academics#notices',
+    icon: 'book',
+    description: 'Official MUHS mandate documents',
+  },
 ]
 
 const ROUTE_ACTIVE = {
@@ -25,7 +58,7 @@ const ROUTE_ACTIVE = {
 
 function hashToMenu(h) {
   if (h === 'about' || h === 'why-us' || h === 'college') return 'About'
-  if (h === 'courses' || h === 'scholarships') return 'Academics'
+  if (['courses', 'scholarships', 'faculty', 'students-corner', 'notices'].includes(h)) return 'Academics'
   if (h === 'facilities' || h === 'gallery') return 'Campus Life'
   if (h === 'admissions') return 'Admissions'
   if (h === 'notices') return 'Mandate'
@@ -38,6 +71,8 @@ export default function Navbar({ mobileMenuOpen, setMobileMenuOpen }) {
   const setOpen = setMobileMenuOpen
   const [pinned, setPinned] = useState(null)
   const [scrolled, setScrolled] = useState(false)
+  const [academicsOpen, setAcademicsOpen] = useState(false)
+  const academicsTimeoutRef = useRef(null)
   const headerRef = useRef(null)
   const { pathname, hash } = useLocation()
   const navigate = useNavigate()
@@ -59,14 +94,18 @@ export default function Navbar({ mobileMenuOpen, setMobileMenuOpen }) {
   }, [open])
 
   useEffect(() => {
-    if (!open) return
+    if (!open && !academicsOpen) return
     const onPointerDown = (e) => {
       if (headerRef.current && !headerRef.current.contains(e.target)) {
         setOpen(false)
+        setAcademicsOpen(false)
       }
     }
     const onKeyDown = (e) => {
-      if (e.key === 'Escape') setOpen(false)
+      if (e.key === 'Escape') {
+        setOpen(false)
+        setAcademicsOpen(false)
+      }
     }
     document.addEventListener('mousedown', onPointerDown)
     document.addEventListener('touchstart', onPointerDown)
@@ -76,7 +115,7 @@ export default function Navbar({ mobileMenuOpen, setMobileMenuOpen }) {
       document.removeEventListener('touchstart', onPointerDown)
       document.removeEventListener('keydown', onKeyDown)
     }
-  }, [open, setOpen])
+  }, [open, setOpen, academicsOpen])
 
   const activeMenu = (() => {
     if (pinned) return pinned
@@ -103,6 +142,17 @@ export default function Navbar({ mobileMenuOpen, setMobileMenuOpen }) {
     } else {
       navigate(routePath || '/', { state: { scrollTo: hashId } })
     }
+  }
+
+  const handleDropdownEnter = () => {
+    if (academicsTimeoutRef.current) clearTimeout(academicsTimeoutRef.current)
+    setAcademicsOpen(true)
+  }
+
+  const handleDropdownLeave = () => {
+    academicsTimeoutRef.current = setTimeout(() => {
+      setAcademicsOpen(false)
+    }, 200)
   }
 
   const navLinkCls = (isActive) =>
@@ -150,6 +200,114 @@ export default function Navbar({ mobileMenuOpen, setMobileMenuOpen }) {
           >
             {MENU.map((item) => {
               const isActive = activeMenu === item.label
+
+              if (item.hasDropdown) {
+                return (
+                  <div
+                    key={item.label}
+                    className="relative"
+                    onMouseEnter={handleDropdownEnter}
+                    onMouseLeave={handleDropdownLeave}
+                  >
+                    <Link
+                      to={item.to}
+                      aria-current={isActive ? 'page' : undefined}
+                      aria-expanded={academicsOpen}
+                      aria-haspopup="true"
+                      onClick={(e) => {
+                        e.preventDefault()
+                        activate(item.label)
+                        setAcademicsOpen((v) => !v)
+                        if (pathname !== '/academics') {
+                          navigate('/academics')
+                        }
+                      }}
+                      className={`${navLinkCls(isActive)} !gap-2`}
+                    >
+                      {item.label}
+                      <svg
+                        className={`h-3.5 w-3.5 transition-transform duration-300 ${academicsOpen ? 'rotate-180' : ''}`}
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </Link>
+
+                    {/* Dropdown */}
+                    <div
+                      className={`absolute left-1/2 top-full z-50 mt-2 w-[340px] -translate-x-1/2 transition-all duration-300 ${
+                        academicsOpen
+                          ? 'pointer-events-auto translate-y-0 opacity-100 scale-100'
+                          : 'pointer-events-none -translate-y-2 opacity-0 scale-95'
+                      }`}
+                    >
+                      {/* Arrow */}
+                      <div className="absolute -top-2 left-1/2 -translate-x-1/2">
+                        <div className="h-4 w-4 rotate-45 rounded-sm bg-white shadow-[4px_4px_8px_rgba(0,0,0,0.06)] ring-1 ring-navy-100/60" />
+                      </div>
+
+                      <div className="overflow-hidden rounded-2xl border border-navy-100/60 bg-white shadow-[0_20px_60px_-12px_rgba(0,0,0,0.18),0_8px_24px_-8px_rgba(0,0,0,0.08)]">
+                        {/* Header */}
+                        <div className="border-b border-navy-50 bg-gradient-to-r from-royal-50/80 to-brand-50/50 px-5 py-3.5">
+                          <p className="text-[11px] font-bold uppercase tracking-widest text-royal-600">
+                            Academics
+                          </p>
+                          <p className="mt-0.5 text-[11px] text-navy-500">
+                            Explore programmes, faculty & resources
+                          </p>
+                        </div>
+
+                        {/* Links */}
+                        <div className="p-2">
+                          {ACADEMICS_DROPDOWN.map((dropItem, idx) => (
+                            <Link
+                              key={dropItem.label}
+                              to={dropItem.to.split('#')[0]}
+                              onClick={(e) => {
+                                e.preventDefault()
+                                setAcademicsOpen(false)
+                                activate('Academics')
+                                const [, hashId] = dropItem.to.split('#')
+                                if (pathname === '/academics') {
+                                  const el = document.getElementById(hashId)
+                                  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                                } else {
+                                  navigate('/academics', { state: { scrollTo: hashId } })
+                                }
+                              }}
+                              className="group flex items-start gap-3.5 rounded-xl px-3.5 py-3 transition-all duration-200 hover:bg-gradient-to-r hover:from-royal-50/60 hover:to-brand-50/40"
+                              style={{ animationDelay: `${idx * 40}ms` }}
+                            >
+                              <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-navy-50 text-royal-600 transition-all duration-200 group-hover:bg-royal-100 group-hover:scale-105">
+                                <Icon name={dropItem.icon} className="w-[18px] h-[18px]" />
+                              </span>
+                              <div className="min-w-0">
+                                <p className="text-[13.5px] font-bold text-navy-900 transition-colors group-hover:text-royal-700">
+                                  {dropItem.label}
+                                </p>
+                                <p className="mt-0.5 text-[11.5px] leading-snug text-navy-500">
+                                  {dropItem.description}
+                                </p>
+                              </div>
+                              <svg
+                                className="ml-auto mt-2 h-3.5 w-3.5 shrink-0 text-navy-300 opacity-0 transition-all duration-200 group-hover:translate-x-0.5 group-hover:text-royal-500 group-hover:opacity-100"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                              >
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                              </svg>
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )
+              }
+
               return (
                 <Link
                   key={item.label}
@@ -203,27 +361,77 @@ export default function Navbar({ mobileMenuOpen, setMobileMenuOpen }) {
       <div
         id="mobile-menu"
         className={`relative z-10 overflow-hidden border-t border-navy-100/60 bg-white/95 backdrop-blur-xl transition-[max-height,opacity] duration-300 ease-out lg:hidden ${
-          open ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'
+          open ? 'max-h-[700px] opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
         <nav className="space-y-1 px-4 pb-5 pt-3" aria-label="Mobile">
-          {MENU.map((item) => (
-            <Link
-              key={item.label}
-              to={item.to.includes('#') ? item.to.split('#')[0] || '/' : item.to}
-              onClick={(e) => {
-                handleNavClick(e, item)
-                setOpen(false)
-              }}
-              className={`block rounded-xl px-4 py-3 text-[15px] font-semibold transition-colors duration-200 ${
-                activeMenu === item.label
-                  ? 'bg-royal-50 text-royal-600'
-                  : 'text-navy-800 hover:bg-navy-50'
-              }`}
-            >
-              {item.label}
-            </Link>
-          ))}
+          {MENU.map((item) => {
+            if (item.hasDropdown) {
+              return (
+                <div key={item.label}>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      activate(item.label)
+                      if (pathname !== '/academics') navigate('/academics')
+                    }}
+                    className={`flex w-full items-center justify-between rounded-xl px-4 py-3 text-[15px] font-semibold transition-colors duration-200 ${
+                      activeMenu === item.label
+                        ? 'bg-royal-50 text-royal-600'
+                        : 'text-navy-800 hover:bg-navy-50'
+                    }`}
+                  >
+                    {item.label}
+                    <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                  <div className="ml-4 mt-1 space-y-0.5 border-l-2 border-navy-100 pl-3">
+                    {ACADEMICS_DROPDOWN.map((dropItem) => (
+                      <Link
+                        key={dropItem.label}
+                        to={dropItem.to.split('#')[0]}
+                        onClick={(e) => {
+                          e.preventDefault()
+                          setOpen(false)
+                          activate('Academics')
+                          const [, hashId] = dropItem.to.split('#')
+                          if (pathname === '/academics') {
+                            const el = document.getElementById(hashId)
+                            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                          } else {
+                            navigate('/academics', { state: { scrollTo: hashId } })
+                          }
+                        }}
+                        className="flex items-center gap-2.5 rounded-lg px-3 py-2.5 text-[13.5px] font-medium text-navy-700 transition-colors hover:bg-royal-50 hover:text-royal-600"
+                      >
+                        <Icon name={dropItem.icon} className="w-4 h-4 text-royal-500" />
+                        {dropItem.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )
+            }
+
+            return (
+              <Link
+                key={item.label}
+                to={item.to.includes('#') ? item.to.split('#')[0] || '/' : item.to}
+                onClick={(e) => {
+                  handleNavClick(e, item)
+                  setOpen(false)
+                }}
+                className={`block rounded-xl px-4 py-3 text-[15px] font-semibold transition-colors duration-200 ${
+                  activeMenu === item.label
+                    ? 'bg-royal-50 text-royal-600'
+                    : 'text-navy-800 hover:bg-navy-50'
+                }`}
+              >
+                {item.label}
+              </Link>
+            )
+          })}
           <Link
             to="/admissions"
             onClick={() => { activate('Admissions'); setOpen(false) }}
