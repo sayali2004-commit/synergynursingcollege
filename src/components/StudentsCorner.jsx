@@ -88,7 +88,7 @@ export default function StudentsCorner() {
                   {currentNotices.year}
                 </p>
                 <p className="mt-2 text-sm font-semibold text-navy-900">{currentNotices.highlight}</p>
-                <div className="mt-4 grid grid-cols-2 gap-2">
+                <div className="mt-4 flex flex-wrap gap-2 [&>*]:w-[calc(50%-0.25rem)] sm:[&>*]:w-auto">
                   {currentNotices.files.slice(0, 8).map((file) => (
                     <a
                       key={file.label}
@@ -130,11 +130,17 @@ export default function StudentsCorner() {
                   based on category, family income, and scheme rules.
                 </p>
                 <div className="mt-4 flex flex-wrap gap-2">
-                  {SCHOLARSHIPS.slice(0, 6).map((s) => (
-                    <span key={s.category} className="rounded-full bg-white/15 px-3 py-1 text-[11px] font-semibold text-white">
-                      {s.category}
-                    </span>
-                  ))}
+                  {SCHOLARSHIPS.slice(0, 6).map((s, idx) => {
+                    const mobileOrderClasses = ['order-1', 'order-2', 'order-3', 'order-6', 'order-4', 'order-5']
+                    return (
+                      <span
+                        key={s.category}
+                        className={`rounded-full bg-white/15 px-3 py-1 text-[11px] font-semibold text-white ${mobileOrderClasses[idx]} sm:order-none`}
+                      >
+                        {s.category}
+                      </span>
+                    )
+                  })}
                 </div>
               </div>
               <div className="flex flex-col gap-3">

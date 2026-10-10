@@ -256,6 +256,20 @@ export const SCHOLARSHIPS = [
     ],
   },
   {
+    category: 'VJ-A / NT-B / NT-C / NT-D (VJNT)',
+    benefit: 'Post-Matric Scholarship / Freeship',
+    department: 'VJNT, OBC & SBC Welfare Department',
+    tuitionFee: '₹ 0/- (Eligible Fees Covered)',
+    description:
+      'Eligible approved fees and maintenance allowance under Post-Matric Scholarship / Tuition Fees and Examination Fees to VJNT Students according to the applicable scheme. Income limit and non-creamy-layer / certificate conditions depend on the selected scheme.',
+    documents: [
+      'Caste Certificate',
+      'Caste Validity Certificate',
+      'Non-Creamy Layer Certificate',
+      'Tahsil Income Certificate',
+    ],
+  },
+  {
     category: 'SBC Students',
     benefit: 'Post-Matric Scholarship / Freeship',
     department: 'SBC Welfare Department, Govt. of Maharashtra',
@@ -281,20 +295,6 @@ export const SCHOLARSHIPS = [
       'Non-Creamy Layer Certificate',
       'Income Certificate',
       'CAP Allotment Letter',
-    ],
-  },
-  {
-    category: 'VJ-A / NT-B / NT-C / NT-D (VJNT)',
-    benefit: 'Post-Matric Scholarship / Freeship',
-    department: 'VJNT, OBC & SBC Welfare Department',
-    tuitionFee: '₹ 0/- (Eligible Fees Covered)',
-    description:
-      'Eligible approved fees and maintenance allowance under Post-Matric Scholarship / Tuition Fees and Examination Fees to VJNT Students according to the applicable scheme. Income limit and non-creamy-layer / certificate conditions depend on the selected scheme.',
-    documents: [
-      'Caste Certificate',
-      'Caste Validity Certificate',
-      'Non-Creamy Layer Certificate',
-      'Tahsil Income Certificate',
     ],
   },
   {
