@@ -212,26 +212,54 @@ export const COURSES = [
 
 export const SCHOLARSHIPS = [
   {
-    category: 'SC / ST Students',
-    benefit: '100% Free Admission',
+    category: 'SC / Nav-Buddhist Students',
+    benefit: 'Post-Matric Scholarship / Freeship',
     department: 'Social Justice & Tribal Development Dept',
-    tuitionFee: '₹ 0/- (100% Free)',
+    tuitionFee: '₹ 0/- (Eligible Fees Covered)',
     description:
-      'Eligible Scheduled Caste (SC) and Scheduled Tribe (ST) students receive 100% Free Admission. Full tuition and exam fees are reimbursed through the Government of Maharashtra MahaDBT scholarship scheme.',
+      'Eligible compulsory fees and maintenance allowance under the Government of India Post-Matric Scholarship / Freeship scheme. Scholarship generally up to ₹2.5 lakh annual family income; freeship conditions differ — verify current rules on MahaDBT.',
     documents: [
       'Caste Certificate',
       'Caste Validity Certificate',
-      'Income Certificate',
+      'Income Certificate (up to ₹2.5 Lakh)',
       'Aadhaar-Linked Bank Account',
     ],
   },
   {
-    category: 'VJNT / NT / SBC Students',
-    benefit: '100% Tuition Freeship',
-    department: 'VJNT, OBC & SBC Welfare Department',
-    tuitionFee: '₹ 0/- (100% Free)',
+    category: 'ST Students',
+    benefit: 'Tuition & Exam Fee Freeship',
+    department: 'Tribal Development Dept, Govt. of Maharashtra',
+    tuitionFee: '₹ 0/- (Eligible Fees Covered)',
     description:
-      'Vimukta Jati, Nomadic Tribes, and Special Backward Class students are granted 100% tuition fee waiver under the State Government Freeship scheme with valid caste credentials.',
+      'Tuition Fee and Examination Fee Freeship with eligible approved fees and maintenance allowance subject to scheme rules. Common post-matric income threshold is up to ₹2.5 lakh — confirm current scheme on MahaDBT.',
+    documents: [
+      'Caste Certificate',
+      'Caste Validity Certificate',
+      'Income Certificate (up to ₹2.5 Lakh)',
+      'Aadhaar-Linked Bank Account',
+    ],
+  },
+  {
+    category: 'OBC Students',
+    benefit: '100% for Eligible Females',
+    department: 'OBC Welfare Department, Govt. of Maharashtra',
+    tuitionFee: 'Fee Reimbursement as per Scheme',
+    description:
+      'Eligible fee reimbursement and maintenance allowance under Post-Matric Scholarship to OBC Students. Eligible female students may qualify for 100% approved tuition and examination fees. Typically family income up to ₹2.5 lakh; other scheme conditions apply.',
+    documents: [
+      'Caste Certificate',
+      'Caste Validity Certificate',
+      'Non-Creamy Layer Certificate',
+      'Income Certificate (up to ₹2.5 Lakh)',
+    ],
+  },
+  {
+    category: 'VJ-A / NT-B / NT-C / NT-D (VJNT)',
+    benefit: 'Post-Matric Scholarship / Freeship',
+    department: 'VJNT, OBC & SBC Welfare Department',
+    tuitionFee: '₹ 0/- (Eligible Fees Covered)',
+    description:
+      'Eligible approved fees and maintenance allowance under Post-Matric Scholarship / Tuition Fees and Examination Fees to VJNT Students according to the applicable scheme. Income limit and non-creamy-layer / certificate conditions depend on the selected scheme.',
     documents: [
       'Caste Certificate',
       'Caste Validity Certificate',
@@ -240,33 +268,90 @@ export const SCHOLARSHIPS = [
     ],
   },
   {
-    category: 'OBC Students',
-    benefit: 'MahaDBT Freeship & Scholarship',
-    department: 'OBC Welfare Department, Govt. of Maharashtra',
-    tuitionFee: 'Concession as per MahaDBT',
+    category: 'SBC Students',
+    benefit: 'Post-Matric Scholarship / Freeship',
+    department: 'SBC Welfare Department, Govt. of Maharashtra',
+    tuitionFee: '₹ 0/- (Eligible Fees Covered)',
     description:
-      'Other Backward Class students are eligible for substantial tuition fee scholarship and freeship concessions as per state government annual income criteria.',
+      'Eligible approved fees and maintenance allowance under Post-Matric Scholarship / Tuition Fees and Examination Fees to SBC Students. The listed post-matric scheme commonly specifies income up to ₹1.5 lakh — verify current rules on MahaDBT.',
     documents: [
       'Caste Certificate',
       'Caste Validity Certificate',
-      'Non-Creamy Layer Certificate',
-      'Income Certificate',
+      'Income Certificate (up to ₹1.5 Lakh)',
+      'Aadhaar-Linked Bank Account',
     ],
   },
   {
-    category: 'EBC / Minority / EWS Students',
-    benefit: 'Rajarshi Shahu Maharaj Scheme',
-    department: 'Higher & Technical Education Dept',
-    tuitionFee: '50% Fee Concession',
+    category: 'SEBC Students',
+    benefit: 'SEBC Fee Reimbursement Scheme',
+    department: 'SEBC Welfare Department, Govt. of Maharashtra',
+    tuitionFee: 'As per Current Govt. Resolution',
     description:
-      'Economically Backward Class (EBC) and minority students receive up to 50% tuition fee reimbursement through state government scholarship schemes.',
+      'Only the benefit specified by the current government resolution and portal eligibility. Check current income, caste certificate, non-creamy-layer and admission conditions on the MahaDBT portal.',
     documents: [
-      'Income Certificate (below ₹8 Lakh)',
+      'SEBC Caste Certificate',
+      'Non-Creamy Layer Certificate',
+      'Income Certificate',
+      'CAP Allotment Letter',
+    ],
+  },
+  {
+    category: 'Open / EWS Students',
+    benefit: 'EBC / EWS Fee Reimbursement',
+    department: 'Higher & Technical Education Dept',
+    tuitionFee: 'Partial Fee Benefit (If Covered)',
+    description:
+      'Partial or other approved fee benefit only if B.Sc. Nursing / GNM and the college are covered under the scheme. Depends on the scheme — do not assume eligibility from EWS status alone. Verify on MahaDBT.',
+    documents: [
+      'Income Certificate',
+      'EWS Certificate (if applicable)',
+      'CAP Allotment Letter',
+      'Maharashtra Domicile Certificate',
+    ],
+  },
+  {
+    category: 'Minority Students',
+    benefit: 'Minority Development Dept Scheme',
+    department: 'Minority Development Dept, Govt. of Maharashtra',
+    tuitionFee: 'Tuition & Exam Fee Assistance',
+    description:
+      'Possible tuition-fee and examination-fee assistance under the relevant Minority Development Department scheme for eligible professional / medical courses. A listed medical-education scheme specifies an income limit up to ₹8 lakh — course list and current availability must be checked on MahaDBT.',
+    documents: [
+      'Minority Community Certificate',
+      'Income Certificate (up to ₹8 Lakh)',
       'CAP Allotment Letter',
       'Maharashtra Domicile Certificate',
     ],
   },
 ]
+
+export const SCHOLARSHIP_MAINTENANCE = {
+  title: 'Maintenance Allowance',
+  description:
+    'Maintenance allowance is separate from tuition-fee reimbursement. Under certain post-matric schemes, eligible students may receive a monthly allowance according to the assigned course group and whether they are day scholars or hostellers. Published rates differ by category and scheme; the correct course group and current rate must be confirmed on MahaDBT. Do not use a single allowance amount for every student.',
+  gnMnote:
+    'Under certain Maharashtra post-matric schemes, eligible OBC, VJNT and SBC students may receive a maintenance allowance based on their assigned course group and accommodation status. Published monthly rates under the OBC/VJNT/SBC schemes range from ₹90 to ₹425 for eligible day scholars and hostellers, depending on the course group. Actual entitlement must be confirmed under the applicable scheme. SC and ST students may qualify for separate maintenance allowances under their respective post-matric schemes.',
+}
+
+export const SCHOLARSHIP_ELIGIBILITY = [
+  'The student must satisfy Maharashtra domicile and category-specific certificate requirements.',
+  'Family income must be within the selected scheme\u2019s prescribed limit.',
+  'Admission must satisfy the scheme\u2019s requirements, including CAP admission wherever mandatory.',
+  'The B.Sc. Nursing / GNM course and Synergy College of Nursing must be listed / approved for the selected scheme.',
+  'Non-Creamy Layer, caste validity, income certificate and other documents must be provided wherever required.',
+  'Scholarship sanction and payment are subject to verification by the competent authority.',
+]
+
+export const SCHOLARSHIP_HOW_TO_APPLY = {
+  steps: [
+    'Log in to the official MahaDBT portal: https://mahadbt2.maharashtra.gov.in/',
+    'Complete your student profile with accurate personal, academic, and category details.',
+    'Check the schemes shown for your category and course (B.Sc. Nursing / GNM).',
+    'Upload the required documents and submit the application.',
+    'Retain the application number and check the application status regularly.',
+  ],
+  note: 'Scholarship amounts, fee reimbursement and eligibility are governed by current Maharashtra Government resolutions and applicable scheme rules. The college does not guarantee a fixed scholarship amount. Students should verify individual eligibility and tentative benefits through the official MahaDBT portal for Academic Year 2026\u20132027.',
+}
 
 export const ADMISSION_DOCS = [
   'SSC Marks Card',

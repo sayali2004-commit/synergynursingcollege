@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom'
-import { SCHOLARSHIPS } from '../data/siteContent'
+import { SCHOLARSHIPS, SCHOLARSHIP_MAINTENANCE, SCHOLARSHIP_ELIGIBILITY, SCHOLARSHIP_HOW_TO_APPLY } from '../data/siteContent'
 import Icon from './Icon'
 
 const scholarshipMeta = [
-  { label: 'Programme', value: 'B.Sc. Nursing (4 Years)', icon: 'cap' },
-  { label: 'Eligible Categories', value: 'SC / ST / VJNT / NT / SBC / OBC', icon: 'users' },
-  { label: 'Tuition Fee Payable', value: '₹ 0/- (100% Free Admission)', icon: 'check' },
+  { label: 'Programmes', value: 'B.Sc. Nursing & GNM Nursing', icon: 'cap' },
+  { label: 'Eligible Categories', value: 'SC / ST / VJNT / NT / SBC / OBC / SEBC / EWS / Minority', icon: 'users' },
+  { label: 'Tuition Fee Payable', value: '₹ 0/- (Eligible Caste Students)', icon: 'check' },
   { label: 'Government Scheme', value: 'MahaDBT · Social Welfare Dept.', icon: 'badge' },
 ]
 
@@ -28,12 +28,13 @@ export default function Scholarships() {
         <div className="mx-auto max-w-2xl text-center">
           <p className="reveal section-tag">Scholarships &amp; Freeships</p>
           <h2 className="reveal heading-xl mt-4 text-balance" style={{ '--reveal-delay': '80ms' }}>
-            100% Free Admission for Caste &amp; Category Students
+            Scholarships for B.Sc. Nursing &amp; GNM Students
           </h2>
           <p className="reveal mt-4 leading-relaxed text-navy-800" style={{ '--reveal-delay': '160ms' }}>
-            Synergy College of Nursing is committed to inclusive healthcare education. Under Government of
-            Maharashtra social welfare regulations and MahaDBT schemes, eligible reserved category students
-            receive full scholarship support and 100% free admission.
+            Synergy College of Nursing encourages eligible students enrolled in B.Sc. Nursing and GNM courses to
+            apply for scholarships and fee-reimbursement schemes offered by the Government of Maharashtra through
+            MahaDBT. Benefits depend on the student&apos;s category, family income, admission type, approved course
+            and institution status, and the rules of the relevant scheme.
           </p>
         </div>
 
@@ -165,7 +166,7 @@ export default function Scholarships() {
                     {item.documents.map((doc) => (
                       <li key={doc} className="flex items-center gap-1.5">
                         <span className="h-1.5 w-1.5 rounded-full bg-emerald-600 shrink-0" />
-                        <span className="truncate">{doc}</span>
+                        <span>{doc}</span>
                       </li>
                     ))}
                   </ul>
@@ -179,6 +180,101 @@ export default function Scholarships() {
           </div>
         </div>
 
+        {/* Maintenance Allowance */}
+        <div className="mt-12 rounded-3xl border border-navy-100 bg-[#F8FBFC] p-7 sm:p-9">
+          <div className="flex items-start gap-4">
+            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand-700">
+              <Icon name="badge" className="w-6 h-6" />
+            </span>
+            <div>
+              <h3 className="font-display text-xl sm:text-2xl font-bold text-navy-950">
+                {SCHOLARSHIP_MAINTENANCE.title}
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-navy-800">
+                {SCHOLARSHIP_MAINTENANCE.description}
+              </p>
+              <p className="mt-3 text-xs leading-relaxed text-navy-600">
+                {SCHOLARSHIP_MAINTENANCE.gnMnote}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Important Eligibility Conditions */}
+        <div className="mt-12">
+          <div className="text-center max-w-xl mx-auto">
+            <h3 className="font-display text-xl sm:text-2xl font-bold text-navy-950">
+              Important Eligibility Conditions
+            </h3>
+            <p className="mt-2 text-xs sm:text-sm text-navy-700">
+              Please ensure all of the following conditions are met before applying for any scholarship scheme.
+            </p>
+          </div>
+          <ul className="mt-8 grid gap-3 sm:grid-cols-2 max-w-4xl mx-auto">
+            {SCHOLARSHIP_ELIGIBILITY.map((condition, i) => (
+              <li key={i} className="flex items-start gap-2.5 rounded-xl border border-navy-100 bg-white p-4 text-xs sm:text-sm text-navy-800 shadow-sm">
+                <Icon name="check" className="w-4 h-4 shrink-0 text-emerald-600 mt-0.5" />
+                <span>{condition}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* How to Apply */}
+        <div className="mt-12 rounded-3xl bg-gradient-to-br from-navy-950 via-navy-900 to-brand-950 p-7 sm:p-10 text-white shadow-card">
+          <div className="grid gap-8 lg:grid-cols-[1.2fr_1fr] items-start">
+            <div>
+              <div className="inline-flex items-center gap-2 rounded-full bg-emerald-400/20 px-3 py-1 text-xs font-bold text-emerald-300 ring-1 ring-emerald-400/40">
+                <Icon name="arrowRight" className="w-4 h-4 text-emerald-400" />
+                <span>How to Apply</span>
+              </div>
+              <h3 className="mt-3 font-display text-xl sm:text-2xl lg:text-3xl font-bold text-white">
+                Apply for Scholarships via MahaDBT Portal
+              </h3>
+              <ol className="mt-6 space-y-4">
+                {SCHOLARSHIP_HOW_TO_APPLY.steps.map((step, i) => (
+                  <li key={i} className="flex items-start gap-3 text-xs sm:text-sm text-white/90">
+                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-300 text-[11px] font-bold ring-1 ring-emerald-400/30">
+                      {i + 1}
+                    </span>
+                    <span>{step}</span>
+                  </li>
+                ))}
+              </ol>
+            </div>
+
+            <div className="rounded-2xl bg-white/10 p-6 sm:p-7 backdrop-blur-md ring-1 ring-white/15">
+              <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-gold-400/20 text-gold-300 ring-1 ring-gold-400/30">
+                <Icon name="badge" className="w-6 h-6" />
+              </span>
+              <h4 className="mt-4 font-display text-lg font-bold text-white">
+                Important Notice
+              </h4>
+              <p className="mt-2 text-xs text-white/80 leading-relaxed">
+                {SCHOLARSHIP_HOW_TO_APPLY.note}
+              </p>
+              <div className="mt-6 space-y-2.5">
+                <a
+                  href="https://mahadbt2.maharashtra.gov.in/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn !bg-emerald-500 !text-white hover:!bg-emerald-600 w-full justify-center"
+                >
+                  <Icon name="arrowRight" className="w-4 h-4" />
+                  Visit MahaDBT Portal
+                </a>
+                <a
+                  href="tel:+919765998191"
+                  className="btn-outline-light w-full justify-center"
+                >
+                  <Icon name="phone" className="w-4 h-4" />
+                  Call: +91 9765998191
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Documents Checklist for Free Admission */}
         <div className="mt-12 rounded-3xl bg-gradient-to-br from-navy-950 via-navy-900 to-brand-950 p-7 sm:p-10 text-white shadow-card">
           <div className="grid gap-8 lg:grid-cols-[1.4fr_1fr] items-center">
@@ -188,11 +284,11 @@ export default function Scholarships() {
                 <span>Eligibility Checklist</span>
               </div>
               <h3 className="mt-3 font-display text-xl sm:text-2xl lg:text-3xl font-bold text-white">
-                Documents Required to Avail 100% Free Admission
+                Documents Required to Avail Scholarship Benefits
               </h3>
               <p className="mt-2 text-xs sm:text-sm text-white/80 leading-relaxed">
                 Keep the following certificates ready in original and photocopies at the time of admission
-                to claim zero-fee admission benefits under government reservation norms:
+                to claim scholarship and fee-reimbursement benefits under government reservation norms:
               </p>
 
               <ul className="mt-6 grid gap-3 sm:grid-cols-2">
@@ -233,10 +329,12 @@ export default function Scholarships() {
         </div>
 
         {/* Regulatory note */}
-        <p className="reveal mx-auto mt-8 max-w-2xl text-center text-xs leading-relaxed text-navy-600">
-          * Free admission and freeship benefits are subject to Government of Maharashtra Social Welfare,
-          Tribal Development, and VJNT/OBC/SBC department rules and successful verification on the MahaDBT
-          scholarship portal. Contact the college administrative office for complete guidance.
+        <p className="reveal mx-auto mt-8 max-w-3xl text-center text-xs leading-relaxed text-navy-600">
+          * Scholarship amounts, fee reimbursement and eligibility are governed by current Maharashtra Government
+          resolutions and applicable scheme rules. The college does not guarantee a fixed scholarship amount.
+          Students must verify individual eligibility and tentative benefits for B.Sc. Nursing / GNM and the college
+          on the official MahaDBT portal (https://mahadbt2.maharashtra.gov.in/) for Academic Year 2026–2027 before
+          relying on any amount. Contact the college administrative office for complete guidance.
         </p>
       </div>
     </section>
