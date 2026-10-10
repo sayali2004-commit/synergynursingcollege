@@ -60,14 +60,6 @@ export default function Hospitals() {
                 Visit Hospital Website
                 <Icon name="globe" className="w-4 h-4" />
               </a>
-              <a
-                href={PARENT_HOSPITAL.website}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="break-all text-sm font-semibold text-royal-600 underline underline-offset-4 transition-colors hover:text-royal-700"
-              >
-                {PARENT_HOSPITAL.websiteLabel}
-              </a>
             </div>
           </div>
         </article>
