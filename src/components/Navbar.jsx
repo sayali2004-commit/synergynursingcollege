@@ -14,36 +14,10 @@ const MENU = [
 ]
 
 const ACADEMICS_DROPDOWN = [
-  {
-    label: 'Courses & Fees',
-    to: '/academics#courses',
-    icon: 'cap',
-    description: 'B.Sc. Nursing & GNM programmes with fee structure',
-  },
-  {
-    label: 'Scholarships',
-    to: '/academics#scholarships',
-    icon: 'check',
-    description: 'MahaDBT scholarships & freeship details',
-  },
-  {
-    label: 'Faculty',
-    to: '/academics#faculty',
-    icon: 'users',
-    description: 'Experienced & dedicated teaching staff',
-  },
-  {
-    label: 'Students Corner',
-    to: '/academics#students-corner',
-    icon: 'badge',
-    description: 'Exams, notices, facilities & more',
-  },
-  {
-    label: 'MUHS Mandate',
-    to: '/academics#notices',
-    icon: 'book',
-    description: 'Official MUHS mandate documents',
-  },
+  { label: 'Courses & Fees', to: '/academics#courses' },
+  { label: 'Scholarships', to: '/academics#scholarships' },
+  { label: 'Faculty', to: '/academics#faculty' },
+  { label: 'Students Corner', to: '/academics#students-corner' },
 ]
 
 const ROUTE_ACTIVE = {
@@ -237,7 +211,7 @@ export default function Navbar({ mobileMenuOpen, setMobileMenuOpen }) {
 
                     {/* Dropdown */}
                     <div
-                      className={`absolute left-1/2 top-full z-50 mt-2 w-[340px] -translate-x-1/2 transition-all duration-300 ${
+                      className={`absolute left-1/2 top-full z-50 mt-2 w-[240px] -translate-x-1/2 transition-all duration-300 ${
                         academicsOpen
                           ? 'pointer-events-auto translate-y-0 opacity-100 scale-100'
                           : 'pointer-events-none -translate-y-2 opacity-0 scale-95'
@@ -254,14 +228,11 @@ export default function Navbar({ mobileMenuOpen, setMobileMenuOpen }) {
                           <p className="text-[11px] font-bold uppercase tracking-widest text-royal-600">
                             Academics
                           </p>
-                          <p className="mt-0.5 text-[11px] text-navy-500">
-                            Explore programmes, faculty & resources
-                          </p>
                         </div>
 
                         {/* Links */}
                         <div className="p-2">
-                          {ACADEMICS_DROPDOWN.map((dropItem, idx) => (
+                          {ACADEMICS_DROPDOWN.map((dropItem) => (
                             <Link
                               key={dropItem.label}
                               to={dropItem.to.split('#')[0]}
@@ -277,22 +248,13 @@ export default function Navbar({ mobileMenuOpen, setMobileMenuOpen }) {
                                   navigate('/academics', { state: { scrollTo: hashId } })
                                 }
                               }}
-                              className="group flex items-start gap-3.5 rounded-xl px-3.5 py-3 transition-all duration-200 hover:bg-gradient-to-r hover:from-royal-50/60 hover:to-brand-50/40"
-                              style={{ animationDelay: `${idx * 40}ms` }}
+                              className="group flex items-center justify-between rounded-xl px-4 py-2.5 transition-all duration-200 hover:bg-gradient-to-r hover:from-royal-50/60 hover:to-brand-50/40"
                             >
-                              <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-navy-50 text-royal-600 transition-all duration-200 group-hover:bg-royal-100 group-hover:scale-105">
-                                <Icon name={dropItem.icon} className="w-[18px] h-[18px]" />
+                              <span className="text-[13.5px] font-semibold text-navy-800 transition-colors group-hover:text-royal-700">
+                                {dropItem.label}
                               </span>
-                              <div className="min-w-0">
-                                <p className="text-[13.5px] font-bold text-navy-900 transition-colors group-hover:text-royal-700">
-                                  {dropItem.label}
-                                </p>
-                                <p className="mt-0.5 text-[11.5px] leading-snug text-navy-500">
-                                  {dropItem.description}
-                                </p>
-                              </div>
                               <svg
-                                className="ml-auto mt-2 h-3.5 w-3.5 shrink-0 text-navy-300 opacity-0 transition-all duration-200 group-hover:translate-x-0.5 group-hover:text-royal-500 group-hover:opacity-100"
+                                className="h-3.5 w-3.5 shrink-0 text-navy-300 opacity-0 transition-all duration-200 group-hover:translate-x-0.5 group-hover:text-royal-500 group-hover:opacity-100"
                                 fill="none"
                                 stroke="currentColor"
                                 viewBox="0 0 24 24"
@@ -403,9 +365,8 @@ export default function Navbar({ mobileMenuOpen, setMobileMenuOpen }) {
                             navigate('/academics', { state: { scrollTo: hashId } })
                           }
                         }}
-                        className="flex items-center gap-2.5 rounded-lg px-3 py-2.5 text-[13.5px] font-medium text-navy-700 transition-colors hover:bg-royal-50 hover:text-royal-600"
+                        className="flex items-center rounded-lg px-3 py-2.5 text-[13.5px] font-medium text-navy-700 transition-colors hover:bg-royal-50 hover:text-royal-600"
                       >
-                        <Icon name={dropItem.icon} className="w-4 h-4 text-royal-500" />
                         {dropItem.label}
                       </Link>
                     ))}
