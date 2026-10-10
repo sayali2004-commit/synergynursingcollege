@@ -592,3 +592,115 @@ export const EXAM_INFO = {
   resultsLink: 'https://muhs.ac.in/',
   resultsNote: 'Results can be checked on the official MUHS examination portal.',
 }
+
+export const CODE_OF_CONDUCT = {
+  description:
+    'All students and staff of Synergy College of Nursing must follow the Code of Ethics and Conduct. At the time of admission, each student signs a statement accepting this Code and gives an undertaking to be regular in studies, complete the course, and clear all pending dues if discontinuing.',
+  sections: [
+    {
+      title: 'Dress Code & Grooming',
+      icon: 'users',
+      points: [
+        'Uniform policy protects personal safety of students and patients in clinical settings.',
+        'Uniform must be worn during clinical postings — spotlessly clean and well ironed.',
+        'Hair must be clean, groomed, and non-distracting.',
+        'One pair of earrings (not longer than fingertip) allowed; no facial or other visible piercings.',
+        'Nails well trimmed; no visible tattoos or nail polish.',
+        'Student ID card must be visible at all times.',
+        'Non-compliance may result in disciplinary consequences.',
+      ],
+    },
+    {
+      title: 'Attendance',
+      icon: 'check',
+      points: [
+        'Regular class attendance and active engagement in the learning process is required.',
+        'Timely notification to faculty is expected if absence is unavoidable.',
+        'Lateness or absence without notification may result in dismissal for the clinical day.',
+        'Students are permitted 10 sick leaves per year with medical certificate (makeup in 1:1 ratio).',
+        'Missed clinical hours may be made up as arranged by faculty.',
+      ],
+    },
+    {
+      title: 'Health & Safety',
+      icon: 'trust',
+      points: [
+        'Take reasonable care of and co-operate with health and safety measures.',
+        'Follow safe work practices including proper use of personal protective equipment.',
+        'Report all health and safety accidents, incidents and hazards to staff immediately.',
+        'Follow emergency evacuation procedures.',
+        'Report any sickness, major illness, or pregnancy to the teacher and class co-ordinator.',
+      ],
+    },
+    {
+      title: 'Library Rules',
+      icon: 'book',
+      points: [
+        'Silence must be maintained; mobile phones on silent mode.',
+        'Library hours: Mon–Fri 9 AM–8 PM (up to 9 PM during exams); Sat 9 AM–4 PM; Sun 9 AM–5 PM (exam time).',
+        'Undergraduate & GNM: Up to 2 books for 1 week.',
+        'Overdue fine: ₹5/day for textbooks, ₹25/day for reference books.',
+        'Loss of borrower card: duplicate issued with ₹25 fine.',
+        'No Due Certificate required after course completion.',
+        'Internet use is for academic purposes only — one hour per user.',
+      ],
+    },
+    {
+      title: 'Academic Integrity',
+      icon: 'badge',
+      points: [
+        'Academic integrity encompasses honesty, responsibility, and ethical standards.',
+        'Plagiarism, cheating, collusion, and fabrication are serious offences.',
+        'First violation leads to a warning; repeat offence may lead to fine, suspension, or expulsion.',
+        'Students must meet course requirements per INC and MUHS guidelines.',
+        'Professional conduct required during labs, clinical experiences, and field trips.',
+      ],
+    },
+    {
+      title: 'Anti-Ragging & Discipline',
+      icon: 'pin',
+      points: [
+        'Zero-tolerance anti-ragging policy based on UGC Regulations 2009.',
+        'Anti-Ragging Squad active at all times with patrolling and surprise inspection powers.',
+        'Sexual Harassment Redressal Committee in place for reporting issues.',
+        'Student Grievance Redressal Cell addresses complaints about ragging, harassment, and academics.',
+        'Disciplinary actions: Warning, Restrictions, Monetary Penalty, Suspension, or Expulsion.',
+        'Entire campus under CCTV surveillance for security.',
+      ],
+    },
+  ],
+}
+
+export const NURSING_ETHICS = {
+  description:
+    'Students of nursing have a responsibility to society in learning the academic theory and clinical skills needed to provide nursing care. The Code of Academic and Clinical conduct is based on an understanding that to practice nursing as a student is an agreement to uphold the trust with which society has placed in us.',
+  principles: [
+    'Advocate the rights of all clients.',
+    'Maintain client confidentiality.',
+    'Take appropriate action to ensure the safety of clients, self, and others.',
+    'Provide care for the client in a timely, compassionate, and professional manner.',
+    'Communicate client care in a truthful, timely and accurate manner.',
+    'Actively promote the highest level of moral and ethical principles and accept responsibility for our actions.',
+    'Promote excellence in nursing by encouraging lifelong learning and professional development.',
+    'Treat others with respect and promote an environment that respects human rights, values, and choice of cultural and spiritual beliefs.',
+    'Collaborate in every reasonable manner with the academic faculty and clinical staff to ensure the highest quality of client care.',
+    'Refrain from performing any technique or procedure for which the student has not been adequately trained.',
+    'Refrain from any deliberate action or omission of care that creates unnecessary risk of injury to client, self, or others.',
+    'Abstain from the use of alcoholic beverages or any substances in the academic and clinical setting that impair judgement.',
+    'Strive to achieve and maintain optimal level of personal health.',
+    'Uphold school policies and regulations related to academic and clinical performance.',
+  ],
+}
+
+export const COUNSELLING_SERVICES = {
+  description:
+    'We believe that each individual/student has the innate ability to overcome barriers in achieving optimal fulfilment of their potentials. Students can avail this facility in case of severe anxiety, excessive stress, or inability to adapt to the current situation.',
+  services: [
+    '3-tier counselling referral',
+    '24/7 helplines',
+    'Walk-in / referral counselling',
+    'Free psychologist & psychiatric consultation and medications',
+    'Meticulous confidentiality in records — shared on strict need-to-know basis',
+    'Psychiatric medications if necessary and prescribed, given under direct observation of faculty',
+  ],
+}

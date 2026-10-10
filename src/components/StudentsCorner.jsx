@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { NOTICES, STUDENT_FACILITIES, EXAM_INFO, SCHOLARSHIPS } from '../data/siteContent'
+import { NOTICES, STUDENT_FACILITIES, EXAM_INFO, SCHOLARSHIPS, CODE_OF_CONDUCT, NURSING_ETHICS, COUNSELLING_SERVICES } from '../data/siteContent'
 import Icon from './Icon'
 
 export default function StudentsCorner() {
@@ -190,6 +190,117 @@ export default function StudentsCorner() {
                 </ul>
               </div>
             ))}
+          </div>
+        </div>
+
+        {/* Code of Conduct */}
+        <div id="code-of-conduct" className="mt-12 scroll-mt-20">
+          <div className="text-center max-w-xl mx-auto">
+            <h3 className="font-display text-xl sm:text-2xl font-bold text-navy-950">
+              Code of Conduct for Students
+            </h3>
+            <p className="mt-2 text-xs sm:text-sm text-navy-700 leading-relaxed">
+              {CODE_OF_CONDUCT.description}
+            </p>
+          </div>
+
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {CODE_OF_CONDUCT.sections.map((section, idx) => (
+              <div
+                key={section.title}
+                className="reveal flex flex-col rounded-2xl border border-navy-100 bg-white p-6 shadow-sm transition hover:shadow-md hover:border-brand-300 card-lift"
+                style={{ '--reveal-delay': `${idx * 80}ms` }}
+              >
+                <div className="flex items-center gap-3">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-navy-50 text-navy-700">
+                    <Icon name={section.icon} className="w-5 h-5" />
+                  </span>
+                  <h4 className="font-display text-base font-bold text-navy-950">{section.title}</h4>
+                </div>
+                <ul className="mt-4 space-y-2">
+                  {section.points.map((point, i) => (
+                    <li key={i} className="flex items-start gap-2 text-[11.5px] leading-relaxed text-navy-700">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-navy-400" />
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Code of Ethics for Nursing Students */}
+        <div id="nursing-ethics" className="mt-12 scroll-mt-20">
+          <div className="rounded-3xl bg-gradient-to-br from-navy-950 via-navy-900 to-brand-950 p-7 sm:p-10 text-white shadow-card">
+            <div className="max-w-3xl mx-auto text-center">
+              <div className="inline-flex items-center gap-2 rounded-full bg-gold-400/20 px-3 py-1 text-xs font-bold text-gold-300 ring-1 ring-gold-400/40">
+                <Icon name="badge" className="w-4 h-4 text-gold-400" />
+                <span>Code of Ethics</span>
+              </div>
+              <h3 className="mt-3 font-display text-xl sm:text-2xl font-bold text-white">
+                Code of Ethics for Nursing Students
+              </h3>
+              <p className="mt-2 text-xs sm:text-sm text-white/80 leading-relaxed">
+                {NURSING_ETHICS.description}
+              </p>
+            </div>
+
+            <ul className="mt-8 grid gap-3 sm:grid-cols-2 max-w-4xl mx-auto">
+              {NURSING_ETHICS.principles.map((principle, i) => (
+                <li key={i} className="flex items-start gap-2.5 rounded-xl bg-white/5 p-3.5 text-[11.5px] sm:text-xs text-white/90 ring-1 ring-white/10">
+                  <Icon name="check" className="w-3.5 h-3.5 shrink-0 text-emerald-400 mt-0.5" />
+                  <span>{principle}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* Counselling Cell */}
+        <div id="counselling" className="mt-12 scroll-mt-20">
+          <div className="rounded-3xl border border-navy-100 bg-white p-7 sm:p-10 shadow-card">
+            <div className="grid gap-8 lg:grid-cols-[1.2fr_1fr] items-start">
+              <div>
+                <div className="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-700 ring-1 ring-emerald-200">
+                  <Icon name="trust" className="w-4 h-4 text-emerald-600" />
+                  <span>Counselling Cell</span>
+                </div>
+                <h3 className="mt-3 font-display text-xl sm:text-2xl font-bold text-navy-950">
+                  Psychological Support &amp; Counselling
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-navy-700">
+                  {COUNSELLING_SERVICES.description}
+                </p>
+                <ul className="mt-5 space-y-2.5">
+                  {COUNSELLING_SERVICES.services.map((service, i) => (
+                    <li key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-navy-800">
+                      <Icon name="check" className="w-4 h-4 shrink-0 text-emerald-600 mt-0.5" />
+                      <span>{service}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="rounded-2xl bg-gradient-to-br from-emerald-600 to-emerald-700 p-6 sm:p-7 text-white">
+                <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/20 ring-1 ring-white/30">
+                  <Icon name="phone" className="w-6 h-6" />
+                </span>
+                <h4 className="mt-4 font-display text-lg font-bold text-white">
+                  Need to Talk?
+                </h4>
+                <p className="mt-2 text-xs text-white/85 leading-relaxed">
+                  Our counselling services are confidential. Reach out whenever you need support — we are here for you.
+                </p>
+                <a
+                  href="tel:+919765998191"
+                  className="btn !bg-white !text-emerald-800 hover:!bg-emerald-50 w-full justify-center mt-5"
+                >
+                  <Icon name="phone" className="w-4 h-4" />
+                  Call: +91 9765998191
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
