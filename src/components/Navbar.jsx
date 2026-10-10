@@ -49,6 +49,7 @@ export default function Navbar({ mobileMenuOpen, setMobileMenuOpen }) {
   const [pinned, setPinned] = useState(null)
   const [scrolled, setScrolled] = useState(false)
   const [academicsOpen, setAcademicsOpen] = useState(false)
+  const [mobileAcademicsOpen, setMobileAcademicsOpen] = useState(false)
   const academicsTimeoutRef = useRef(null)
   const headerRef = useRef(null)
   const { pathname, hash } = useLocation()
@@ -280,7 +281,10 @@ export default function Navbar({ mobileMenuOpen, setMobileMenuOpen }) {
       <div className="flex h-[56px] items-center gap-3 px-4 lg:hidden">
         <button
           type="button"
-          onClick={() => setOpen((v) => !v)}
+          onClick={() => {
+            setOpen((v) => !v)
+            setMobileAcademicsOpen(false)
+          }}
           className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-navy-700 transition-all duration-200 hover:bg-royal-50 focus:outline-none focus-visible:ring-4 focus-visible:ring-royal-500/30"
           aria-expanded={open}
           aria-controls="mobile-menu"
@@ -306,7 +310,7 @@ export default function Navbar({ mobileMenuOpen, setMobileMenuOpen }) {
       <div
         id="mobile-menu"
         className={`relative z-10 overflow-hidden border-t border-navy-100/60 bg-white/95 backdrop-blur-xl transition-[max-height,opacity] duration-300 ease-out lg:hidden ${
-          open ? 'max-h-[700px] opacity-100' : 'max-h-0 opacity-0'
+          open ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
         <nav className="space-y-1 px-4 pb-5 pt-3" aria-label="Mobile">
@@ -316,10 +320,7 @@ export default function Navbar({ mobileMenuOpen, setMobileMenuOpen }) {
                 <div key={item.label}>
                   <button
                     type="button"
-                    onClick={() => {
-                      activate(item.label)
-                      if (pathname !== '/academics') navigate('/academics')
-                    }}
+                    onClick={() => setMobileAcademicsOpen((v) => !v)}
                     className={`flex w-full items-center justify-between rounded-xl px-4 py-3 text-[15px] font-semibold transition-colors duration-200 ${
                       activeMenu === item.label
                         ? 'bg-royal-50 text-royal-600'
@@ -327,24 +328,36 @@ export default function Navbar({ mobileMenuOpen, setMobileMenuOpen }) {
                     }`}
                   >
                     {item.label}
-                    <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg
+                      className={`h-4 w-4 transition-transform duration-300 ${mobileAcademicsOpen ? 'rotate-90' : ''}`}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
                   </button>
-                  <div className="ml-4 mt-1 space-y-0.5 border-l-2 border-navy-100 pl-3">
-                    {ACADEMICS_DROPDOWN.map((dropItem) => (
-                      <Link
-                        key={dropItem.label}
-                        to={dropItem.to}
-                        onClick={() => {
-                          setOpen(false)
-                          activate('Academics')
-                        }}
-                        className="flex items-center rounded-lg px-3 py-2.5 text-[13.5px] font-medium text-navy-700 transition-colors hover:bg-royal-50 hover:text-royal-600"
-                      >
-                        {dropItem.label}
-                      </Link>
-                    ))}
+                  <div
+                    className={`overflow-hidden transition-[max-height,opacity] duration-300 ease-out ${
+                      mobileAcademicsOpen ? 'max-h-[300px] opacity-100' : 'max-h-0 opacity-0'
+                    }`}
+                  >
+                    <div className="ml-4 mt-1 space-y-0.5 border-l-2 border-navy-100 pl-3">
+                      {ACADEMICS_DROPDOWN.map((dropItem) => (
+                        <Link
+                          key={dropItem.label}
+                          to={dropItem.to}
+                          onClick={() => {
+                            setOpen(false)
+                            setMobileAcademicsOpen(false)
+                            activate('Academics')
+                          }}
+                          className="flex items-center rounded-lg px-3 py-2.5 text-[13.5px] font-medium text-navy-700 transition-colors hover:bg-royal-50 hover:text-royal-600"
+                        >
+                          {dropItem.label}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 </div>
               )
