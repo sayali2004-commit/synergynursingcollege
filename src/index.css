@@ -27,6 +27,16 @@
   .section-pad {
     @apply py-8 sm:py-9 lg:py-10;
   }
+  @media (max-width: 639px) {
+    .scholarship-tags .scholarship-tag {
+      order: var(--order, 0);
+    }
+  }
+  @media (min-width: 640px) {
+    .scholarship-tags .scholarship-tag {
+      order: 0;
+    }
+  }
   .btn {
     @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium tracking-wide transition-all duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-500/40;
   }

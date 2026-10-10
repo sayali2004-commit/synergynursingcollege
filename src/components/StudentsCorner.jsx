@@ -129,13 +129,21 @@ export default function StudentsCorner() {
                   Benefits are available for SC, ST, OBC, VJNT, SBC, SEBC, EWS, and Minority categories
                   based on category, family income, and scheme rules.
                 </p>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {SCHOLARSHIPS.slice(0, 6).map((s, idx) => {
-                    const mobileOrderClasses = ['order-1', 'order-2', 'order-3', 'order-6', 'order-4', 'order-5']
+                <div className="scholarship-tags mt-4 flex flex-wrap gap-2">
+                  {SCHOLARSHIPS.slice(0, 6).map((s) => {
+                    const mobileOrderMap = {
+                      'SC / Nav-Buddhist Students': 1,
+                      'ST Students': 2,
+                      'OBC Students': 3,
+                      'SBC Students': 4,
+                      'SEBC Students': 5,
+                      'VJ-A / NT-B / NT-C / NT-D (VJNT)': 6,
+                    }
                     return (
                       <span
                         key={s.category}
-                        className={`rounded-full bg-white/15 px-3 py-1 text-[11px] font-semibold text-white ${mobileOrderClasses[idx]} sm:order-none`}
+                        style={{ '--order': mobileOrderMap[s.category] }}
+                        className="scholarship-tag rounded-full bg-white/15 px-3 py-1 text-[11px] font-semibold text-white"
                       >
                         {s.category}
                       </span>
