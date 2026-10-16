@@ -17,10 +17,6 @@ export default function Gallery() {
   const [lightboxLoading, setLightboxLoading] = useState(true)
 
   const images = useMemo(() => GALLERY_BY_CATEGORY[active] ?? [], [active])
-  const counts = useMemo(
-    () => Object.fromEntries(GALLERY_CATEGORIES.map((c) => [c.id, (GALLERY_BY_CATEGORY[c.id] ?? []).length])),
-    [],
-  )
 
   const close = useCallback(() => setLightbox(null), [])
   const open = useCallback((i) => {
@@ -92,13 +88,6 @@ export default function Gallery() {
                   }`}
                 >
                   <span className="whitespace-nowrap">{cat.label}</span>
-                  <span
-                    className={`hidden min-w-[1.4rem] rounded-full px-1.5 py-0.5 text-center text-[11px] font-extrabold leading-none transition-colors duration-300 sm:inline-block ${
-                      isActive ? 'bg-white/25 text-white' : 'bg-navy-100 text-navy-600'
-                    }`}
-                  >
-                    {counts[cat.id]}
-                  </span>
                 </button>
               )
             })}
