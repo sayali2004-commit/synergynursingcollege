@@ -134,7 +134,7 @@ export default function Navbar({ mobileMenuOpen, setMobileMenuOpen }) {
   }
 
   const navLinkCls = (isActive) =>
-    `nav-link group relative inline-flex items-center gap-1.5 px-2 py-2 text-[13px] xl:px-3 xl:text-[15px] font-semibold tracking-wide transition-colors duration-300 rounded-lg hover:bg-navy-50/60 whitespace-nowrap ${
+    `nav-link group relative inline-flex items-center gap-1.5 px-1.5 py-2 text-[12.5px] xl:px-3 xl:text-[14px] 2xl:text-[15px] font-semibold tracking-wide transition-colors duration-300 rounded-lg hover:bg-navy-50/60 whitespace-nowrap ${
       isActive
         ? 'active-underline text-royal-600'
         : 'text-navy-700 hover:text-royal-600'
@@ -164,14 +164,14 @@ export default function Navbar({ mobileMenuOpen, setMobileMenuOpen }) {
               alt="Synergy College of Nursing logo"
               className="h-10 w-auto rounded-lg ring-1 ring-navy-100 shadow-sm"
             />
-            <span className="font-display text-[16px] font-bold leading-tight text-navy-900 whitespace-nowrap">
+            <span className="hidden font-display text-[15px] font-bold leading-tight text-navy-900 whitespace-nowrap xl:inline 2xl:text-[16px]">
               Synergy College of Nursing
             </span>
           </Link>
 
           {/* Nav links, centered when no logo, right-aligned when logo visible */}
           <nav
-            className={`flex items-center gap-1 transition-all duration-300 ${
+            className={`flex min-w-0 items-center gap-0.5 transition-all duration-300 xl:gap-1 ${
               scrolled ? 'ml-auto' : 'mx-auto'
             }`}
             aria-label="Primary"
@@ -270,7 +270,7 @@ export default function Navbar({ mobileMenuOpen, setMobileMenuOpen }) {
 
           <Link
             to="/admissions"
-            className="shrink-0 ml-2 xl:ml-4 rounded-full bg-gradient-to-r from-royal-600 to-royal-700 px-4 py-2 xl:px-6 xl:py-2.5 text-[11px] xl:text-[13px] font-bold uppercase tracking-widest text-white shadow-[0_2px_12px_rgba(25,118,210,0.3)] transition-all duration-300 hover:-translate-y-0.5 hover:from-royal-700 hover:to-royal-800 hover:shadow-[0_6px_20px_rgba(25,118,210,0.4)]"
+            className="shrink-0 ml-2 xl:ml-4 rounded-full bg-gradient-to-r from-royal-600 to-royal-700 px-3.5 py-2 xl:px-6 xl:py-2.5 text-[10.5px] xl:text-[12.5px] 2xl:text-[13px] font-bold uppercase tracking-widest text-white shadow-[0_2px_12px_rgba(25,118,210,0.3)] transition-all duration-300 hover:-translate-y-0.5 hover:from-royal-700 hover:to-royal-800 hover:shadow-[0_6px_20px_rgba(25,118,210,0.4)]"
           >
             Apply Now
           </Link>
