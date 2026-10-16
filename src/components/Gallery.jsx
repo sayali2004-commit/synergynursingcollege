@@ -1,5 +1,5 @@
-import { useCallback, useEffect, useState } from 'react'
-import { GALLERY_IMAGES } from '../data/siteContent'
+import { useCallback, useEffect, useMemo, useState } from 'react'
+import { GALLERY_CATEGORIES, GALLERY_BY_CATEGORY } from '../data/siteContent'
 import Icon from './Icon'
 
 const FALLBACK =
@@ -12,25 +12,32 @@ const FALLBACK =
   )
 
 export default function Gallery() {
+  const [active, setActive] = useState(GALLERY_CATEGORIES[0].id)
   const [lightbox, setLightbox] = useState(null) // index | null
   const [lightboxLoading, setLightboxLoading] = useState(true)
 
-  const close = useCallback(() => setLightbox(null), [])
-  const prev = useCallback(
-    () => setLightbox((i) => (i === null ? null : (i - 1 + GALLERY_IMAGES.length) % GALLERY_IMAGES.length)),
-    [],
-  )
-  const next = useCallback(
-    () => setLightbox((i) => (i === null ? null : (i + 1) % GALLERY_IMAGES.length)),
+  const images = useMemo(() => GALLERY_BY_CATEGORY[active] ?? [], [active])
+  const counts = useMemo(
+    () => Object.fromEntries(GALLERY_CATEGORIES.map((c) => [c.id, (GALLERY_BY_CATEGORY[c.id] ?? []).length])),
     [],
   )
 
-  useEffect(() => {
-    if (lightbox === null) {
-      setLightboxLoading(true)
-      return undefined
-    }
+  const close = useCallback(() => setLightbox(null), [])
+  const open = useCallback((i) => {
+    setLightbox(i)
     setLightboxLoading(true)
+  }, [])
+  const prev = useCallback(() => {
+    setLightbox((i) => (i === null ? null : (i - 1 + images.length) % images.length))
+    setLightboxLoading(true)
+  }, [images.length])
+  const next = useCallback(() => {
+    setLightbox((i) => (i === null ? null : (i + 1) % images.length))
+    setLightboxLoading(true)
+  }, [images.length])
+
+  useEffect(() => {
+    if (lightbox === null) return undefined
     const onKey = (e) => {
       if (e.key === 'Escape') close()
       if (e.key === 'ArrowLeft') prev()
@@ -58,19 +65,65 @@ export default function Gallery() {
           </p>
         </div>
 
-        <div className="mt-9 columns-2 gap-3 sm:columns-3 sm:gap-4 lg:columns-5">
-          {GALLERY_IMAGES.map((src, i) => (
+        {/* Modern filter tabs */}
+        <div
+          className="reveal mt-8 flex justify-center"
+          style={{ '--reveal-delay': '200ms' }}
+          role="tablist"
+          aria-label="Gallery categories"
+        >
+          <div className="inline-flex flex-wrap items-center justify-center gap-1.5 rounded-2xl bg-white/80 p-1.5 shadow-soft ring-1 ring-navy-100 backdrop-blur-md sm:gap-2 sm:p-2">
+            {GALLERY_CATEGORIES.map((cat) => {
+              const isActive = active === cat.id
+              return (
+                <button
+                  key={cat.id}
+                  type="button"
+                  role="tab"
+                  aria-selected={isActive}
+                  onClick={() => {
+                    setActive(cat.id)
+                    setLightbox(null)
+                  }}
+                  className={`inline-flex items-center gap-2 rounded-xl px-3.5 py-2.5 text-[13px] font-bold tracking-wide transition-all duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-500/40 sm:px-5 sm:text-sm ${
+                    isActive
+                      ? 'bg-gradient-to-r from-brand-600 to-royal-600 text-white shadow-lg shadow-brand-600/30'
+                      : 'text-navy-600 hover:bg-navy-50 hover:text-brand-700'
+                  }`}
+                >
+                  <Icon name={cat.icon} className="h-4 w-4 shrink-0" />
+                  <span className="whitespace-nowrap">{cat.label}</span>
+                  <span
+                    className={`hidden min-w-[1.4rem] rounded-full px-1.5 py-0.5 text-center text-[11px] font-extrabold leading-none transition-colors duration-300 sm:inline-block ${
+                      isActive ? 'bg-white/25 text-white' : 'bg-navy-100 text-navy-600'
+                    }`}
+                  >
+                    {counts[cat.id]}
+                  </span>
+                </button>
+              )
+            })}
+          </div>
+        </div>
+
+        {/* Masonry grid — remounts on tab change to replay stagger animation */}
+        <div
+          key={active}
+          className="mt-9 columns-2 gap-3 sm:columns-3 sm:gap-4 lg:columns-5"
+          role="tabpanel"
+        >
+          {images.map((src, i) => (
             <button
               key={src}
               type="button"
-              onClick={() => setLightbox(i)}
-              className="reveal group relative mb-3 block w-full overflow-hidden rounded-xl break-inside-avoid bg-navy-50 ring-1 ring-navy-200 focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-500/50 sm:mb-4"
-              style={{ '--reveal-delay': `${(i % 10) * 60}ms` }}
-              aria-label={`Open image ${i + 1} of ${GALLERY_IMAGES.length}`}
+              onClick={() => open(i)}
+              className="group relative mb-3 block w-full animate-fade-up overflow-hidden rounded-xl break-inside-avoid bg-navy-50 ring-1 ring-navy-200 transition-shadow duration-300 hover:shadow-card-hover hover:ring-brand-400 focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-500/50 sm:mb-4"
+              style={{ animationDelay: `${(i % 12) * 55}ms` }}
+              aria-label={`Open image ${i + 1} of ${images.length}`}
             >
               <img
                 src={src}
-                alt={`Synergy Nursing College campus facility ${i + 1}`}
+                alt={`Synergy Nursing College ${active} photo ${i + 1}`}
                 className="block w-full transition-transform duration-500 group-hover:scale-110"
                 loading="lazy"
                 decoding="async"
@@ -79,10 +132,12 @@ export default function Gallery() {
                 }}
               />
               <span
-                className="absolute inset-0 flex items-center justify-center bg-navy-950/0 opacity-0 transition-all duration-300 group-hover:bg-navy-950/45 group-hover:opacity-100"
+                className="absolute inset-0 flex items-center justify-center bg-gradient-to-t from-navy-950/70 via-navy-950/10 to-transparent opacity-0 transition-all duration-300 group-hover:opacity-100"
                 aria-hidden="true"
               >
-                <Icon name="zoom" className="w-8 h-8 text-white" />
+                <span className="flex h-11 w-11 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm">
+                  <Icon name="zoom" className="h-5 w-5 text-white" />
+                </span>
               </span>
             </button>
           ))}
@@ -127,7 +182,7 @@ export default function Gallery() {
                 </div>
               )}
               <img
-                src={GALLERY_IMAGES[lightbox]}
+                src={images[lightbox]}
                 alt={`Synergy Nursing College, image ${lightbox + 1}`}
                 className="max-h-[78vh] w-auto rounded-xl shadow-card-hover ring-1 ring-white/20"
                 decoding="async"
@@ -139,7 +194,7 @@ export default function Gallery() {
               />
             </div>
             <figcaption className="mt-3 text-center text-sm font-semibold text-white/70">
-              {lightbox + 1} / {GALLERY_IMAGES.length}
+              {lightbox + 1} / {images.length}
             </figcaption>
           </figure>
 
