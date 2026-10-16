@@ -91,7 +91,6 @@ export default function Gallery() {
                       : 'text-navy-600 hover:bg-navy-50 hover:text-brand-700'
                   }`}
                 >
-                  <Icon name={cat.icon} className="h-4 w-4 shrink-0" />
                   <span className="whitespace-nowrap">{cat.label}</span>
                   <span
                     className={`hidden min-w-[1.4rem] rounded-full px-1.5 py-0.5 text-center text-[11px] font-extrabold leading-none transition-colors duration-300 sm:inline-block ${

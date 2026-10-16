@@ -458,12 +458,6 @@ export const FACILITIES = FACILITY_IMAGE_FILES.map((file) => ({
   image: `${import.meta.env.BASE_URL}images/campus-facilities/${file}`,
 }))
 
-const GALLERY_BASE = import.meta.env.BASE_URL + 'images/'
-
-const STUDENT_ACTIVITY_BASE = import.meta.env.BASE_URL + 'images/student-activity/'
-
-const VISIT_BASE = import.meta.env.BASE_URL + 'images/student actvity/'
-
 const img = (base, file) => base + encodeURI(file)
 
 export const GALLERY_CATEGORIES = [
@@ -472,89 +466,75 @@ export const GALLERY_CATEGORIES = [
   { id: 'visit', label: 'Visit', icon: 'pin' },
 ]
 
+const CAMPUS_BASE = import.meta.env.BASE_URL + 'images/clg Campus/'
+const EVENT_BASE = import.meta.env.BASE_URL + 'images/Event/'
+const VISIT_BASE = import.meta.env.BASE_URL + 'images/visit/'
+
 const CAMPUS_IMAGES = [
-  'IMG-20200806-WA0032.jpg',
-  'IMG-20200806-WA0035.jpg',
-  'IMG-20210210-WA0005.jpg',
-  'IMG-20200806-WA0033.jpg',
-  'IMG-20201001-WA0061.jpg',
-  'IMG-20201001-WA0067.jpg',
-  'IMG-20200806-WA0036.jpg',
-  'IMG-20200806-WA0027.jpg',
-  'IMG-20200806-WA0029.jpg',
-  'IMG-20200806-WA0034.jpg',
-  'IMG-20200806-WA0037.jpg',
-  'IMG-20201001-WA0072.jpg',
-  'IMG-20210210-WA0008.jpg',
-  'IMG-20210210-WA0013.jpg',
-  'Synergy-Hospital-Miraj.jpg',
-  'Multi-Speciality-Hospital-Miraj.jpg',
-  'Female-Ward-Synergy-Hospital.jpg',
-  'Child-Care-Hospital-Miraj-Sangli.jpg',
   'Ambulance-Facility-Miraj.jpg',
   'best-eye-hospital-in-MIraj.jpg',
-].map((f) => img(GALLERY_BASE, f))
-
-const FACILITY_GALLERY_IMAGES = [
-  'facility-07.jpeg',
-  'facility-09.jpeg',
-  'facility-10.jpeg',
-  'facility-11.jpeg',
-  'facility-12.jpeg',
-  'facility-13.jpeg',
-  'facility-14.jpeg',
-  'facility-15.jpeg',
-].map((f) => img(GALLERY_BASE + 'campus-facilities/', f))
+  'Child-Care-Hospital-Miraj-Sangli.jpg',
+  'Female-Ward-Synergy-Hospital.jpg',
+  'IMG-20200806-WA0027.jpg',
+  'IMG-20200806-WA0029.jpg',
+  'IMG-20200806-WA0032.jpg',
+  'IMG-20200806-WA0033.jpg',
+  'IMG-20200806-WA0034.jpg',
+  'IMG-20200806-WA0035.jpg',
+  'IMG-20200806-WA0036.jpg',
+  'IMG-20200806-WA0037.jpg',
+  'IMG-20201001-WA0061.jpg',
+  'IMG-20201001-WA0067.jpg',
+  'IMG-20201001-WA0072.jpg',
+  'IMG-20210210-WA0005.jpg',
+  'IMG-20210210-WA0008.jpg',
+  'IMG-20210210-WA0013.jpg',
+  'Multi-Speciality-Hospital-Miraj.jpg',
+  'WhatsApp Image 2026-10-14 at 8.11.04 PM.jpeg',
+  'WhatsApp Image 2026-10-14 at 8.11.05 PM (1).jpeg',
+  'WhatsApp Image 2026-10-14 at 8.11.05 PM (2).jpeg',
+  'WhatsApp Image 2026-10-14 at 8.11.05 PM.jpeg',
+  'WhatsApp Image 2026-10-16 at 3.21.02 PM (1).jpeg',
+  'WhatsApp Image 2026-10-16 at 3.21.04 PM (1).jpeg',
+  'WhatsApp Image 2026-10-16 at 3.21.04 PM.jpeg',
+  'WhatsApp Image 2026-10-16 at 3.21.05 PM (1).jpeg',
+  'WhatsApp Image 2026-10-16 at 3.21.05 PM (2).jpeg',
+  'WhatsApp Image 2026-10-16 at 3.21.05 PM.jpeg',
+  'WhatsApp Image 2026-10-16 at 3.21.06 PM.jpeg',
+  'WhatsApp-Image-2024-03-05-at-11.53.54-AM-1.jpeg',
+  'WhatsApp-Image-2024-03-05-at-11.53.55-AM.jpeg',
+  'WhatsApp-Image-2024-03-05-at-11.56.25-AM-1.jpeg',
+].map((f) => img(CAMPUS_BASE, f))
 
 const EVENT_IMAGES = [
-  ...Array.from({ length: 23 }, (_, i) => i + 2)
-    .filter((n) => ![4, 5].includes(n))
-    .map((n) => img(STUDENT_ACTIVITY_BASE, `student-${String(n).padStart(2, '0')}.jpeg`)),
-  img(STUDENT_ACTIVITY_BASE, 'student-scholarship.jpeg'),
-  img(GALLERY_BASE, 'WhatsApp-Image-2024-03-05-at-11.53.54-AM-1.jpeg'),
-  img(GALLERY_BASE, 'WhatsApp-Image-2024-03-05-at-11.53.55-AM.jpeg'),
-  img(GALLERY_BASE, 'WhatsApp-Image-2024-03-05-at-11.56.23-AM.jpeg'),
-  img(GALLERY_BASE, 'WhatsApp-Image-2024-03-05-at-11.56.25-AM-1.jpeg'),
-  img(GALLERY_BASE, 'WhatsApp-Image-2024-03-05-at-11.56.27-AM.jpeg'),
-  img(GALLERY_BASE, 'WhatsApp-Image-2024-03-05-at-11.56.27-AM-1.jpeg'),
-]
+  'Miraj-Hospitals-Best-Hospital.jpg',
+  'student-08.jpeg',
+  'student-12.jpeg',
+  'student-13.jpeg',
+  'student-14.jpeg',
+  'student-15.jpeg',
+  'student-16.jpeg',
+  'student-17.jpeg',
+  'student-18.jpeg',
+  'student-21.jpeg',
+  'student-22.jpeg',
+  'student-23.jpeg',
+  'student-scholarship.jpeg',
+  'WhatsApp Image 2026-10-01 at 3.33.11 PM (1).jpeg',
+  'WhatsApp Image 2026-10-01 at 3.33.18 PM.jpeg',
+  'WhatsApp-Image-2024-03-05-at-11.56.23-AM.jpeg',
+  'WhatsApp-Image-2024-03-05-at-11.56.27-AM-1.jpeg',
+].map((f) => img(EVENT_BASE, f))
 
 const VISIT_IMAGES = [
-  'WhatsApp Image 2026-10-01 at 3.33.11 PM.jpeg',
-  'WhatsApp Image 2026-10-01 at 3.33.12 PM (1).jpeg',
-  'WhatsApp Image 2026-10-01 at 3.33.12 PM (2).jpeg',
-  'WhatsApp Image 2026-10-01 at 3.33.12 PM (3).jpeg',
-  'WhatsApp Image 2026-10-01 at 3.33.12 PM.jpeg',
-  'WhatsApp Image 2026-10-01 at 3.33.13 PM (1).jpeg',
-  'WhatsApp Image 2026-10-01 at 3.33.13 PM.jpeg',
-  'WhatsApp Image 2026-10-01 at 3.33.14 PM (1).jpeg',
-  'WhatsApp Image 2026-10-01 at 3.33.14 PM.jpeg',
-  'WhatsApp Image 2026-10-01 at 3.33.15 PM (1).jpeg',
-  'WhatsApp Image 2026-10-01 at 3.33.15 PM (2).jpeg',
-  'WhatsApp Image 2026-10-01 at 3.33.15 PM.jpeg',
-  'WhatsApp Image 2026-10-01 at 3.33.16 PM.jpeg',
-  'WhatsApp Image 2026-10-01 at 3.33.17 PM.jpeg',
-  'WhatsApp Image 2026-10-01 at 3.33.19 PM (1).jpeg',
-  'WhatsApp Image 2026-10-01 at 3.33.19 PM (2).jpeg',
-  'WhatsApp Image 2026-10-01 at 3.33.19 PM.jpeg',
-  'WhatsApp Image 2026-10-01 at 3.33.20 PM.jpeg',
-  'WhatsApp Image 2026-10-01 at 3.33.21 PM (1).jpeg',
-  'WhatsApp Image 2026-10-01 at 3.33.21 PM (2).jpeg',
-  'WhatsApp Image 2026-10-01 at 3.33.21 PM.jpeg',
-  'WhatsApp Image 2026-10-01 at 3.33.22 PM.jpeg',
-  'WhatsApp Image 2026-10-01 at 3.33.23 PM.jpeg',
-  'WhatsApp-Image-2024-03-05-at-11.56.27-AM-1.jpeg',
+  'WhatsApp Image 2026-10-14 at 8.11.06 PM (1).jpeg',
+  'WhatsApp Image 2026-10-14 at 8.11.07 PM (2).jpeg',
+  'WhatsApp Image 2026-10-14 at 8.11.07 PM (3).jpeg',
+  'WhatsApp Image 2026-10-16 at 3.21.02 PM.jpeg',
 ].map((f) => img(VISIT_BASE, f))
 
-export const GALLERY_IMAGES = [
-  ...CAMPUS_IMAGES,
-  ...FACILITY_GALLERY_IMAGES,
-  ...EVENT_IMAGES,
-  ...VISIT_IMAGES,
-]
-
 export const GALLERY_BY_CATEGORY = {
-  campus: [...CAMPUS_IMAGES, ...FACILITY_GALLERY_IMAGES],
+  campus: CAMPUS_IMAGES,
   events: EVENT_IMAGES,
   visit: VISIT_IMAGES,
 }
